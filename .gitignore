@@ -1,0 +1,7 @@
+.DS_Store
+*work*
+*.nextflow*
+*trace.txt*
+*npy
+*ped
+*map
