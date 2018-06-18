@@ -4,14 +4,14 @@ params.out = "."
 
 X = file(params.X)
 Y = file(params.Y)
-snps = file(params.snps)
+featnames = file(params.featnames)
 
 process run_HSIC_lasso {
 
   input:
     file X
     file Y
-    file snps
+    file featnames
 
   output:
     file 'aggregated_score.csv' into aggregated_score
@@ -27,7 +27,7 @@ process run_HSIC_lasso {
 
   hl.X_in = np.load("$X")
   hl.Y_in = np.load("$Y")
-  hl.featname = np.load("$snps")
+  hl.featname = np.load("$featnames")
 
   d,n = hl.X_in.shape
 

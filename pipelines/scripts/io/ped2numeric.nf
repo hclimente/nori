@@ -51,7 +51,7 @@ process numeric2npy {
 
   np.save("${numeric.baseName}.X.npy", hl.X_in)
   np.save("${numeric.baseName}.Y.npy", hl.Y_in)
-  np.save("${numeric.baseName}.snps.npy", hl.featname)
+  np.save("${numeric.baseName}.featnames.npy", hl.featname)
   """
 
 }

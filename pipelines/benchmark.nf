@@ -28,7 +28,7 @@ process simulate_data {
     file binSimulateData
 
   output:
-    set i,n,d,c, "X.npy", "Y.npy", "snps.npy" into data
+    set i,n,d,c, "X.npy", "Y.npy", "featnames.npy" into data
 
   """
   nextflow run $binSimulateData --n $n --d $d --causal $c
@@ -44,14 +44,14 @@ process run_HSIC_lasso {
     file binHSICLasso
     file binEvaluateSolution
     each B from params.B
-    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_hsic
+    set n,d,i,c,"X.npy", "Y.npy", "featnames.npy" from data_hsic
 
   output:
     file 'feature_stats' into features_hsic
     file 'prediction_stats' into predictions_hsic
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --snps snps.npy --B $B --mode regression --causal $c
+  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode regression --causal $c
   nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
   nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B'
   """
@@ -63,14 +63,14 @@ process run_lasso {
   input:
     file binLasso
     file binEvaluateSolution
-    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_lasso
+    set n,d,i,c,"X.npy", "Y.npy", "featnames.npy" from data_lasso
 
   output:
     file 'feature_stats' into features_lasso
     file 'prediction_stats' into predictions_lasso
 
   """
-  nextflow run $binLasso --X X.npy --Y Y.npy --snps snps.npy
+  nextflow run $binLasso --X X.npy --Y Y.npy --featnames featnames.npy
   nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'lasso'
   """
 
@@ -81,14 +81,14 @@ process run_mRMR {
   input:
     file binmRMR
     file binEvaluateSolution
-    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_mrmr
+    set n,d,i,c,"X.npy", "Y.npy", "featnames.npy" from data_mrmr
 
   output:
     file 'feature_stats' into features_mrmr
     file 'prediction_stats' into predictions_mrmr
 
   """
-  nextflow run $binmRMR --X X.npy --Y Y.npy --snps snps.npy --causal $c
+  nextflow run $binmRMR --X X.npy --Y Y.npy --featnames featnames.npy --causal $c
   nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
   nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR'
   """

@@ -28,11 +28,11 @@ process generate_data {
     f,args = F[funs[i]]
     Y += f(X[i,:], args)
 
-  featname = [ str(x) for x in np.arange($params.d) ]
+  featnames = [ str(x) for x in np.arange($params.d) ]
 
   np.save("X.npy", X)
   np.save("Y.npy", Y)
-  np.save("snps.npy", featname)
+  np.save("featnames.npy", featnames)
   """
 
 }

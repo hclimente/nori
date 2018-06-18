@@ -19,7 +19,7 @@ process read_data {
     file map
 
   output:
-    set "*.X.npy", "*.Y.npy", "*.snps.npy" into data
+    set "*.X.npy", "*.Y.npy", "*.featnames.npy" into data
 
   """
   nextflow run $binReadPed --gt $ped.baseName
@@ -31,10 +31,10 @@ process read_data {
 process run_HSIC_lasso {
 
   input:
-    set "X.npy", "Y.npy", "snps.npy" from data
+    set "X.npy", "Y.npy", "featnames.npy" from data
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --snps snps.npy --B $B --mode classification
+  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode classification
   """
 
 }
