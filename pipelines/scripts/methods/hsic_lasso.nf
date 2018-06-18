@@ -34,7 +34,7 @@ process run_HSIC_lasso {
   d,n = hl.X_in.shape
 
   if $B:
-    discard = np.random.choice(np.arange(10), n % $B, replace = False)
+    discard = np.random.choice(np.arange(n), n % $B, replace = False)
     hl.X_in = np.delete(hl.X_in, discard, 1)
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
@@ -65,7 +65,7 @@ process standarize_output {
   scores <- read_csv("$aggregated_score", col_types = 'cdd')
   parameters <- read_csv("$parameters", col_types = 'cdcdcdcdcdcdcdcdcdcdcd')
 
-  select(parameters, Feature) %>%
+  select(scores, Feature) %>%
     write_tsv('features', col_names = FALSE)
   """
 
