@@ -2,8 +2,7 @@
 
 params.out = "."
 
-n = params.n
-d = params.d
+params.causal = 5
 
 process generate_data {
 
@@ -17,10 +16,19 @@ process generate_data {
 
   import numpy as np
 
-  X = np.random.rand($d, $n)
-  Y = np.square(X[0,:]) + np.power(X[1,:], 3) + np.sin(X[2,:]) + 3 * np.cos(X[3,:]) + np.log(X[4,:])
-  Y = np.expand_dims(Y, 0)
-  featname = [ str(x) for x in np.arange($d) ]
+  X = np.random.rand($params.d, $params.n)
+
+  F = [(np.square, None), (np.power, [3]), (np.power, [4]),
+       (np.power, [5]), (np.power, [6]), (np.log, None),
+       (np.sin, None), (np.cos, None)]
+  funs = np.random.choice(np.arange(len(F)), $params.causal)
+
+  Y = np.zeros((1, $params.n))
+  for i in range($params.causal):
+    f,args = F[funs[i]]
+    Y += f(X[i,:], args)
+
+  featname = [ str(x) for x in np.arange($params.d) ]
 
   np.save("X.npy", X)
   np.save("Y.npy", Y)
