@@ -6,7 +6,8 @@ params.out = "."
 params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
-params.B = [10, 20, 30, 40, 50]
+params.B = [0, 10, 20, 30, 40, 50]
+params.causal = [10, 50, 100]
 
 bins = file("${params.projectdir}/pipelines/scripts")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
@@ -20,57 +21,39 @@ binEvaluateSolution = file("$bins/analysis/evaluate_solution.nf")
 process simulate_data {
 
   input:
+    each i from 1..params.perms
     each n from params.n
     each d from params.d
-    each i from 1..params.perms
+    each c from params.causal
     file binSimulateData
 
   output:
-    set n,d,i, "X.npy", "Y.npy", "snps.npy" into data
+    set i,n,d,c, "X.npy", "Y.npy", "snps.npy" into data
 
   """
-  nextflow run $binSimulateData --n $n --d $d
+  nextflow run $binSimulateData --n $n --d $d --causal $c
   """
 
 }
 
-data.into { data_hsic; data_block_hsic; data_lasso; data_mrmr }
+data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_HSIC_lasso {
 
   input:
     file binHSICLasso
     file binEvaluateSolution
-    set n,d,i,"X.npy","Y.npy","snps.npy" from data_hsic
+    each B from params.B
+    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_hsic
 
   output:
     file 'feature_stats' into features_hsic
     file 'prediction_stats' into predictions_hsic
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --snps snps.npy --B 0 --mode regression
+  nextflow run $binHSICLasso --X X.npy --Y Y.npy --snps snps.npy --B $B --mode regression --causal $c
   nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --i $i --model 'hsic_lasso'
-  """
-
-}
-
-process run_block_HSIC_lasso {
-
-  input:
-    file binHSICLasso
-    file binEvaluateSolution
-    each B from params.B
-    set n,d,i,"X.npy", "Y.npy", "snps.npy" from data_block_hsic
-
-  output:
-    file 'feature_stats' into features_block_hsic
-    file 'prediction_stats' into predictions_block_hsic
-
-  """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --snps snps.npy --B $B --mode regression
-  nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --i $i --model 'hsic_lasso-b$B'
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B'
   """
 
 }
@@ -80,7 +63,7 @@ process run_lasso {
   input:
     file binLasso
     file binEvaluateSolution
-    set n,d,i,"X.npy", "Y.npy", "snps.npy" from data_lasso
+    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_lasso
 
   output:
     file 'feature_stats' into features_lasso
@@ -88,7 +71,7 @@ process run_lasso {
 
   """
   nextflow run $binLasso --X X.npy --Y Y.npy --snps snps.npy
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --i $i --model 'lasso'
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'lasso'
   """
 
 }
@@ -98,22 +81,22 @@ process run_mRMR {
   input:
     file binmRMR
     file binEvaluateSolution
-    set n,d,i,"X.npy", "Y.npy", "snps.npy" from data_mrmr
+    set n,d,i,c,"X.npy", "Y.npy", "snps.npy" from data_mrmr
 
   output:
     file 'feature_stats' into features_mrmr
     file 'prediction_stats' into predictions_mrmr
 
   """
-  nextflow run $binmRMR --X X.npy --Y Y.npy --snps snps.npy
+  nextflow run $binmRMR --X X.npy --Y Y.npy --snps snps.npy --causal $c
   nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --i $i --model 'mRMR'
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR'
   """
 
 }
 
-features = features_block_hsic. mix(features_hsic, features_lasso, features_mrmr)
-predictions = predictions_block_hsic. mix(predictions_hsic, predictions_lasso, predictions_mrmr)
+features = features_hsic. mix( features_lasso, features_mrmr )
+predictions = predictions_hsic. mix( predictions_lasso, predictions_mrmr )
 
 process benchmark {
 

@@ -19,8 +19,8 @@ process evaluate_features {
   library(tidyverse)
 
   features <- read_tsv("$features", col_types = 'i', col_names = FALSE)
-  selected <- intersect(seq(1,5), features\$X1)
-  tpr <- length(selected) / 5
+  selected <- intersect(seq(1, $params.causal), features\$X1)
+  tpr <- length(selected) / $params.causal
 
   data_frame(model = "$params.model", n = $params.n,
              d = $params.d, i = $params.i,

@@ -5,8 +5,6 @@ params.out = "."
 X = file(params.X)
 Y = file(params.Y)
 snps = file(params.snps)
-B = params.B
-mode = params.mode
 
 process run_HSIC_lasso {
 
@@ -34,11 +32,11 @@ process run_HSIC_lasso {
   d,n = hl.X_in.shape
 
   if $B:
-    discard = np.random.choice(np.arange(n), n % $B, replace = False)
+    discard = np.random.choice(np.arange(n), n % $params.B, replace = False)
     hl.X_in = np.delete(hl.X_in, discard, 1)
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
-  hl.$mode(5, B = $B)
+  hl.$params.mode($params.causal, B = $params.B)
 
   hl.save_score()
   hl.save_param()
