@@ -26,7 +26,9 @@ process generate_data {
   Y = np.zeros((1, $params.n))
   for i in range($params.causal):
     f,args = F[funs[i]]
-    Y += f(X[i,:], args)
+    yi = f(X[i,:], args)
+    # normalize by the variance
+    Y += yi / np.var(yi)
 
   featnames = [ str(x) for x in np.arange($params.d) ]
 

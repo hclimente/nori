@@ -31,7 +31,7 @@ process simulate_data {
     set i,n,d,c, "X.npy", "Y.npy", "featnames.npy" into data
 
   """
-  nextflow run $binSimulateData --n $n --d $d --causal $c
+  nextflow run $binSimulateData --n $n --d $d --causal $c -profile cluster
   """
 
 }
@@ -39,6 +39,8 @@ process simulate_data {
 data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_HSIC_lasso {
+
+  memory '50 GB'
 
   input:
     file binHSICLasso
@@ -51,9 +53,9 @@ process run_HSIC_lasso {
     file 'prediction_stats' into predictions_hsic
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode regression --causal $c
-  nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B'
+  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode regression --causal $c -profile bigmem
+  nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features -profile cluster
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
@@ -70,8 +72,8 @@ process run_lasso {
     file 'prediction_stats' into predictions_lasso
 
   """
-  nextflow run $binLasso --X X.npy --Y Y.npy --featnames featnames.npy
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'lasso'
+  nextflow run $binLasso --X X.npy --Y Y.npy --featnames featnames.npy -profile bigmem
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
   """
 
 }
@@ -88,9 +90,9 @@ process run_mRMR {
     file 'prediction_stats' into predictions_mrmr
 
   """
-  nextflow run $binmRMR --X X.npy --Y Y.npy --featnames featnames.npy --causal $c
-  nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features
-  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR'
+  nextflow run $binmRMR --X X.npy --Y Y.npy --featnames featnames.npy --causal $c -profile bigmem
+  nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features -profile cluster
+  nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   """
 
 }
