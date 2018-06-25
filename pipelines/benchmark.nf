@@ -40,7 +40,7 @@ data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_HSIC_lasso {
 
-  memory '50 GB'
+  errorStrategy 'ignore'
 
   input:
     file binHSICLasso
@@ -53,7 +53,7 @@ process run_HSIC_lasso {
     file 'prediction_stats' into predictions_hsic
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode regression --causal $c -profile bigmem
+  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode regression --causal $c -profile bigmem -with-trace
   nextflow run $binKernelRegression --X X.npy --Y Y.npy --selected_features features -profile cluster
   nextflow run $binEvaluateSolution --features features --Y Y.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
