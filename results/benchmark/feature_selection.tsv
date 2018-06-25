@@ -1,4 +1,4 @@
-model	n	d	i	TPR
+model	i	n	d	TPR
 hsic_lasso-b10	5	100	1e3	0.2
 hsic_lasso-b0	7	100	2500	0
 hsic_lasso-b20	4	1e3	2500	0.1
