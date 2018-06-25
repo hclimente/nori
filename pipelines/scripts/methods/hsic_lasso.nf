@@ -8,13 +8,15 @@ featnames = file(params.featnames)
 
 process run_HSIC_lasso {
 
+  publishDir "$params.out", overwrite: true, mode: "copy"
+
   input:
     file X
     file Y
     file featnames
 
   output:
-    file 'aggregated_score.csv' into aggregated_score
+    file 'features'
 
   """
   #!/usr/bin/env python
@@ -36,31 +38,7 @@ process run_HSIC_lasso {
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
   hl.$params.mode($params.causal, B = $params.B)
-
-  hl.save_score()
-  """
-
-}
-
-process standarize_output {
-
-  publishDir "$params.out", overwrite: true, mode: "copy"
-
-  input:
-    file aggregated_score
-
-  output:
-    file 'features' into features
-
-  """
-  #!/usr/bin/env Rscript
-
-  library(tidyverse)
-
-  scores <- read_csv("$aggregated_score", col_types = 'cdd')
-
-  select(scores, Feature) %>%
-    write_tsv('features', col_names = FALSE)
+  np.savetxt('features', hl.A, fmt = '%i')
   """
 
 }

@@ -2,6 +2,7 @@ params.out = '.'
 
 X = file("$params.X")
 Y = file("$params.Y")
+X_test = file("$params.X_test")
 selected_features = file("$params.selected_features")
 
 process regression {
@@ -12,6 +13,7 @@ process regression {
     file X
     file Y
     file selected_features
+    file X_test
 
   output:
     file 'predictions'
@@ -30,7 +32,9 @@ process regression {
   clf = svm.SVR()
   clf.fit(X, Y)
 
-  predictions = clf.predict(X)
+  X_test = np.load("$X_test").T
+  X_test = X_test[:, selected_features]
+  predictions = clf.predict(X_test)
   np.savetxt('predictions', predictions)
   """
 

@@ -24,7 +24,7 @@ process evaluate_features {
 
   data_frame(model = "$params.model", n = $params.n,
              d = $params.d, i = $params.i,
-             tpr = tpr) %>%
+             c = $params.causal, tpr = tpr) %>%
     write_tsv("feature_stats", col_names = FALSE)
   """
 
@@ -52,7 +52,7 @@ process evaluate_predictions {
 
   data_frame(model = "$params.model", n = $params.n,
              d = $params.d, i = $params.i,
-             r2 = as.numeric(r2)) %>%
+             c = $params.causal, r2 = as.numeric(r2)) %>%
     write_tsv("prediction_stats", col_names = FALSE)
   """
 
