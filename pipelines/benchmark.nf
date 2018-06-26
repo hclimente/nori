@@ -14,7 +14,7 @@ binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binHSICLasso = file("$bins/methods/hsic_lasso.nf")
 binLasso = file("$bins/methods/lasso.nf")
 binmRMR = file("$bins/methods/mrmr.nf")
-binKernelRegression = file("$bins/methods/kernel_svr.nf")
+binKernelSVM = file("$bins/methods/kernel_svm.nf")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binEvaluateSolution = file("$bins/analysis/evaluate_solution.nf")
 
@@ -54,7 +54,7 @@ process run_HSIC_lasso {
 
   """
   nextflow run $binHSICLasso --X X_train.npy --Y Y_train.npy --featnames featnames.npy --B $B --mode regression --causal $c -profile bigmem
-  nextflow run $binKernelRegression --X X_train.npy --Y Y_train.npy --X_test X_test.npy --selected_features features -profile cluster
+  nextflow run $binKernelSVM --X X_train.npy --Y Y_train.npy --X_test X_test.npy --selected_features features --model SVR -profile cluster
   nextflow run $binEvaluateSolution --features features --Y Y_test.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 
@@ -91,7 +91,7 @@ process run_mRMR {
 
   """
   nextflow run $binmRMR --X X_train.npy --Y Y_train.npy --featnames featnames.npy --causal $c -profile bigmem
-  nextflow run $binKernelRegression --X X_train.npy --Y Y_train.npy --X_test X_test.npy --selected_features features -profile cluster
+  nextflow run $binKernelSVM --X X_train.npy --Y Y_train.npy --X_test X_test.npy --selected_features features --model SVR -profile cluster
   nextflow run $binEvaluateSolution --features features --Y Y_test.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   """
 
