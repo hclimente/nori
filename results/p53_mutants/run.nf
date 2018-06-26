@@ -4,7 +4,7 @@ params.projectdir = '../../'
 params.out = "."
 
 p53 = file("K8.data")
-B = 50
+B = 20
 
 bins = file("${params.projectdir}/pipelines/scripts")
 binRead = file("$bins/io/read_p53mutants.nf")

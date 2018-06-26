@@ -54,7 +54,7 @@ process read_p53mutants {
     featnames = [ str(x) for x in mutants.columns.values ]
 
     # remove samples with many nans
-    badfeats = np.sum(np.isnan(X), axis = 0) > 0)
+    badfeats = np.sum(np.isnan(X), axis = 0) > 0
     X = X[:, np.logical_not(badfeats)]
 
     np.save("X.npy", X)
