@@ -14,7 +14,7 @@ binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binHSICLasso = file("$bins/methods/hsic_lasso.nf")
 binLasso = file("$bins/methods/lasso.nf")
 binmRMR = file("$bins/methods/mrmr.nf")
-binKernelRegression = file("$bins/methods/kernel_regression.nf")
+binKernelRegression = file("$bins/methods/kernel_svr.nf")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binEvaluateSolution = file("$bins/analysis/evaluate_solution.nf")
 
