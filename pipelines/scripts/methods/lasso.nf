@@ -35,8 +35,8 @@ process run_lasso {
   predictions = clf.predict(X_test)
   np.savetxt('predictions', predictions)
 
-  features = np.where(clf.coef_ != 0)
-  np.savetxt('features', features)
+  features = np.nonzero(clf.coef_)[0] 
+  np.savetxt('features', features, fmt = '%i')
   """
 
 }
