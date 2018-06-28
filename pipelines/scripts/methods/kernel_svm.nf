@@ -1,11 +1,12 @@
 params.out = '.'
 
-X = file("$params.X")
-Y = file("$params.Y")
-X_test = file("$params.X_test")
-selected_features = file("$params.selected_features")
+X = file(params.X)
+Y = file(params.Y)
+X_test = file(params.X_test)
+selected_features = file(params.selected_features)
+model = params.model
 
-process regression {
+process predict {
 
   publishDir "$params.out", overwrite: true, mode: "copy"
 
@@ -29,7 +30,7 @@ process regression {
   X = X[:, selected_features]
   Y = np.load("$Y").squeeze()
 
-  clf = svm.SVR()
+  clf = svm.$model()
   clf.fit(X, Y)
 
   X_test = np.load("$X_test").T

@@ -1,59 +1,101 @@
 params.out = '.'
 
+params.outcome = 'numerical'
+
 features = file("$params.features")
 predictions = file("$params.predictions")
 Y = file("$params.Y")
+outcome = params.outcome
 
-process evaluate_features {
+if (params.features) {
 
-  publishDir "$params.out", overwrite: true, mode: "copy"
+  process evaluate_features {
 
-  input:
-    file features
+    publishDir "$params.out", overwrite: true, mode: "copy"
 
-  output:
-    file 'feature_stats' into feature_stats
+    input:
+      file features
 
-  """
-  #!/usr/bin/env Rscript
-  library(tidyverse)
+    output:
+      file 'feature_stats' into feature_stats
 
-  features <- read_tsv("$features", col_types = 'i', col_names = FALSE)
-  selected <- intersect(seq(1, $params.causal), features\$X1)
-  tpr <- length(selected) / $params.causal
+    """
+    #!/usr/bin/env Rscript
+    library(tidyverse)
 
-  data_frame(model = "$params.model", n = $params.n,
-             d = $params.d, i = $params.i,
-             c = $params.causal, tpr = tpr) %>%
-    write_tsv("feature_stats", col_names = FALSE)
-  """
+    features <- read_tsv("$features", col_types = 'i', col_names = FALSE)
+    selected <- intersect(seq(1, $params.causal), features\$X1)
+    tpr <- length(selected) / $params.causal
 
+    data_frame(model = "$params.model", n = "$params.n",
+               d = "$params.d", i = "$params.i",
+               c = "$params.causal", tpr = tpr) %>%
+      write_tsv("feature_stats", col_names = FALSE)
+    """
+
+  }
 }
 
-process evaluate_predictions {
+if (predictions) {
 
-  publishDir "$params.out", overwrite: true, mode: "copy"
+  if (outcome == 'categorical') {
 
-  input:
-    file predictions
-    file Y
+    process evaluate_classification {
 
-  output:
-    file 'prediction_stats' into prediction_stats
+      publishDir "$params.out", overwrite: true, mode: "copy"
 
-  """
-  #!/usr/bin/env Rscript
-  library(tidyverse)
-  library(RcppCNPy)
+      input:
+        file predictions
+        file Y
 
-  predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
-  Y <- npyLoad("$Y") %>% t
-  r2 <- cor(predictions, Y) ^ 2
+      output:
+        file 'prediction_stats' into prediction_stats
 
-  data_frame(model = "$params.model", n = $params.n,
-             d = $params.d, i = $params.i,
-             c = $params.causal, r2 = as.numeric(r2)) %>%
-    write_tsv("prediction_stats", col_names = FALSE)
-  """
+      """
+      #!/usr/bin/env Rscript
+      library(tidyverse)
+      library(RcppCNPy)
+
+      predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
+      Y <- npyLoad("$Y") %>% t
+      TPR <- sum(predictions == Y)/length(Y)
+
+      data_frame(model = "$params.model", n = "$params.n",
+                 d = "$params.d", i = "$params.i",
+                 c = "$params.causal", TPR = as.numeric(TPR)) %>%
+        write_tsv("prediction_stats", col_names = FALSE)
+      """
+
+    }
+  } else {
+
+    process evaluate_regression {
+
+      publishDir "$params.out", overwrite: true, mode: "copy"
+
+      input:
+        file predictions
+        file Y
+
+      output:
+        file 'prediction_stats' into prediction_stats
+
+      """
+      #!/usr/bin/env Rscript
+      library(tidyverse)
+      library(RcppCNPy)
+
+      predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
+      Y <- npyLoad("$Y") %>% t
+      r2 <- cor(predictions, Y) ^ 2
+
+      data_frame(model = "$params.model", n = "$params.n",
+                 d = "$params.d", i = "$params.i",
+                 c = "$params.causal", r2 = as.numeric(r2)) %>%
+        write_tsv("prediction_stats", col_names = FALSE)
+      """
+
+    }
+  }
 
 }
