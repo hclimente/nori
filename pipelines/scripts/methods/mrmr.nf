@@ -41,7 +41,7 @@ process run_mRMR {
     file 'features' into features
 
   """
-  mrmr -i $csv -t 0 -n $params.causal >results
+  mrmr -i $csv -t 0 -n $params.causal -s 10000 >results
   grep -A `expr $params.causal + 1` mRMR results | head -n `expr $params.causal + 2` | tail -n $params.causal | cut -f3 | sed 's/ //g' >features
   """
 

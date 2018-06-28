@@ -6,7 +6,7 @@ params.out = "."
 params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
-params.B = [0, 10, 20, 30, 40, 50]
+params.B = [0, 10, 20, 50]
 params.causal = [10, 50, 100]
 
 bins = file("${params.projectdir}/pipelines/scripts")
