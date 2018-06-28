@@ -113,7 +113,7 @@ process benchmark {
     file 'prediction.tsv'
 
   """
-  echo 'model\tn\td\ti\tc\tTPR' >feature_selection.tsv
+  echo 'model\tn\td\ti\tc\ttpr\tfpr' >feature_selection.tsv
   cat feature_stats* >>feature_selection.tsv
 
   echo 'model\tn\td\ti\tc\tr2' >prediction.tsv

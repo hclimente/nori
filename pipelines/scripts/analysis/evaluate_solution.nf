@@ -24,12 +24,14 @@ if (params.features) {
     library(tidyverse)
 
     features <- read_tsv("$features", col_types = 'i', col_names = FALSE)
-    selected <- intersect(seq(1, $params.causal), features\$X1)
-    tpr <- length(selected) / $params.causal
+    tp <- intersect(seq(1, $params.causal), features\$X1)
+    fp <- setdiff(seq(1, $params.causal), features\$X1)
+    tpr <- length(tp) / $params.causal
+    fpr <- length(fp) / $params.causal
 
     data_frame(model = "$params.model", n = "$params.n",
                d = "$params.d", i = "$params.i",
-               c = "$params.causal", tpr = tpr) %>%
+               c = "$params.causal", tpr = tpr, fpr = fpr) %>%
       write_tsv("feature_stats", col_names = FALSE)
     """
 
@@ -58,11 +60,13 @@ if (predictions) {
 
       predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
       Y <- npyLoad("$Y") %>% t
-      TPR <- sum(predictions == Y)/length(Y)
+      tpr <- sum(predictions == Y)/length(Y)
+      fpr <- sum(predictions != Y)/length(Y)
 
       data_frame(model = "$params.model", n = "$params.n",
                  d = "$params.d", i = "$params.i",
-                 c = "$params.causal", TPR = as.numeric(TPR)) %>%
+                 c = "$params.causal",
+                 tpr = as.numeric(tpr), fpr = as.numeric(fpr) ) %>%
         write_tsv("prediction_stats", col_names = FALSE)
       """
 
