@@ -10,29 +10,32 @@ process generate_data {
 
   output:
     file "*.npy" into npy
+    stdout equation
 
   """
   #!/usr/bin/env python
 
   import numpy as np
 
-  X_train = np.random.rand($params.d, $params.n)
-  X_test = np.random.rand($params.d, 100)
+  X_train = 10 * np.random.rand($params.d, $params.n)
+  X_test = 10 * np.random.rand($params.d, 100)
 
-  F = [(np.square, None), (np.power, [3]), (np.power, [4]),
-       (np.power, [5]), (np.power, [6]), (np.log, None),
-       (np.sin, None), (np.cos, None)]
+  F = [(np.power, [4]), (np.power, [5]), (np.power, [6]),
+       (np.log, None), (np.sin, None), (np.cos, None)]
   funs = np.random.choice(np.arange(len(F)), $params.causal)
 
   Y_train = np.zeros((1, $params.n))
   Y_test = np.zeros((1, 100))
+
+  print('Y = 0', end='')
   for i in range($params.causal):
     f,args = F[funs[i]]
+    print(' + {}(X[{},],{})'.format(f.__name__, i, args), end='')
     y_train = f(X_train[i,:], args)
     y_test = f(X_test[i,:], args)
     # normalize by the variance
-    Y_train += y_train / np.var(y_train)
-    Y_test += y_test / np.var(y_test)
+    Y_train += (y_train - min(y_train))/(max(y_train) - min(y_train))
+    Y_test += (y_test - min(y_test))/(max(y_test) - min(y_test))
 
   featnames = [ str(x) for x in np.arange($params.d) ]
 
@@ -44,3 +47,5 @@ process generate_data {
   """
 
 }
+
+equation .subscribe { println it }
