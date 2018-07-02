@@ -35,13 +35,14 @@ process benchmark {
 
   input:
     file binBenchmark
-    set val(mat.baseName), x_train, x_test, y_train, y_test, featnames from data
+    set mat,'X_train.npy','X_test.npy','Y_train.npy','Y_test.npy','featnames.npy' from data
 
   output:
-    file 'features' into features
+    file '*prediction.tsv'
 
   """
-  nextflow run $binBenchmark --mode classification -profile cluster --projectdir $projectdir
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir
+  mv prediction.tsv ${mat}_prediction.tsv
   """
 
 }
