@@ -38,7 +38,7 @@ process numeric2npy {
     file numeric
 
   output:
-    file "${numeric.baseName}.*.npy" into npy
+    file "*.npy"
 
   """
   #!/usr/bin/env python
@@ -49,9 +49,9 @@ process numeric2npy {
   hl = HSICLasso()
   hl.input("$numeric")
 
-  np.save("${numeric.baseName}.X.npy", hl.X_in)
-  np.save("${numeric.baseName}.Y.npy", hl.Y_in)
-  np.save("${numeric.baseName}.featnames.npy", hl.featname)
+  np.save("X.npy", hl.X_in)
+  np.save("Y.npy", hl.Y_in)
+  np.save("featnames.npy", hl.featname)
   """
 
 }
