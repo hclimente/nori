@@ -41,7 +41,8 @@ process benchmark {
     file 'prediction.tsv' into features
 
   """
-  nextflow run $binBenchmark --mode classification -profile cluster --projectdir $projectdir
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir
+  mv prediction.tsv ${mat}_prediction.tsv
   """
 
 }
