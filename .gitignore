@@ -8,3 +8,4 @@
 test*
 *data
 .ipynb_checkpoints/
+*mat
