@@ -2,7 +2,7 @@ params.out = '.'
 
 X = file(params.X)
 Y = file(params.Y)
-X_test = file(params.X_test)
+x_test = file(params.x_test)
 selected_features = file(params.selected_features)
 model = params.model
 
@@ -14,7 +14,7 @@ process predict {
     file X
     file Y
     file selected_features
-    file X_test
+    file x_test
 
   output:
     file 'predictions'
@@ -33,9 +33,9 @@ process predict {
   clf = svm.$model()
   clf.fit(X, Y)
 
-  X_test = np.load("$X_test").T
-  X_test = X_test[:, selected_features]
-  predictions = clf.predict(X_test)
+  x_test = np.load("$x_test").T
+  x_test = x_test[:, selected_features]
+  predictions = clf.predict(x_test)
   np.savetxt('predictions', predictions)
   """
 

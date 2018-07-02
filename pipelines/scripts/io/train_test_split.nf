@@ -3,7 +3,7 @@ params.out = '.'
 X = file("$params.X")
 Y = file("$params.Y")
 
-params.split = 0.9
+params.split = 0.1
 
 process split {
 
