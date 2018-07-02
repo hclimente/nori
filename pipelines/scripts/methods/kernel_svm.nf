@@ -1,7 +1,7 @@
 params.out = '.'
 
-X = file(params.X)
-Y = file(params.Y)
+X = file(params.x)
+Y = file(params.y)
 x_test = file(params.x_test)
 selected_features = file(params.selected_features)
 model = params.model

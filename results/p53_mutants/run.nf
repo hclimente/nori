@@ -43,7 +43,7 @@ process run_HSIC_lasso {
     file 'features' into features
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --causal $c --B $B --mode classification -profile bigmem
+  nextflow run $binHSICLasso --x X.npy --y Y.npy --featnames featnames.npy --causal $c --B $B --mode classification -profile bigmem
   """
 
 }
@@ -60,9 +60,9 @@ process regression {
     file 'prediction_stats'
 
   """
-  nextflow run $binSplit --X X.npy --Y Y.npy -profile cluster
-  nextflow run $binKernelSVM --X X_train.npy --Y Y_train.npy --X_test X_test.npy --selected_features $features --model SVC -profile cluster
-  nextflow run $binEvaluateSolution --Y Y_test.npy --predictions predictions --causal $c --model 'hsic_lasso-b$B' --outcome categorical -profile cluster
+  nextflow run $binSplit --x X.npy --y Y.npy -profile cluster
+  nextflow run $binKernelSVM --x x_train.npy --y y_train.npy --x_test x_test.npy --selected_features $features --model SVC -profile cluster
+  nextflow run $binEvaluateSolution --y y_test.npy --predictions predictions --causal $c --model 'hsic_lasso-b$B' --d 5408 --outcome categorical -profile cluster
   """
 
 }

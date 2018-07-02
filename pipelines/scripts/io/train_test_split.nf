@@ -1,7 +1,7 @@
 params.out = '.'
 
-X = file("$params.X")
-Y = file("$params.Y")
+X = file("$params.x")
+Y = file("$params.y")
 
 params.split = 0.1
 
@@ -14,10 +14,10 @@ process split {
     file Y
 
   output:
-    file 'X_train.npy'
-    file 'X_test.npy'
-    file 'Y_train.npy'
-    file 'Y_test.npy'
+    file 'x_train.npy'
+    file 'x_test.npy'
+    file 'y_train.npy'
+    file 'y_test.npy'
 
   """
   #!/usr/bin/env python
@@ -28,13 +28,13 @@ process split {
   X = np.load("$X").T
   Y = np.load("$Y").T
 
-  X_train, X_test, Y_train, Y_test = train_test_split(X, Y,
+  x_train, x_test, y_train, y_test = train_test_split(X, Y,
                                   test_size = $params.split, random_state = 42)
 
-  np.save("X_train.npy", X_train.T)
-  np.save("X_test.npy", X_test.T)
-  np.save("Y_train.npy", Y_train.T)
-  np.save("Y_test.npy", Y_test.T)
+  np.save("x_train.npy", x_train.T)
+  np.save("x_test.npy", x_test.T)
+  np.save("y_train.npy", y_train.T)
+  np.save("y_test.npy", y_test.T)
   """
 
 }

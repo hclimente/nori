@@ -2,8 +2,8 @@
 
 params.out = "."
 
-X = file(params.X)
-Y = file(params.Y)
+X = file(params.x)
+Y = file(params.y)
 featnames = file(params.featnames)
 
 process run_HSIC_lasso {

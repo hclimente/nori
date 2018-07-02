@@ -34,7 +34,7 @@ process run_HSIC_lasso {
     set "X.npy", "Y.npy", "featnames.npy" from data
 
   """
-  nextflow run $binHSICLasso --X X.npy --Y Y.npy --featnames featnames.npy --B $B --mode classification
+  nextflow run $binHSICLasso --x X.npy --y Y.npy --featnames featnames.npy --B $B --mode classification
   """
 
 }

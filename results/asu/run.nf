@@ -19,11 +19,11 @@ process read_data {
     file mat from mats
 
   output:
-    set val(mat.baseName), "X_train.npy", "X_test.npy", "Y_train.npy", "Y_test.npy", "featnames.npy" into data
+    set val(mat.baseName),'x_train.npy','x_test.npy','y_train.npy','y_test.npy','featnames.npy' into datasets
 
   """
   nextflow run $binRead --mat $mat -profile cluster
-  nextflow run $binSplit --X X.npy --Y Y.npy --split 0.2 -profile cluster
+  nextflow run $binSplit --x X.npy --y Y.npy --split 0.2 -profile cluster
   """
 
 }
@@ -35,10 +35,10 @@ process benchmark {
 
   input:
     file binBenchmark
-    set val(mat.baseName), x_train, x_test, y_train, y_test, featnames from data
+    set val(mat.baseName), file('x_train.npy'), file('x_test.npy'), file('y_train.npy'), file('y_test.npy'), file('featnames.npy') from datasets
 
   output:
-    file 'features' into features
+    file 'prediction.tsv' into features
 
   """
   nextflow run $binBenchmark --mode classification -profile cluster --projectdir $projectdir

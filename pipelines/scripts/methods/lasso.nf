@@ -2,9 +2,9 @@
 
 params.out = "."
 
-X = file(params.X)
-Y = file(params.Y)
-X_test = file(params.X_test)
+X = file(params.x)
+Y = file(params.y)
+x_test = file(params.x_test)
 
 process run_lasso {
 
@@ -13,7 +13,7 @@ process run_lasso {
   input:
     file X
     file Y
-    file X_test
+    file x_test
 
   output:
     file 'features' into features
@@ -31,11 +31,11 @@ process run_lasso {
   clf = Lasso()
   clf.fit(X, Y)
 
-  X_test = np.load("$X_test").T
-  predictions = clf.predict(X_test)
+  x_test = np.load("$x_test").T
+  predictions = clf.predict(x_test)
   np.savetxt('predictions', predictions)
 
-  features = np.nonzero(clf.coef_)[0] 
+  features = np.nonzero(clf.coef_)[0]
   np.savetxt('features', features, fmt = '%i')
   """
 

@@ -4,7 +4,7 @@ params.outcome = 'numerical'
 
 features = file("$params.features")
 predictions = file("$params.predictions")
-Y = file("$params.Y")
+Y = file("$params.y")
 outcome = params.outcome
 
 if (params.features) {
