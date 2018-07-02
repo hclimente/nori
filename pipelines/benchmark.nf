@@ -16,7 +16,7 @@ binLasso = file("$bins/methods/lasso.nf")
 binmRMR = file("$bins/methods/mrmr.nf")
 binKernelSVM = file("$bins/methods/kernel_svm.nf")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
-binEvaluatePredictions = file("$bins/analysis/evaluate_solution.nf")
+binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
 
 process simulate_data {

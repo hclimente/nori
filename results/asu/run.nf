@@ -35,7 +35,7 @@ process benchmark {
 
   input:
     file binBenchmark
-    set val(mat.baseName), file('x_train.npy'), file('x_test.npy'), file('y_train.npy'), file('y_test.npy'), file('featnames.npy') from datasets
+    set val(mat), file('x_train.npy'), file('x_test.npy'), file('y_train.npy'), file('y_test.npy'), file('featnames.npy') from datasets
 
   output:
     file 'prediction.tsv' into features
