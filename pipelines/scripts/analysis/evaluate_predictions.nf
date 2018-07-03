@@ -1,12 +1,9 @@
 params.out = '.'
 
-params.outcome = 'numerical'
-
 predictions = file("$params.predictions")
-Y = file("$params.y")
-outcome = params.outcome
+y_test = file("$params.y_test")
 
-if (outcome == 'categorical') {
+if (params.stat == 'accuracy') {
 
   process evaluate_classification {
 
@@ -14,28 +11,28 @@ if (outcome == 'categorical') {
 
     input:
       file predictions
-      file Y
+      file y_test
 
     output:
       file 'prediction_stats' into prediction_stats
 
     """
-    #!/usr/bin/env Rscript
-    library(tidyverse)
-    library(RcppCNPy)
+    #!/usr/bin/env python
 
-    predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
-    Y <- npyLoad("$Y") %>% t
-    p <- $params.causal
-    n <- $params.d - $params.causal
-    tpr <- sum(predictions == Y) / p
-    fpr <- sum(predictions != Y) / n
+    import csv
+    import numpy as np
+    from sklearn.metrics import accuracy_score
 
-    data_frame(model = "$params.model", n = "$params.n",
-               d = "$params.d", i = "$params.i",
-               c = "$params.causal",
-               tpr = as.numeric(tpr), fpr = as.numeric(fpr) ) %>%
-      write_tsv("prediction_stats", col_names = FALSE)
+    y_true = np.load('$y_test').squeeze()
+    y_pred = np.load('$predictions')
+
+    accuracy = accuracy_score(y_true, y_pred)
+    row = ['$params.model', $params.n, $params.d, $params.i,
+           $params.causal, accuracy ]
+
+    with open('prediction_stats', 'w', newline='') as f_output:
+        tsv_output = csv.writer(f_output, delimiter='\t')
+        tsv_output.writerow(row)
     """
 
   }
@@ -47,24 +44,28 @@ if (outcome == 'categorical') {
 
     input:
       file predictions
-      file Y
+      file y_test
 
     output:
       file 'prediction_stats' into prediction_stats
 
     """
-    #!/usr/bin/env Rscript
-    library(tidyverse)
-    library(RcppCNPy)
+    #!/usr/bin/env python
 
-    predictions <- read_tsv("$predictions", col_names = FALSE, col_types = 'd')\$X1
-    Y <- npyLoad("$Y") %>% t
-    r2 <- cor(predictions, Y) ^ 2
+    import csv
+    import numpy as np
+    from sklearn.metrics import mean_squared_error
 
-    data_frame(model = "$params.model", n = "$params.n",
-               d = "$params.d", i = "$params.i",
-               c = "$params.causal", r2 = as.numeric(r2)) %>%
-      write_tsv("prediction_stats", col_names = FALSE)
+    y_true = np.load('$y_test').squeeze()
+    y_pred = np.load('$predictions')
+
+    mse = mean_squared_error(y_true, y_pred, multioutput = 'uniform_average')
+    row = ['$params.model', $params.n, $params.d, $params.i,
+           $params.causal, mse ]
+
+    with open('prediction_stats', 'w', newline='') as f_output:
+        tsv_output = csv.writer(f_output, delimiter='\t')
+        tsv_output.writerow(row)
     """
 
   }

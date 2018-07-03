@@ -13,21 +13,21 @@ process evaluate_features {
     file 'feature_stats' into feature_stats
 
   """
-  #!/usr/bin/env Rscript
-  library(tidyverse)
+  #!/usr/bin/env python
 
-  features <- read_tsv("$features", col_types = 'i', col_names = FALSE)
-  tp <- intersect(seq(1, $params.causal), features\$X1) %>% length
-  p <- $params.causal
-  fp <- setdiff(seq(1, $params.causal), features\$X1) %>% length
-  n <- $params.d - $params.causal
-  tpr <- length(tp) / p
-  fpr <- length(fp) / n
+  import csv
+  import numpy as np
 
-  data_frame(model = "$params.model", n = "$params.n",
-             d = "$params.d", i = "$params.i",
-             c = "$params.causal", tpr = tpr, fpr = fpr) %>%
-    write_tsv("feature_stats", col_names = FALSE)
+  feats_true = np.arange($params.causal)
+  feats_pred = np.load('$features')
+
+  tpr = len(np.intersect1d(feats_true, feats_pred)) / len(feats_true)
+  row = ['$params.model', $params.n, $params.d, $params.i,
+         $params.causal, tpr ]
+
+  with open('feature_stats', 'w', newline='') as f_output:
+      tsv_output = csv.writer(f_output, delimiter='\t')
+      tsv_output.writerow(row)
   """
 
 }

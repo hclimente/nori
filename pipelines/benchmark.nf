@@ -12,12 +12,17 @@ params.causal = [10, 50, 100]
 bins = file("${params.projectdir}/pipelines/scripts")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binHSICLasso = file("$bins/methods/hsic_lasso.nf")
-binLasso = file("$bins/methods/lasso.nf")
+binLinear = file("$bins/methods/linear_classifier.nf")
 binmRMR = file("$bins/methods/mrmr.nf")
 binKernelSVM = file("$bins/methods/kernel_svm.nf")
 binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
+
+params.mode = 'regression'
+svm = (params.mode == 'regression')? 'SVR' : 'SVC'
+stat = (params.mode == 'regression')? 'mse' : 'accuracy'
+linmod = (params.mode == 'regression')? 'Lasso' : 'LogisticRegression'
 
 process simulate_data {
 
@@ -56,17 +61,17 @@ process run_HSIC_lasso {
 
   """
   nextflow run $binHSICLasso --x x_train.npy --y y_train.npy --featnames featnames.npy --B $B --mode regression --causal $c -profile bigmem
-  nextflow run $binKernelSVM --x x_train.npy --y y_train.npy --x_test x_test.npy --selected_features features --model SVR -profile cluster
-  nextflow run $binEvaluatePredictions --y y_test.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
-  nextflow run $binEvaluateFeatures --features features --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binKernelSVM --x_train x_train.npy --y_train y_train.npy --x_test x_test.npy --selected_features features.npy --model $svm -profile cluster
+  nextflow run $binEvaluatePredictions --y_test y_test.npy --stat $stat --predictions predictions.npy --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
 
-process run_lasso {
+process run_linear_model {
 
   input:
-    file binLasso
+    file binLinear
     file binEvaluatePredictions
     file binEvaluateFeatures
     set n,d,i,c,"x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" from data_lasso
@@ -76,9 +81,9 @@ process run_lasso {
     file 'prediction_stats' into predictions_lasso
 
   """
-  nextflow run $binLasso --x x_train.npy --y y_train.npy --x_test x_test.npy --featnames featnames.npy -profile bigmem
-  nextflow run $binEvaluatePredictions --y y_test.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
-  nextflow run $binEvaluateFeatures --features features --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
+  nextflow run $binLinear --x_train x_train.npy --y_train y_train.npy --x_test x_test.npy --linmod $linmod --featnames featnames.npy -profile bigmem
+  nextflow run $binEvaluatePredictions --y_test y_test.npy --stat $stat --predictions predictions.npy --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
+  nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model $linmod -profile cluster
   """
 
 }
@@ -97,9 +102,9 @@ process run_mRMR {
 
   """
   nextflow run $binmRMR --x x_train.npy --y y_train.npy --featnames featnames.npy --causal $c -profile bigmem
-  nextflow run $binKernelSVM --x x_train.npy --y y_train.npy --x_test x_test.npy --selected_features features --model SVR -profile cluster
-  nextflow run $binEvaluatePredictions --y y_test.npy --predictions predictions --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
-  nextflow run $binEvaluateFeatures --features features --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
+  nextflow run $binKernelSVM --x_train x_train.npy --y_train y_train.npy --x_test x_test.npy --selected_features features.npy --model SVR -profile cluster
+  nextflow run $binEvaluatePredictions --y_test y_test.npy --stat $stat --predictions predictions.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
+  nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   """
 
 }
@@ -120,10 +125,10 @@ process benchmark {
     file 'prediction.tsv'
 
   """
-  echo 'model\tn\td\ti\tc\ttpr\tfpr' >feature_selection.tsv
+  echo 'model\tn\td\ti\tc\ttpr' >feature_selection.tsv
   cat feature_stats* >>feature_selection.tsv
 
-  echo 'model\tn\td\ti\tc\tr2' >prediction.tsv
+  echo 'model\tn\td\ti\tc\t$stat' >prediction.tsv
   cat prediction_stats* >>prediction.tsv
   """
 

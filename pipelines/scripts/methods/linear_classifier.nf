@@ -1,10 +1,12 @@
-params.out = '.'
+#!/usr/bin/env nextflow
+
+params.out = "."
 
 x_train = file(params.x_train)
 y_train = file(params.y_train)
 x_test = file(params.x_test)
-selected_features = file(params.selected_features)
-model = params.model
+
+params.linmod = 'Lasso'
 
 process predict {
 
@@ -13,30 +15,30 @@ process predict {
   input:
     file x_train
     file y_train
-    file selected_features
     file x_test
 
   output:
-    file 'predictions.npy'
+    file 'features.npy' into features
+    file 'predictions.npy' into predictions
 
   """
   #!/usr/bin/env python
 
   import numpy as np
-  from sklearn import svm
+  from sklearn.linear_model import $params.linmod
 
-  selected_features = np.load("$selected_features")
   x_train = np.load("$x_train").T
-  x_train = x_train[:, selected_features]
   y_train = np.load("$y_train").squeeze()
 
-  clf = svm.$model()
+  clf = $params.linmod()
   clf.fit(x_train, y_train)
 
   x_test = np.load("$x_test").T
-  x_test = x_test[:, selected_features]
   predictions = clf.predict(x_test)
   np.save('predictions.npy', predictions)
+
+  features = np.nonzero(clf.coef_)[0]
+  np.save('features.npy', features)
   """
 
 }

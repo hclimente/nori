@@ -16,7 +16,7 @@ process run_HSIC_lasso {
     file featnames
 
   output:
-    file 'features'
+    file 'features.npy'
 
   """
   #!/usr/bin/env python
@@ -38,7 +38,7 @@ process run_HSIC_lasso {
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
   hl.$params.mode($params.causal, B = $params.B)
-  np.savetxt('features', hl.A, fmt = '%i')
+  np.save('features.npy', hl.A)
   """
 
 }
