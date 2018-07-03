@@ -38,7 +38,7 @@ process benchmark {
     set val(mat), file('x_train.npy'), file('x_test.npy'), file('y_train.npy'), file('y_test.npy'), file('featnames.npy') from datasets
 
   output:
-    file 'prediction.tsv' into features
+    file '*prediction.tsv' into features
 
   """
   nextflow run $binBenchmark --mode classification --projectdir $projectdir

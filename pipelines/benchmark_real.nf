@@ -17,6 +17,7 @@ featnames = file(params.featnames)
 
 params.mode = 'regression'
 svm = (params.mode == 'regression')? 'SVR' : 'SVC'
+stat = (params.mode == 'regression')? 'mse' : 'accuracy'
 
 params.B = [0, 20, 50]
 params.causal = [10, 50, 100]
@@ -49,7 +50,7 @@ process run_HSIC_lasso {
   """
   nextflow run $binHSICLasso --x $x_train --y $y_train --featnames featnames.npy --B $B --mode $params.mode --causal $c -profile bigmem
   nextflow run $binKernelSVM --x $x_train --y $y_train --x_test $x_test --selected_features features --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --n NA --d NA --causal $c --i NA --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --stat $stat --n NA --d NA --causal $c --i NA --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
@@ -69,7 +70,7 @@ process run_lasso {
 
   """
   nextflow run $binLasso --x $x_train --y $y_train --x_test $x_test --featnames featnames.npy -profile bigmem
-  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --n NA --d NA --causal NA --i NA --model 'lasso' -profile cluster
+  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --stat $stat --n NA --d NA --causal NA --i NA --model 'lasso' -profile cluster
   """
 
 }
@@ -91,7 +92,7 @@ process run_mRMR {
   """
   nextflow run $binmRMR --x $x_train --y $y_train --featnames featnames.npy --causal $c -profile bigmem
   nextflow run $binKernelSVM --x $x_train --y $y_train --x_test $x_test --selected_features features --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --n NA --d NA --causal $c --i NA --model 'mRMR' -profile cluster
+  nextflow run $binEvaluatePredictions --y $y_test --predictions predictions --stat $stat --n NA --d NA --causal $c --i NA --model 'mRMR' -profile cluster
   """
 
 }
@@ -109,7 +110,7 @@ process benchmark {
     file 'prediction.tsv'
 
   """
-  echo 'model\tn\td\ti\tc\tr2' >prediction.tsv
+  echo 'model\tn\td\ti\tc\t$stat' >prediction.tsv
   cat prediction_stats* >>prediction.tsv
   """
 
