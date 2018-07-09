@@ -4,7 +4,7 @@ params.out = "."
 
 x_train = file(params.x_train)
 y_train = file(params.y_train)
-x_test = file(params.x_test)
+x_val = file(params.x_val)
 
 params.linmod = 'Lasso'
 
@@ -15,7 +15,7 @@ process predict {
   input:
     file x_train
     file y_train
-    file x_test
+    file x_val
 
   output:
     file 'features.npy' into features
@@ -33,8 +33,8 @@ process predict {
   clf = $params.linmod()
   clf.fit(x_train, y_train)
 
-  x_test = np.load("$x_test").T
-  predictions = clf.predict(x_test)
+  x_val = np.load("$x_val").T
+  predictions = clf.predict(x_val)
   np.save('predictions.npy', predictions)
 
   features = np.nonzero(clf.coef_)[0]

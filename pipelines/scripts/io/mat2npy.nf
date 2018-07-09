@@ -2,7 +2,7 @@
 
 params.out = "."
 
-mat= file(params.mat)
+mat = file(params.mat)
 
 process mat2npy {
 
@@ -22,14 +22,14 @@ process mat2npy {
 
   data = spio.loadmat("$mat")
 
-  X = data["X"].T
-  Y = data["Y"].T
+  x = data["X"].T
+  y = data["Y"].T
 
-  d = X.shape[0]
+  d = x.shape[0]
   featname = [('%d' % i) for i in range(1,d+1)]
 
-  np.save("X.npy", X)
-  np.save("Y.npy", Y)
+  np.save("x.npy", x)
+  np.save("y.npy", y)
   np.save("featnames.npy", featname)
   """
 

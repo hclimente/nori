@@ -1,7 +1,7 @@
 params.out = '.'
 
 predictions = file("$params.predictions")
-y_test = file("$params.y_test")
+y_val = file("$params.y_val")
 
 if (params.stat == 'accuracy') {
 
@@ -11,7 +11,7 @@ if (params.stat == 'accuracy') {
 
     input:
       file predictions
-      file y_test
+      file y_val
 
     output:
       file 'prediction_stats' into prediction_stats
@@ -23,7 +23,7 @@ if (params.stat == 'accuracy') {
     import numpy as np
     from sklearn.metrics import accuracy_score
 
-    y_true = np.load('$y_test').squeeze()
+    y_true = np.load('$y_val').squeeze()
     y_pred = np.load('$predictions')
 
     accuracy = accuracy_score(y_true, y_pred)
@@ -44,7 +44,7 @@ if (params.stat == 'accuracy') {
 
     input:
       file predictions
-      file y_test
+      file y_val
 
     output:
       file 'prediction_stats' into prediction_stats
@@ -56,7 +56,7 @@ if (params.stat == 'accuracy') {
     import numpy as np
     from sklearn.metrics import mean_squared_error
 
-    y_true = np.load('$y_test').squeeze()
+    y_true = np.load('$y_val').squeeze()
     y_pred = np.load('$predictions')
 
     mse = mean_squared_error(y_true, y_pred, multioutput = 'uniform_average')

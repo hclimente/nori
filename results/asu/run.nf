@@ -5,6 +5,7 @@ projectdir = file(params.projectdir)
 params.out = "."
 
 mats = file("$params.mats/*mat")
+params.i = 100
 
 bins = file("$projectdir/pipelines")
 binRead = file("$bins/scripts/io/mat2npy.nf")
@@ -19,11 +20,26 @@ process read_data {
     file mat from mats
 
   output:
-    set val(mat.baseName),'x_train.npy','x_test.npy','y_train.npy','y_test.npy','featnames.npy' into datasets
+    set val(mat.baseName),'x.npy','y.npy','featnames.npy' into datasets
 
   """
   nextflow run $binRead --mat $mat -profile cluster
-  nextflow run $binSplit --x X.npy --y Y.npy --split 0.2 -profile cluster
+  """
+
+}
+
+process split_data {
+
+  input:
+    file binSplit
+    set val(mat), file('x.npy'), file('y.npy'), file('featnames.npy') from datasets
+    each i from 1..params.i
+
+  output:
+    set val(mat),'x_train.npy','x_val.npy','y_train.npy','y_val.npy','featnames.npy' into splits
+
+  """
+  nextflow run $binSplit --x x.npy --y y.npy --split 0.2 -profile cluster
   """
 
 }
@@ -35,7 +51,7 @@ process benchmark {
 
   input:
     file binBenchmark
-    set val(mat), file('x_train.npy'), file('x_test.npy'), file('y_train.npy'), file('y_test.npy'), file('featnames.npy') from datasets
+    set val(mat), file('x_train.npy'), file('x_val.npy'), file('y_train.npy'), file('y_val.npy'), file('featnames.npy') from splits
 
   output:
     file '*prediction.tsv' into features

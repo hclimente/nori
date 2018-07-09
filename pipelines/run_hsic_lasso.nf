@@ -9,7 +9,7 @@ B = params.B
 
 bins = file("${params.projectdir}/pipelines/scripts")
 binReadPed = file("$bins/io/ped2numeric.nf")
-binHSICLasso = file("$bins/methods/hsic_lasso.nf")
+binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 
 process read_data {
 

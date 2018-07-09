@@ -12,9 +12,9 @@ c = 10
 
 bins = file("${params.projectdir}/pipelines/scripts")
 binRead = file("$bins/io/read_p53mutants.nf")
-binHSICLasso = file("$bins/methods/hsic_lasso.nf")
+binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binSplit = file("$bins/io/train_test_split.nf")
-binKernelSVM = file("$bins/methods/kernel_svm.nf")
+binKernelSVM = file("$bins/classifiers/kernel_svm.nf")
 binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 
 process read_data {
@@ -62,8 +62,8 @@ process regression {
 
   """
   nextflow run $binSplit --x X.npy --y Y.npy -profile cluster
-  nextflow run $binKernelSVM --x_train x_train.npy --y_train y_train.npy --x_test x_test.npy --selected_features $features --model SVC -profile cluster
-  nextflow run $binEvaluatePredictions --y_test y_test.npy --predictions predictions.npy --stat stat --n None --d None --causal $c --i None --model hsic_lasso-b$B -profile cluster
+  nextflow run $binKernelSVM --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features $features --model SVC -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --predictions predictions.npy --stat stat --n None --d None --causal $c --i None --model hsic_lasso-b$B -profile cluster
   """
 
 }

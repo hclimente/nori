@@ -2,7 +2,7 @@ params.out = '.'
 
 x_train = file(params.x_train)
 y_train = file(params.y_train)
-x_test = file(params.x_test)
+x_val = file(params.x_val)
 selected_features = file(params.selected_features)
 model = params.model
 
@@ -14,7 +14,7 @@ process predict {
     file x_train
     file y_train
     file selected_features
-    file x_test
+    file x_val
 
   output:
     file 'predictions.npy'
@@ -23,19 +23,20 @@ process predict {
   #!/usr/bin/env python
 
   import numpy as np
-  from sklearn import svm
+  from sklearn.neighbors import KNeighborsClassifier
+  from sklearn.model_selection import GridSearchCV
 
   selected_features = np.load("$selected_features")
   x_train = np.load("$x_train").T
   x_train = x_train[:, selected_features]
   y_train = np.load("$y_train").squeeze()
 
-  clf = svm.$model()
+  clf = KNeighborsClassifier()
   clf.fit(x_train, y_train)
 
-  x_test = np.load("$x_test").T
-  x_test = x_test[:, selected_features]
-  predictions = clf.predict(x_test)
+  x_val = np.load("$x_val").T
+  x_val = x_val[:, selected_features]
+  predictions = clf.predict(x_val)
   np.save('predictions.npy', predictions)
   """
 

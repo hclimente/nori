@@ -1,7 +1,7 @@
 params.out = '.'
 
-X = file("$params.x")
-Y = file("$params.y")
+x = file("$params.x")
+y = file("$params.y")
 
 params.split = 0.1
 
@@ -10,14 +10,14 @@ process split {
   publishDir "$params.out", overwrite: true, mode: "copy"
 
   input:
-    file X
-    file Y
+    file x
+    file y
 
   output:
     file 'x_train.npy'
-    file 'x_test.npy'
+    file 'x_val.npy'
     file 'y_train.npy'
-    file 'y_test.npy'
+    file 'y_val.npy'
 
   """
   #!/usr/bin/env python
@@ -25,16 +25,21 @@ process split {
   import numpy as np
   from sklearn.model_selection import train_test_split
 
-  X = np.load("$X").T
-  Y = np.load("$Y").T
+  x = np.load("$x").T
+  y = np.load("$y").T
 
-  x_train, x_test, y_train, y_test = train_test_split(X, Y,
-                                  test_size = $params.split, random_state = 42)
+  n = x.shape[0]
+  perm = np.random.permutation(n)
+  x = x[perm,:]
+  y = y[perm,:]
+
+  x_train, x_val, y_train, y_val = \
+      train_test_split(x, y, test_size = $params.split)
 
   np.save("x_train.npy", x_train.T)
-  np.save("x_test.npy", x_test.T)
+  np.save("x_val.npy", x_val.T)
   np.save("y_train.npy", y_train.T)
-  np.save("y_test.npy", y_test.T)
+  np.save("y_val.npy", y_val.T)
   """
 
 }
