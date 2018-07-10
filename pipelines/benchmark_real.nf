@@ -20,8 +20,12 @@ svm = (params.mode == 'regression')? 'SVR' : 'SVC'
 stat = (params.mode == 'regression')? 'mse' : 'accuracy'
 linmod = (params.mode == 'regression')? 'Lasso' : 'LogisticRegression'
 
-params.B = [0, 20, 50]
-params.causal = [10, 20, 30, 40, 50]
+params.B = '0,20,50'
+params.causal = '10,30,50'
+params.i = 'None'
+
+B = params.B.split(",")
+causal = params.causal.split(",")
 
 bins = file("$params.projectdir/pipelines/scripts")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
@@ -37,7 +41,7 @@ process run_HSIC_lasso {
     file binHSICLasso
     file binClassifier
     file binEvaluatePredictions
-    each B from params.B
+    each B from B
     file x_train
     file x_val
     file y_train
@@ -60,7 +64,7 @@ process subset_HSIC_lasso_features {
     file binFilter
     file binClassifier
     file binEvaluatePredictions
-    each c from params.causal
+    each c from causal
     file x_train
     file x_val
     file y_train
@@ -73,7 +77,7 @@ process subset_HSIC_lasso_features {
   """
   nextflow run $binFilter --selected_features $features --n $c -profile cluster
   nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features filtered_features.npy --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i None --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i $params.i --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
@@ -94,7 +98,7 @@ process run_linear_model {
 
   """
   nextflow run $binLinear --x_train $x_train --y_train $y_train --x_val $x_val --linmod $linmod --featnames $featnames -profile bigmem
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal None --i None --model $linmod -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal None --i $params.i --model $linmod -profile cluster
   """
 
 }
@@ -105,7 +109,7 @@ process run_mRMR {
     file binmRMR
     file binClassifier
     file binEvaluatePredictions
-    each c from params.causal
+    each c from causal
     file x_train
     file x_val
     file y_train
@@ -117,7 +121,7 @@ process run_mRMR {
   """
   nextflow run $binmRMR --x $x_train --y $y_train --featnames $featnames --causal $c --mode $params.mode -profile bigmem
   nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features features.npy --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i None --model 'mRMR' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i $params.i --model 'mRMR' -profile cluster
   """
 
 }

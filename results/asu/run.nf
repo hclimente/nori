@@ -6,6 +6,8 @@ params.out = "."
 
 mats = file("$params.mats/*mat")
 params.i = 100
+params.B = '0,20,50'
+params.causal = '10,30,50'
 
 bins = file("$projectdir/pipelines")
 binRead = file("$bins/scripts/io/mat2npy.nf")
@@ -36,7 +38,7 @@ process split_data {
     each i from 1..params.i
 
   output:
-    set val(mat),'x_train.npy','x_val.npy','y_train.npy','y_val.npy','featnames.npy' into splits
+    set val(mat),val(i),'x_train.npy','x_val.npy','y_train.npy','y_val.npy','featnames.npy' into splits
 
   """
   nextflow run $binSplit --x x.npy --y y.npy --split 0.2 -profile cluster
@@ -47,18 +49,37 @@ process split_data {
 
 process benchmark {
 
+  input:
+    file binBenchmark
+    set val(mat), val(i), file('x_train.npy'), file('x_val.npy'), file('y_train.npy'), file('y_val.npy'), file('featnames.npy') from splits
+
+  output:
+    set val(mat), '*prediction.tsv' into features
+
+  """
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir --B $params.B --causal $params.causal --i $i
+  mv prediction.tsv ${mat}_prediction.tsv
+  """
+
+}
+
+features
+  .groupTuple()
+  .set { dataset_benchmarks }
+
+process join_benchmarks {
+
   publishDir "$params.out", overwrite: true, mode: "copy"
 
   input:
-    file binBenchmark
-    set val(mat), file('x_train.npy'), file('x_val.npy'), file('y_train.npy'), file('y_val.npy'), file('featnames.npy') from splits
+    set val(mat), file('predictions*') from dataset_benchmarks
 
   output:
-    file '*prediction.tsv' into features
+    file "${mat}_prediction.tsv"
 
   """
-  nextflow run $binBenchmark --mode classification --projectdir $projectdir
-  mv prediction.tsv ${mat}_prediction.tsv
+  head -n1 `ls | head -n1` >${mat}_prediction.tsv
+  tail -n +2 predictions* | grep -v '==>' | grep -v -e '^\$' >>${mat}_prediction.tsv
   """
 
 }
