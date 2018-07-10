@@ -10,6 +10,9 @@ process run_HSIC_lasso {
 
   publishDir "$params.out", overwrite: true, mode: "copy"
 
+  beforeScript 'echo -e "import numpy as np\\nnp.save(\'features.npy\', np.array([]))" | python'
+  validExitStatus 0,134
+
   input:
     file X
     file Y

@@ -47,8 +47,6 @@ data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_HSIC_lasso {
 
-  errorStrategy 'ignore'
-
   input:
     file binHSICLasso
     file binEvaluateFeatures

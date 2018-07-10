@@ -34,6 +34,9 @@ process prepare_csv {
 
 process run_mRMR {
 
+  beforeScript 'touch features'
+  validExitStatus 0,134
+
   input:
     file csv
 
