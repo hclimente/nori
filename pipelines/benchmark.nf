@@ -8,15 +8,23 @@ params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 params.B = [0, 20, 50]
 params.causal = [10, 50, 100]
+params.simulation = 'additive'
 
 bins = file("${params.projectdir}/pipelines/scripts")
-binSimulateData = file("$bins/io/generate_non-linear_data.nf")
+
+if (params.simulation == 'random') {
+  binSimulateData = file("$bins/io/generate_non-linear_data.nf")
+} else if (params.simulation == 'non-additive') {
+  binSimulateData = file("$bins/io/yamada_non_additive.nf")
+} else if (params.simulation == 'additive') {
+  binSimulateData = file("$bins/io/yamada_additive.nf")
+}
+
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binLinear = file("$bins/classifiers/linear_classifier.nf")
 binmRMR = file("$bins/feature_selection/mrmr.nf")
 binClassifier = file("$bins/classifiers/kernel_svm.nf")
 binFilter = file("$bins/io/filter_n.nf")
-binSimulateData = file("$bins/io/generate_non-linear_data.nf")
 binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
 
