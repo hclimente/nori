@@ -8,6 +8,9 @@ model = params.model
 
 process predict {
 
+  beforeScript 'echo -e "import numpy as np\\nnp.save(\'predictions.npy\', np.array([]))" | python'
+  validExitStatus 0,99
+
   publishDir "$params.out", overwrite: true, mode: "copy"
 
   input:
@@ -28,7 +31,14 @@ process predict {
 
   selected_features = np.load("$selected_features")
   x_train = np.load("$x_train").T
-  x_train = x_train[:, selected_features]
+
+  try:
+    x_train = x_train[:, selected_features]
+  except ValueError:
+    import sys, traceback
+    traceback.print_exc()
+    sys.exit(99)
+
   y_train = np.load("$y_train").squeeze()
 
   clf = svm.$model()
