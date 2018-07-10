@@ -26,7 +26,9 @@ process generate_data {
   x_val = np.random.rand($params.d, 100)
 
   y_train = non_additive(x_train[0,:], x_train[1,:], x_train[2,:])
+  y_train = np.expand_dims(y_train, 0)
   y_val = non_additive(x_val[0,:], x_val[1,:], x_val[2,:])
+  y_val = np.expand_dims(y_val, 0)
 
   featnames = [ str(x) for x in np.arange($params.d) ]
 
