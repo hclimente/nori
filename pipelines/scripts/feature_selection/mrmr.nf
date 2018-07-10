@@ -47,7 +47,7 @@ process run_mRMR {
   samples=`cat $csv | wc -l | sed 's/ \\+//'`
   features=`head -n1 $csv | sed 's/,/\\n/g' | wc -l | sed 's/ \\+//'`
   mrmr -i $csv $discretization -n $params.causal -s \$samples -v \$features >results
-  grep -A `expr $params.causal + 1` mRMR results | head -n `expr $params.causal + 2` | tail -n $params.causal | cut -f3 | sed 's/ //g' >features
+  grep -A `expr $params.causal + 1` mRMR results | head -n `expr $params.causal + 2` | tail -n $params.causal | cut -f3 | sed 's/ //g' | grep -v "[a-z]" >features
   """
 
 }
