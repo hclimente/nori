@@ -26,7 +26,7 @@ if (params.stat == 'accuracy') {
     y_true = np.load('$y_val').squeeze()
     y_pred = np.load('$predictions')
 
-    accuracy = accuracy_score(y_true, y_pred)
+    accuracy = np.nan if len(y_pred) == 0 else accuracy_score(y_true, y_pred)
     row = ['$params.model', $params.n, $params.d, $params.i,
            $params.causal, accuracy ]
 
@@ -59,7 +59,7 @@ if (params.stat == 'accuracy') {
     y_true = np.load('$y_val').squeeze()
     y_pred = np.load('$predictions')
 
-    mse = mean_squared_error(y_true, y_pred, multioutput = 'uniform_average')
+    mse = np.nan if len(y_pred) == 0 else mean_squared_error(y_true, y_pred, multioutput = 'uniform_average')
     row = ['$params.model', $params.n, $params.d, $params.i,
            $params.causal, mse ]
 
