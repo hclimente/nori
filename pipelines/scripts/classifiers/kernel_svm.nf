@@ -8,8 +8,7 @@ model = params.model
 
 process predict {
 
-  beforeScript 'echo -e "import numpy as np\\nnp.save(\'predictions.npy\', np.array([]))" | python'
-  validExitStatus 0,99
+  validExitStatus 0,77
 
   publishDir "$params.out", overwrite: true, mode: "copy"
 
@@ -33,11 +32,14 @@ process predict {
   x_train = np.load("$x_train").T
 
   try:
+    if not selected_features.any():
+      raise IndexError('No selected features')
     x_train = x_train[:, selected_features]
-  except ValueError:
+  except IndexError:
     import sys, traceback
+    np.save('predictions.npy', np.array([]))
     traceback.print_exc()
-    sys.exit(99)
+    sys.exit(77)
 
   y_train = np.load("$y_train").squeeze()
 
