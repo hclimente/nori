@@ -139,7 +139,7 @@ process process_output {
     file 'prediction.tsv'
 
   """
-  echo 'model\tn\td\ti\tc\t$stat' >prediction.tsv
+  echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >prediction.tsv
   cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>prediction.tsv
   """
 

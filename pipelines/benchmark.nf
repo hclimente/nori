@@ -7,17 +7,20 @@ params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 params.B = [0, 20, 50]
-params.causal = [10, 50, 100]
+params.select = [10, 50, 100]
 params.simulation = 'additive'
 
 bins = file("${params.projectdir}/pipelines/scripts")
 
 if (params.simulation == 'random') {
   binSimulateData = file("$bins/io/generate_non-linear_data.nf")
+  causal = params.select
 } else if (params.simulation == 'non-additive') {
   binSimulateData = file("$bins/io/yamada_non_additive.nf")
+  causal = 4
 } else if (params.simulation == 'additive') {
   binSimulateData = file("$bins/io/yamada_additive.nf")
+  causal = 3
 }
 
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
@@ -39,7 +42,7 @@ process simulate_data {
     each i from 1..params.perms
     each n from params.n
     each d from params.d
-    each c from params.causal
+    each c from causal
     file binSimulateData
 
   output:
@@ -62,7 +65,7 @@ process run_HSIC_lasso {
     set n,d,i,c,"x_train.npy","y_train.npy","x_val.npy","y_val.npy","featnames.npy" from data_hsic
 
   output:
-    set val(B),'features.npy','x_train.npy','y_train.npy','x_val.npy','y_val.npy' into features_pred
+    set n,d,i,c,B,'features.npy','x_train.npy','y_train.npy','x_val.npy','y_val.npy' into features_pred
     file 'feature_stats' into features_hsic
 
   """
@@ -75,11 +78,11 @@ process run_HSIC_lasso {
 process subset_HSIC_lasso_features {
 
   input:
-    set B,"features.npy","x_train.npy","y_train.npy","x_val.npy","y_val.npy" from features_pred
+    set n,d,i,c,B,"features.npy","x_train.npy","y_train.npy","x_val.npy","y_val.npy" from features_pred
     file binFilter
     file binClassifier
     file binEvaluatePredictions
-    each c from params.causal
+    each c from causal
 
   output:
     file 'prediction_stats' into predictions_hsic
@@ -87,7 +90,7 @@ process subset_HSIC_lasso_features {
   """
   nextflow run $binFilter --selected_features features.npy --n $c -profile cluster
   nextflow run $binClassifier --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features filtered_features.npy --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y_val y_val.npy --predictions predictions.npy --stat $stat --n None --d None --causal $c --i None --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --predictions predictions.npy --features filtered_features.npy --stat $stat --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
@@ -106,7 +109,7 @@ process run_linear_model {
 
   """
   nextflow run $binLinear --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --linmod $linmod --featnames featnames.npy -profile bigmem
-  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model $linmod -profile cluster
   """
 
@@ -128,7 +131,7 @@ process run_mRMR {
   """
   nextflow run $binmRMR --x x_train.npy --y y_train.npy --featnames featnames.npy --causal $c --mode $params.mode -profile bigmem
   nextflow run $binClassifier --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features features.npy --model SVR -profile cluster
-  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   """
 
@@ -150,10 +153,10 @@ process process_output {
     file 'prediction.tsv'
 
   """
-  echo 'model\tn\td\ti\tc\ttpr' >feature_selection.tsv
+  echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >feature_selection.tsv
   cat feature_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>feature_selection.tsv
 
-  echo 'model\tn\td\ti\tc\t$stat' >prediction.tsv
+  echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >prediction.tsv
   cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>prediction.tsv
   """
 

@@ -22,8 +22,8 @@ process evaluate_features {
   feats_pred = np.load('$features')
 
   tpr = np.nan if len(feats_pred) == 0 else len(np.intersect1d(feats_true, feats_pred)) / len(feats_true)
-  row = ['$params.model', $params.n, $params.d, $params.i,
-         $params.causal, tpr ]
+  row = ['$params.model', $params.n, $params.d, $params.causal,
+         len(feats_pred), $params.i, tpr ]
 
   with open('feature_stats', 'w', newline='') as f_output:
       tsv_output = csv.writer(f_output, delimiter='\t')

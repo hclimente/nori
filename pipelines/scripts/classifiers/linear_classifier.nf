@@ -34,8 +34,8 @@ process predict {
   clf.fit(x_train, y_train)
 
   x_val = np.load("$x_val").T
-  predictions = clf.predict(x_val)
-  np.save('predictions.npy', predictions)
+  y_pred = clf.predict(x_val)
+  np.save('predictions.npy', y_pred)
 
   features = np.nonzero(clf.coef_)[0]
   np.save('features.npy', features)
