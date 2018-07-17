@@ -31,7 +31,7 @@ bins = file("$params.projectdir/pipelines/scripts")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binLinear = file("$bins/classifiers/linear_classifier.nf")
 binmRMR = file("$bins/feature_selection/mrmr.nf")
-binFilter = file("$bins/io/filter_n.nf")
+binFilter = file("$bins/feature_selection/filter_n.nf")
 binClassifier = file("$bins/classifiers/knn.nf")
 binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 

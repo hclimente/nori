@@ -24,7 +24,7 @@ binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binLinear = file("$bins/classifiers/linear_classifier.nf")
 binmRMR = file("$bins/feature_selection/mrmr.nf")
 binClassifier = file("$bins/classifiers/kernel_svm.nf")
-binFilter = file("$bins/io/filter_n.nf")
+binFilter = file("$bins/feature_selection/filter_n.nf")
 binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
 binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
 
