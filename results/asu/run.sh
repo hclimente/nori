@@ -1,1 +1,1 @@
-./run.nf --mats /home/hclimente/data/asu -resume
+./run.nf "$@" --mats /home/hclimente/data/asu -resume
