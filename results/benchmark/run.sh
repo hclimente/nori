@@ -1,1 +1,1 @@
-../../pipelines/benchmark.nf -with-trace -resume
+../../scripts/benchmark.nf -with-trace -resume

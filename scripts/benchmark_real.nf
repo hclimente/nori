@@ -29,7 +29,7 @@ params.i = 'None'
 B = params.B.split(",")
 causal = params.causal.split(",")
 
-bins = file("$params.projectdir/pipelines/scripts")
+bins = file("$params.projectdir/scripts")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binLinear = file("$bins/classifiers/linear_classifier.nf")
 binmRMR = file("$bins/feature_selection/mrmr.nf")

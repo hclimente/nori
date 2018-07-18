@@ -1,1 +1,1 @@
-../../pipelines/run_hsic_lasso.nf --gt genesis.final -resume
+../../scripts/run_hsic_lasso.nf --gt genesis.final -resume

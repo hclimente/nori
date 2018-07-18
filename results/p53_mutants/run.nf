@@ -10,7 +10,7 @@ p53 = file(params.data)
 B = 20
 c = 10
 
-bins = file("${params.projectdir}/pipelines/scripts")
+bins = file("${params.projectdir}/scripts")
 binRead = file("$bins/io/read_p53mutants.nf")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 binSplit = file("$bins/io/train_test_split.nf")

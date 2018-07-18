@@ -7,7 +7,7 @@ ped = file("${params.gt}.ped")
 map = file("${params.gt}.map")
 B = params.B
 
-bins = file("${params.projectdir}/pipelines/scripts")
+bins = file("${params.projectdir}/scripts")
 binReadPed = file("$bins/io/ped2numeric.nf")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
 

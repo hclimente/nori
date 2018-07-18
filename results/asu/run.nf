@@ -9,9 +9,9 @@ params.i = 100
 params.B = '0,20,50'
 params.causal = '10,30,50'
 
-bins = file("$projectdir/pipelines")
-binRead = file("$bins/scripts/io/mat2npy.nf")
-binSplit = file("$bins/scripts/io/train_test_split.nf")
+bins = file("$projectdir/scripts")
+binRead = file("$bins/io/mat2npy.nf")
+binSplit = file("$bins/io/train_test_split.nf")
 binBenchmark = file("$bins/benchmark_real.nf")
 
 process read_data {

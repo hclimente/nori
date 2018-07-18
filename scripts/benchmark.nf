@@ -10,7 +10,7 @@ params.B = [0, 20, 50]
 params.select = [10, 50, 100]
 params.simulation = 'additive'
 
-bins = file("${params.projectdir}/pipelines/scripts")
+bins = file("${params.projectdir}/scripts")
 
 if (params.simulation == 'random') {
   binSimulateData = file("$bins/io/generate_non-linear_data.nf")
