@@ -46,7 +46,6 @@ process split_data {
 
 }
 
-
 process benchmark {
 
   input:
@@ -57,7 +56,9 @@ process benchmark {
     set val(mat), '*prediction.tsv' into features
 
   """
-  nextflow run $binBenchmark --mode classification --projectdir $projectdir --B $params.B --causal $params.causal --i $i
+  d=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[0])'`
+  n=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[1])'`
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir --n \$n --d \$d --B $params.B --causal $params.causal --i $i
   mv prediction.tsv ${mat}_prediction.tsv
   """
 

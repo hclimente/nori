@@ -18,10 +18,12 @@ featnames = file(params.featnames)
 params.mode = 'regression'
 svm = (params.mode == 'regression')? 'SVR' : 'SVC'
 stat = (params.mode == 'regression')? 'mse' : 'accuracy'
-linmod = (params.mode == 'regression')? 'Lasso' : 'LogisticRegression'
+linmod = (params.mode == 'regression')? 'LassoCV' : 'LogisticRegressionCV'
 
 params.B = '0,20,50'
 params.causal = '10,30,50'
+params.n = 'None'
+params.d = 'None'
 params.i = 'None'
 
 B = params.B.split(",")
@@ -77,7 +79,7 @@ process subset_HSIC_lasso_features {
   """
   nextflow run $binFilter --selected_features $features --n $c -profile cluster
   nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features filtered_features.npy --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i $params.i --model 'hsic_lasso-b$B' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features filtered_features.npy --stat $stat --n $params.n --d $params.d --causal $c --i $params.i --model 'hsic_lasso-b$B' -profile cluster
   """
 
 }
@@ -98,7 +100,7 @@ process run_linear_model {
 
   """
   nextflow run $binLinear --x_train $x_train --y_train $y_train --x_val $x_val --linmod $linmod --featnames $featnames -profile bigmem
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal None --i $params.i --model $linmod -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features features.npy --stat $stat --n $params.n --d $params.d --causal None --i $params.i --model $linmod -profile cluster
   """
 
 }
@@ -121,7 +123,7 @@ process run_mRMR {
   """
   nextflow run $binmRMR --x $x_train --y $y_train --featnames $featnames --causal $c --mode $params.mode -profile bigmem
   nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features features.npy --model $svm -profile cluster
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --stat $stat --n None --d None --causal $c --i $params.i --model 'mRMR' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features features.npy --stat $stat --n $params.n --d $params.d --causal $c --i $params.i --model 'mRMR' -profile cluster
   """
 
 }

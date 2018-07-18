@@ -5,8 +5,9 @@ params.out = "."
 x_train = file(params.x_train)
 y_train = file(params.y_train)
 x_val = file(params.x_val)
+featnames = file(params.featnames)
 
-params.linmod = 'Lasso'
+params.linmod = 'LassoCV'
 
 process predict {
 
@@ -16,6 +17,7 @@ process predict {
     file x_train
     file y_train
     file x_val
+    file featnames
 
   output:
     file 'features.npy' into features
@@ -26,18 +28,21 @@ process predict {
 
   import numpy as np
   from sklearn.linear_model import $params.linmod
+  from sklearn.feature_selection import SelectFromModel
 
-  x_train = np.load("$x_train").T
-  y_train = np.load("$y_train").squeeze()
+  x_train = np.load('$x_train').T
+  y_train = np.load('$y_train').squeeze()
+  featnames = np.load('$featnames')
 
   clf = $params.linmod()
   clf.fit(x_train, y_train)
 
-  x_val = np.load("$x_val").T
+  x_val = np.load('$x_val').T
   y_pred = clf.predict(x_val)
   np.save('predictions.npy', y_pred)
 
-  features = np.nonzero(clf.coef_)[0]
+  sfm = SelectFromModel(clf, prefit = True)
+  features = featnames[sfm.get_support()]
   np.save('features.npy', features)
   """
 

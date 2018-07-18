@@ -17,10 +17,10 @@ if (params.simulation == 'random') {
   causal = params.select
 } else if (params.simulation == 'non-additive') {
   binSimulateData = file("$bins/io/yamada_non_additive.nf")
-  causal = 4
+  causal = 3
 } else if (params.simulation == 'additive') {
   binSimulateData = file("$bins/io/yamada_additive.nf")
-  causal = 3
+  causal = 4
 }
 
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
@@ -34,7 +34,7 @@ binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
 params.mode = 'regression'
 svm = (params.mode == 'regression')? 'SVR' : 'SVC'
 stat = (params.mode == 'regression')? 'mse' : 'accuracy'
-linmod = (params.mode == 'regression')? 'Lasso' : 'LogisticRegression'
+linmod = (params.mode == 'regression')? 'LassoCV' : 'LogisticRegressionCV'
 
 process simulate_data {
 

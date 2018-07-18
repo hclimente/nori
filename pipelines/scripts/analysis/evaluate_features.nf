@@ -20,8 +20,12 @@ process evaluate_features {
 
   feats_true = np.arange($params.causal)
   feats_pred = np.load('$features')
+  feats_top = feats_pred[0:$params.causal]
 
-  tpr = np.nan if len(feats_pred) == 0 else len(np.intersect1d(feats_true, feats_pred)) / len(feats_true)
+  tpr = np.nan
+  if len(feats_top):
+    tpr = len(np.intersect1d(feats_true, feats_top)) / len(feats_true)
+
   row = ['$params.model', $params.n, $params.d, $params.causal,
          len(feats_pred), $params.i, tpr ]
 
