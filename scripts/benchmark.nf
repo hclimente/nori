@@ -7,7 +7,7 @@ params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 params.B = [0, 20, 50]
-params.select = [10, 50, 100]
+params.select = [10, 25, 50]
 params.simulation = 'additive'
 
 bins = file("${params.projectdir}/scripts")
@@ -69,7 +69,7 @@ process run_HSIC_lasso {
     file 'feature_stats' into features_hsic
 
   """
-  nextflow run $binHSICLasso --x x_train.npy --y y_train.npy --featnames featnames.npy --B $B --mode $params.mode --causal 50 -profile bigmem
+  nextflow run $binHSICLasso --x x_train.npy --y y_train.npy --featnames featnames.npy --B $B --mode $params.mode --select ${Collections.max(params.select)} -profile bigmem
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 
@@ -109,7 +109,7 @@ process run_linear_model {
 
   """
   nextflow run $binLinear --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --linmod $linmod --featnames featnames.npy -profile bigmem
-  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model 'lasso' -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model LassoCV -profile cluster
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model $linmod -profile cluster
   """
 
@@ -129,7 +129,7 @@ process run_mRMR {
     file 'prediction_stats' into predictions_mrmr
 
   """
-  nextflow run $binmRMR --x x_train.npy --y y_train.npy --featnames featnames.npy --causal $c --mode $params.mode -profile bigmem
+  nextflow run $binmRMR --x x_train.npy --y y_train.npy --featnames featnames.npy --select $c --mode $params.mode -profile bigmem
   nextflow run $binClassifier --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features features.npy --model SVR -profile cluster
   nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'mRMR' -profile cluster

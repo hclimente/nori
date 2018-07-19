@@ -54,7 +54,7 @@ process run_HSIC_lasso {
     set val(B),'features.npy',file(x_train),file(y_train),file(x_val),file(y_val) into features_hsic
 
   """
-  nextflow run $binHSICLasso --x $x_train --y $y_train --featnames $featnames --B $B --mode $params.mode --causal 50 -profile bigmem
+  nextflow run $binHSICLasso --x $x_train --y $y_train --featnames $featnames --B $B --mode $params.mode --select ${Collections.max(params.select)} -profile bigmem
   """
 
 }
@@ -121,7 +121,7 @@ process run_mRMR {
     file 'prediction_stats' into predictions_mrmr
 
   """
-  nextflow run $binmRMR --x $x_train --y $y_train --featnames $featnames --causal $c --mode $params.mode -profile bigmem
+  nextflow run $binmRMR --x $x_train --y $y_train --featnames $featnames --select $c --mode $params.mode -profile bigmem
   nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features features.npy --model $svm -profile cluster
   nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features features.npy --stat $stat --n $params.n --d $params.d --causal $c --i $params.i --model 'mRMR' -profile cluster
   """
