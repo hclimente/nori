@@ -9,6 +9,7 @@ params.d = [1000, 2500, 5000, 10000]
 params.B = [0, 20, 50]
 params.select = [10, 25, 50]
 params.simulation = 'additive'
+params.M = 3
 
 bins = file("${params.projectdir}/scripts")
 
@@ -69,7 +70,7 @@ process run_HSIC_lasso {
     file 'feature_stats' into features_hsic
 
   """
-  nextflow run $binHSICLasso --x x_train.npy --y y_train.npy --featnames featnames.npy --B $B --mode $params.mode --select ${Collections.max(params.select)} -profile bigmem
+  nextflow run $binHSICLasso --x x_train.npy --y y_train.npy --featnames featnames.npy --B $B --M $params.M --mode $params.mode --select ${Collections.max(params.select)} -profile bigmem
   nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model 'hsic_lasso-b$B' -profile cluster
   """
 

@@ -40,7 +40,7 @@ process run_HSIC_lasso {
     hl.X_in = np.delete(hl.X_in, discard, 1)
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
-  hl.$params.mode($params.select, B = $params.B)
+  hl.$params.mode($params.select, B = $params.B, M = $params.M)
   np.save('features.npy', hl.A)
   """
 

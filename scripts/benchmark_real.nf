@@ -25,9 +25,10 @@ params.causal = '10,30,50'
 params.n = 'None'
 params.d = 'None'
 params.i = 'None'
+params.M = 3
 
-B = params.B.split(",")
-causal = params.causal.split(",")
+B = params.B .split(",")
+causal = params .causal.split(",")
 
 bins = file("$params.projectdir/scripts")
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
@@ -54,7 +55,7 @@ process run_HSIC_lasso {
     set val(B),'features.npy',file(x_train),file(y_train),file(x_val),file(y_val) into features_hsic
 
   """
-  nextflow run $binHSICLasso --x $x_train --y $y_train --featnames $featnames --B $B --mode $params.mode --select ${Collections.max(params.select)} -profile bigmem
+  nextflow run $binHSICLasso --x $x_train --y $y_train --featnames $featnames --B $B --mode $params.mode --M $params.M --select 50 -profile bigmem
   """
 
 }
