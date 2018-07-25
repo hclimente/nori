@@ -27,7 +27,7 @@ process generate_data {
     return x1 * np.exp(2*x2) + np.square(x3) + e
 
   x = np.random.rand($params.d, $n)
-  y = non_additive(x[0,:], x[1,:], x[2,:], x[3,:])
+  y = non_additive(x[0,:], x[1,:], x[2,:])
   y = np.expand_dims(y, 0)
 
   np.save("x_${sets}.npy", x)
