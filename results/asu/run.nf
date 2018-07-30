@@ -4,7 +4,7 @@ params.projectdir = '../../'
 projectdir = file(params.projectdir)
 params.out = "."
 
-mats = file("$params.mats/*mat")
+mat = file("$params.mat")
 params.i = 100
 params.B = '0,20,50'
 params.causal = '10,30,50'
@@ -19,7 +19,7 @@ process read_data {
   input:
     file binRead
     file binSplit
-    file mat from mats
+    file mat
 
   output:
     set val(mat.baseName),'x.npy','y.npy','featnames.npy' into datasets
@@ -58,7 +58,7 @@ process benchmark {
   """
   d=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[0])'`
   n=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[1])'`
-  nextflow run $binBenchmark --mode classification --projectdir $projectdir --n \$n --d \$d --B $params.B --causal $params.causal --i $i
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir --n \$n --d \$d --B $params.B --causal $params.causal --i $i -profile bigmem
   mv prediction.tsv ${mat}_prediction.tsv
   """
 
