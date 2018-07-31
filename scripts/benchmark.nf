@@ -25,7 +25,7 @@ if (params.simulation == 'random') {
 }
 
 binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
-binLinear = file("$bins/classifiers/linear_classifier.nf")
+binLinear = file("$bins/classifiers/lars.nf")
 binmRMR = file("$bins/feature_selection/mrmr.nf")
 binClassifier = file("$bins/classifiers/kernel_svm.nf")
 binFilter = file("$bins/feature_selection/filter_n.nf")
@@ -35,7 +35,6 @@ binEvaluateFeatures = file("$bins/analysis/evaluate_features.nf")
 params.mode = 'regression'
 svm = (params.mode == 'regression')? 'SVR' : 'SVC'
 stat = (params.mode == 'regression')? 'mse' : 'accuracy'
-linmod = (params.mode == 'regression')? 'LassoCV' : 'LogisticRegressionCV'
 
 process simulate_data {
 
@@ -96,7 +95,7 @@ process subset_HSIC_lasso_features {
 
 }
 
-process run_linear_model {
+process run_lars {
 
   input:
     file binLinear
@@ -109,9 +108,10 @@ process run_linear_model {
     file 'prediction_stats' into predictions_lasso
 
   """
-  nextflow run $binLinear --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --linmod $linmod --featnames featnames.npy -profile bigmem
+  nextflow run $binLinear --select $c --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --featnames featnames.npy -profile bigmem
+  nextflow run $binClassifier --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features features.npy --model SVR -profile cluster
   nextflow run $binEvaluatePredictions --y_val y_val.npy --stat $stat --predictions predictions.npy --features features.npy --n $n --d $d --causal $c --i $i --model LassoCV -profile cluster
-  nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model $linmod -profile cluster
+  nextflow run $binEvaluateFeatures --features features.npy --n $n --d $d --causal $c --i $i --model LARS -profile cluster
   """
 
 }
