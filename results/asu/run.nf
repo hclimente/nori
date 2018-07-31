@@ -5,7 +5,7 @@ projectdir = file(params.projectdir)
 params.out = "."
 
 mat = file("$params.mat")
-params.i = 100
+params.i = 10
 params.B = '0,20,50'
 params.causal = '10,30,50'
 
@@ -48,6 +48,9 @@ process split_data {
 
 process benchmark {
 
+  executor = 'sge'
+  clusterOptions = '-V -jc pcc-large'
+
   input:
     file binBenchmark
     set val(mat), val(i), file('x_train.npy'), file('x_val.npy'), file('y_train.npy'), file('y_val.npy'), file('featnames.npy') from splits
@@ -58,7 +61,7 @@ process benchmark {
   """
   d=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[0])'`
   n=`python -c 'import numpy as np; print(np.load("x_train.npy").shape[1])'`
-  nextflow run $binBenchmark --mode classification --projectdir $projectdir --n \$n --d \$d --B $params.B --causal $params.causal --i $i -profile bigmem
+  nextflow run $binBenchmark --mode classification --projectdir $projectdir --n \$n --d \$d --B $params.B --causal $params.causal --i $i
   mv prediction.tsv ${mat}_prediction.tsv
   """
 
