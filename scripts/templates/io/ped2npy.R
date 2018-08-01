@@ -1,0 +1,22 @@
+#!/usr/bin/env Rscript
+'
+Input variables:
+    - PED: input .ped file.
+    - MAP: input .map file.
+Output files:
+    - x.npy
+    - y.npy
+    - featnames.npy
+'
+
+library(snpStats)
+library(RcppCNPy)
+
+gwas <- read.pedfile("${PED}", snps = "${MAP}")
+
+X <- as(gwas\$genotypes, "numeric")
+Y <- gwas\$fam\$affected
+
+npySave('x_train.npy', X)
+npySave('y_train.npy', Y)
+npySave('featnames.npy', gwas\$map\$snp)

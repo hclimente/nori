@@ -1,9 +1,17 @@
 #!/usr/bin/env python
+'''
+Input variables:
+    - INPUT_FILE: input mat file.
+Output files:
+    - x.npy
+    - y.npy
+    - featnames.npy
+'''
 
 import numpy as np
 from scipy import io as spio
 
-data = spio.loadmat("$input_file")
+data = spio.loadmat("${INPUT_FILE}")
 
 x = data["X"].T
 y = data["Y"].T

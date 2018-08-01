@@ -141,7 +141,8 @@ process prediction {
         set MODEL,N,D,I,C, file(Y_VAL),'predictions.npy' into predictions
 
     script:
-    template 'classifier/kernel_svm.py'
+    if (MODE == 'regression') template 'classifier/kernel_svm.py'
+    else if (MODE == 'classification') template 'classifier/knn.py'
 
 }
 

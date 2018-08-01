@@ -17,7 +17,7 @@ params.causal = '10,25,50'
 causal = params .causal.split(",")
 
 // classifier
-params.mode = 'regression'
+params.mode = 'classification'
 MODE = params.mode
 stat = (MODE == 'regression')? 'mse' : 'accuracy'
 
@@ -43,6 +43,7 @@ process read_data {
     script:
 
     if (input_file.getExtension() == 'mat') template 'io/mat2npy.py'
+    else if (input_file.getExtension() == 'p53') template 'io/p53data2npy.py'
 
 }
 
@@ -123,7 +124,8 @@ process prediction {
         set MODEL,C,I, file(Y_VAL),'predictions.npy' into predictions
 
     script:
-    template 'classifier/kernel_svm.py'
+    if (MODE == 'regression') template 'classifier/kernel_svm.py'
+    else if (MODE == 'classification') template 'classifier/knn.py'
 
 }
 
