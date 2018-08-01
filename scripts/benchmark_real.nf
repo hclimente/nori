@@ -3,147 +3,158 @@
 params.projectdir = '../../'
 params.out = "."
 
-params.x_train = 'x_train.npy'
-params.x_val = 'x_val.npy'
-params.y_train = 'y_train.npy'
-params.y_val = 'y_val.npy'
-params.featnames = 'featnames.npy'
+input_file = file(params.input)
+N = 'None'
+D = 'None'
 
-x_train = file(params.x_train)
-x_val = file(params.x_val)
-y_train = file(params.y_train)
-y_val = file(params.y_val)
-featnames = file(params.featnames)
+// PARAMETERS
+/////////////////////////////////////
 
-params.mode = 'regression'
-svm = (params.mode == 'regression')? 'SVR' : 'SVC'
-stat = (params.mode == 'regression')? 'mse' : 'accuracy'
-linmod = (params.mode == 'regression')? 'LassoCV' : 'LogisticRegressionCV'
-
-params.B = '0,20,50'
-params.causal = '10,30,50'
-params.n = 'None'
-params.d = 'None'
-params.i = 'None'
-params.M = 3
-
-B = params.B .split(",")
+// setup
+SPLIT = 0.2
+params.perms = 10
+params.causal = '10,25,50'
 causal = params .causal.split(",")
 
-bins = file("$params.projectdir/scripts")
-binHSICLasso = file("$bins/feature_selection/hsic_lasso.nf")
-binLinear = file("$bins/classifiers/linear_classifier.nf")
-binmRMR = file("$bins/feature_selection/mrmr.nf")
-binFilter = file("$bins/feature_selection/filter_n.nf")
-binClassifier = file("$bins/classifiers/knn.nf")
-binEvaluatePredictions = file("$bins/analysis/evaluate_predictions.nf")
+// classifier
+params.mode = 'regression'
+MODE = params.mode
+stat = (MODE == 'regression')? 'mse' : 'accuracy'
 
-process run_HSIC_lasso {
+// HSIC lasso
+params.hl_select = 50
+params.M = 3
+M = params.M
+params.B = '0,5,10,50'
+B = params.B .split(",")
 
-  input:
-    file binHSICLasso
-    file binClassifier
-    file binEvaluatePredictions
-    each B from B
-    file x_train
-    file x_val
-    file y_train
-    file y_val
-    file featnames
+//  GENERATE DATA
+/////////////////////////////////////
+process read_data {
 
-  output:
-    set val(B),'features.npy',file(x_train),file(y_train),file(x_val),file(y_val) into features_hsic
+    input:
+        file input_file
 
-  """
-  nextflow run $binHSICLasso --x $x_train --y $y_train --featnames $featnames --B $B --mode $params.mode --M $params.M --select 50
-  """
+    output:
+        file 'x.npy' into X
+        file 'y.npy' into Y
+        file 'featnames.npy' into FEATNAMES
 
-}
+    script:
 
-process subset_HSIC_lasso_features {
-
-  input:
-    set B,features,x_train,y_train,x_val,y_val from features_hsic
-    file binFilter
-    file binClassifier
-    file binEvaluatePredictions
-    each c from causal
-    file x_train
-    file x_val
-    file y_train
-    file y_val
-    file featnames
-
-  output:
-    file 'prediction_stats' into predictions_hsic
-
-  """
-  nextflow run $binFilter --selected_features $features --n $c
-  nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features filtered_features.npy --model $svm
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features filtered_features.npy --stat $stat --n $params.n --d $params.d --causal $c --i $params.i --model 'hsic_lasso-b$B'
-  """
+    if (input_file.getExtension() == 'mat') template 'io/mat2npy.py'
 
 }
 
-process run_linear_model {
+process split_data {
 
-  input:
-    file binLinear
-    file binEvaluatePredictions
-    file x_train
-    file x_val
-    file y_train
-    file y_val
-    file featnames
+    input:
+        file X
+        file Y
+        file FEATNAMES
+        each I from 1..params.perms
+        each C from causal
 
-  output:
-    file 'prediction_stats' into predictions_lasso
+    output:
+        set val(C), val(I), "x_train.npy","y_train.npy","x_val.npy","y_val.npy","featnames.npy" into split_data
 
-  """
-  nextflow run $binLinear --x_train $x_train --y_train $y_train --x_val $x_val --linmod $linmod --featnames $featnames
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features features.npy --stat $stat --n $params.n --d $params.d --causal None --i $params.i --model $linmod
-  """
+    script:
+    template 'analysis/train_test_split.py'
 
 }
 
-process run_mRMR {
+//  FEATURE SELECTION
+/////////////////////////////////////
+split_data.into { data_hsic; data_lasso; data_mrmr }
 
-  input:
-    file binmRMR
-    file binClassifier
-    file binEvaluatePredictions
-    each c from causal
-    file x_train
-    file x_val
-    file y_train
-    file y_val
+process run_lars {
 
-  output:
-    file 'prediction_stats' into predictions_mrmr
+    input:
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_lasso
+    
+    output:
+        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_lars
 
-  """
-  nextflow run $binmRMR --x $x_train --y $y_train --featnames $featnames --select $c --mode $params.mode
-  nextflow run $binClassifier --x_train $x_train --y_train $y_train --x_val $x_val --selected_features features.npy --model $svm
-  nextflow run $binEvaluatePredictions --y_val $y_val --predictions predictions.npy --features features.npy --stat $stat --n $params.n --d $params.d --causal $c --i $params.i --model 'mRMR'
-  """
+    script:
+    template 'feature_selection/lars.py'
 
 }
 
-predictions = predictions_hsic. mix( predictions_lasso, predictions_mrmr )
+process run_hsic_lasso {
 
-process process_output {
+    input:
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_hsic
+        each HL_B from B
+        each HL_M from M
+        each HL_SELECT from params.hl_select
+    
+    output:
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_hsic
 
-  publishDir "$params.out", overwrite: true, mode: "copy"
+    script:
+    template 'feature_selection/hsic_lasso.py'
 
-  input:
-    file "prediction_stats*" from predictions. collect()
+}
 
-  output:
-    file 'prediction.tsv'
+process run_mrmr {
 
-  """
-  echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >prediction.tsv
-  cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>prediction.tsv
-  """
+    input:
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_mrmr
+    
+    output:
+        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_mrmr
+
+    script:
+    template 'feature_selection/mrmr.py'
+
+}
+
+//  PREDICTION
+/////////////////////////////////////
+features_prediction = features_hsic
+    .mix( features_lars, features_mrmr ) 
+
+process prediction {
+
+    input:
+        set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(SELECTED_FEATURES) from features_prediction
+
+    output:
+        set MODEL,C,I, file(Y_VAL),'predictions.npy' into predictions
+
+    script:
+    template 'classifier/kernel_svm.py'
+
+}
+
+//  PREDICTION ANALYSIS
+/////////////////////////////////////
+process analyze_predictions {
+
+    input:
+        set MODEL,C,I, file(Y_VAL),file(Y_PRED) from predictions
+
+    output:
+        file 'prediction_stats' into prediction_analysis
+
+    script:
+    template 'analysis/analyze_predictions.py'
+
+}
+
+process join_prediction_analyses {
+
+    publishDir "$params.out", overwrite: true, mode: "copy"
+
+    input:
+        file "prediction_stats*" from prediction_analysis. collect()
+
+    output:
+        file "${input_file.baseName}_prediction.tsv"
+
+    """
+    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
+    cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>${input_file.baseName}_prediction.tsv
+    """
 
 }

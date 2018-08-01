@@ -1,3 +1,3 @@
 for f in `ls /home/hclimente/data/asu/*.mat`
-	do ./run.nf "$@" --mat $f -resume
+	do nextflow run ../../scripts/benchmark_real.nf --input $f "$@" -resume
 done
