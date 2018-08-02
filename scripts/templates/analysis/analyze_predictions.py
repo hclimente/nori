@@ -2,7 +2,7 @@
 '''
 Input variables:
     - Y_PRED: path to numpy array with prediction vector.
-    - Y_VAL: path to numpy array with validation Y vector.
+    - Y_TEST: path to numpy array with validation Y vector.
     - MODE: classification or regression.
     - MODEL: name of the method.
     - N: number of samples
@@ -18,7 +18,7 @@ import csv
 import numpy as np
 from sklearn.metrics import accuracy_score, mean_squared_error
 
-y_true = np.load('${Y_VAL}').squeeze()
+y_true = np.load('${Y_TEST}').squeeze()
 y_pred = np.load('${Y_PRED}')
 
 score = np.nan

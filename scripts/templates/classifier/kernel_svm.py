@@ -4,7 +4,7 @@ Input variables:
     - SELECTED_FEATURES: path to the selected features.
     - X_TRAIN: path to numpy array with train X matrix.
     - Y_TRAIN: path to numpy array with train Y vector.
-    - X_VAL: path to numpy array with validation X matrix.
+    - X_TEST: path to numpy array with validation X matrix.
     - MODE: regression or classification.
     - C: number of causal features.
 Output files:
@@ -40,7 +40,7 @@ Cs = np.logspace(-6, 1, 10)
 clf = GridSearchCV(estimator=clf, param_grid=dict(C=Cs))
 clf.fit(x_train, y_train)
 
-x_val = np.load("${X_VAL}").T
+x_val = np.load("${X_TEST}").T
 x_val = x_val[:, selected_features]
 predictions = clf.predict(x_val)
 np.save('predictions.npy', predictions)

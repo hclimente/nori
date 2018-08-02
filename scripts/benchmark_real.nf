@@ -71,10 +71,10 @@ split_data.into { data_hsic; data_lasso; data_mrmr }
 process run_lars {
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_lasso
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_lars
+        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -84,13 +84,13 @@ process run_lars {
 process run_hsic_lasso {
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_hsic
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_B from B
         each HL_M from M
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -100,10 +100,10 @@ process run_hsic_lasso {
 process run_mrmr {
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_mrmr
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_mrmr
+        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -118,10 +118,10 @@ features_prediction = features_hsic
 process prediction {
 
     input:
-        set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(SELECTED_FEATURES) from features_prediction
+        set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
-        set MODEL,C,I, file(Y_VAL),'predictions.npy' into predictions
+        set MODEL,C,I, file(Y_TEST),'predictions.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
@@ -134,7 +134,7 @@ process prediction {
 process analyze_predictions {
 
     input:
-        set MODEL,C,I, file(Y_VAL),file(Y_PRED) from predictions
+        set MODEL,C,I, file(Y_TEST),file(Y_PRED) from predictions
 
     output:
         file 'prediction_stats' into prediction_analysis

@@ -4,7 +4,7 @@ Input variables:
     - SELECTED_FEATURES: path to the selected features.
     - X_TRAIN: path to numpy array with train X matrix.
     - Y_TRAIN: path to numpy array with train Y vector.
-    - X_VAL: path to numpy array with validation X matrix.
+    - X_TEST: path to numpy array with validation X matrix.
     - C: number of causal features.
 Output files:
     - predictions.npy
@@ -32,7 +32,7 @@ y_train = np.load("${Y_TRAIN}").squeeze()
 clf = KNeighborsClassifier()
 clf.fit(x_train, y_train)
 
-x_val = np.load("${X_VAL}").T
+x_val = np.load("${X_TEST}").T
 x_val = x_val[:, selected_features]
 predictions = clf.predict(x_val)
 np.save('predictions.npy', predictions)

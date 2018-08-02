@@ -9,7 +9,11 @@ params.out = "."
 params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
-causal = [10, 25, 50]
+
+params.data_generation = 'yamada-additive'
+if (params.data_generation == 'random') causal = [10, 25, 50]
+else if (params.data_generation == 'yamada_additive') causal = 4
+else if (params.data_generation == 'yamada_nonadditive') causal = 3
 
 // classifier
 params.mode = 'regression'
@@ -32,10 +36,12 @@ process simulate_data {
         each C from causal
 
     output:
-        set N,D,I,C,"x_train.npy","y_train.npy","x_val.npy","y_val.npy","featnames.npy" into data
+        set N,D,I,C,"x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into data
 
     script:
-    template 'analysis/generate_data.py'
+    if (params.data_generation == 'random') template 'analysis/generate_data.py'
+    else if (params.data_generation == 'yamada_additive') template 'analysis/yamada_additive.py'
+    else if (params.data_generation == 'yamada_nonadditive') template 'analysis/yamada_nonadditive.py'
 
 }
 
@@ -46,10 +52,10 @@ data.into { data_hsic; data_lasso; data_mrmr }
 process run_lars {
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_lasso
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_lars
+        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -62,13 +68,13 @@ process run_hsic_lasso {
     errorStrategy 'ignore'
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_hsic
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_M from params.M
         each HL_B from params.B
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -81,10 +87,10 @@ process run_mrmr {
     errorStrategy 'ignore'
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(FEATNAMES) from data_mrmr
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), 'features.npy' into features_mrmr
+        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -100,7 +106,7 @@ features_hsic
 process analyze_features {
 
     input:
-        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(SELECTED_FEATURES) from features_qc
+        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_qc
 
     output:
         file 'feature_stats' into feature_analyses
@@ -118,11 +124,11 @@ process join_feature_analyses {
         file "feature_stats*" from feature_analyses. collect()
 
     output:
-        file 'feature_selection.tsv'
+        file "${params.data_generation}_feature_selection.tsv"
 
     """
-    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >feature_selection.tsv
-    cat feature_stats* | sed 's/^HSIC_lasso-B0-M3/HSIC_lasso/' >>feature_selection.tsv
+    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >${params.data_generation}_feature_selection.tsv
+    cat feature_stats* | sed 's/^HSIC_lasso-B0-M3/HSIC_lasso/' >>${params.data_generation}_feature_selection.tsv
     """
 
 }
@@ -135,10 +141,10 @@ process prediction {
     validExitStatus 0,77
 
     input:
-        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_VAL), file(Y_VAL), file(SELECTED_FEATURES) from features_prediction
+        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
-        set MODEL,N,D,I,C, file(Y_VAL),'predictions.npy' into predictions
+        set MODEL,N,D,I,C, file(Y_TEST),'predictions.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
@@ -151,7 +157,7 @@ process prediction {
 process analyze_predictions {
 
     input:
-        set MODEL,N,D,I,C, file(Y_VAL),file(Y_PRED) from predictions
+        set MODEL,N,D,I,C, file(Y_TEST),file(Y_PRED) from predictions
 
     output:
         file 'prediction_stats' into prediction_analysis
@@ -169,11 +175,11 @@ process join_prediction_analyses {
         file "prediction_stats*" from prediction_analysis. collect()
 
     output:
-        file 'prediction.tsv'
+        file "${params.data_generation}_prediction.tsv"
 
     """
-    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$STAT' >prediction.tsv
-    cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>prediction.tsv
+    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$STAT' >${params.data_generation}_prediction.tsv
+    cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>${params.data_generation}_prediction.tsv
     """
 
 }
