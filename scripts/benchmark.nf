@@ -10,7 +10,7 @@ params.perms = 10
 params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 
-params.data_generation = 'yamada-additive'
+params.data_generation = 'yamada_additive'
 if (params.data_generation == 'random') causal = [10, 25, 50]
 else if (params.data_generation == 'yamada_additive') causal = 4
 else if (params.data_generation == 'yamada_nonadditive') causal = 3
@@ -28,6 +28,8 @@ params.hl_select = 50
 //  GENERATE DATA
 /////////////////////////////////////
 process simulate_data {
+
+    clusterOptions = '-V -jc pcc-skl'
 
     input:
         each N from params.n
@@ -51,6 +53,8 @@ data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_lars {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
@@ -64,6 +68,7 @@ process run_lars {
 
 process run_hsic_lasso {
 
+    clusterOptions = '-V -jc pcc-large'
     validExitStatus 0,77
     errorStrategy 'ignore'
 
@@ -83,6 +88,7 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
+    clusterOptions = '-V -jc pcc-large'
     validExitStatus 0
     errorStrategy 'ignore'
 
@@ -105,6 +111,8 @@ features_hsic
 
 process analyze_features {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_qc
 
@@ -118,6 +126,7 @@ process analyze_features {
 
 process join_feature_analyses {
 
+    clusterOptions = '-V -jc pcc-skl'
     publishDir "$params.out", overwrite: true, mode: "copy"
 
     input:
@@ -137,6 +146,7 @@ process join_feature_analyses {
 /////////////////////////////////////
 process prediction {
 
+    clusterOptions = '-V -jc pcc-skl'
     errorStrategy 'ignore'
     validExitStatus 0,77
 
@@ -156,6 +166,8 @@ process prediction {
 /////////////////////////////////////
 process analyze_predictions {
 
+    clusterOptions = '-V -jc pcc-skl'
+    
     input:
         set MODEL,N,D,I,C, file(Y_TEST),file(Y_PRED) from predictions
 
@@ -169,6 +181,7 @@ process analyze_predictions {
 
 process join_prediction_analyses {
 
+    clusterOptions = '-V -jc pcc-skl'
     publishDir "$params.out", overwrite: true, mode: "copy"
 
     input:
