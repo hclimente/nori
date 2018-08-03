@@ -156,7 +156,7 @@ process join_prediction_analyses {
 
     """
     echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
-    cat prediction_stats* | sed 's/^hsic_lasso-b0/hsic_lasso/' >>${input_file.baseName}_prediction.tsv
+    cat prediction_stats* >>${input_file.baseName}_prediction.tsv
     """
 
 }

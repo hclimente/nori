@@ -1,4 +1,4 @@
-model	samples	features	causal	selected	i	mse
+model	samples	features	causal	i	mse
 mRMR	100	1000	3	6	2.685499185181882
 LARS	1000	2500	3	2	0.9903635017877463
 HSIC_lasso-B=50-M=3	100	5000	3	4	1.6102885945665224
