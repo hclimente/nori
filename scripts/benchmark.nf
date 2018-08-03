@@ -83,9 +83,6 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
-    validExitStatus 0
-    errorStrategy 'ignore'
-
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     

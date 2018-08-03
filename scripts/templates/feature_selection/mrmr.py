@@ -11,20 +11,23 @@ Output files:
 '''
 
 import numpy as np
-from subprocess import check_output
+import subprocess
 
 x = np.load("${X_TRAIN}")
 y = np.load("${Y_TRAIN}")
 
-np.savetxt('dataset.csv', np.vstack((y,x)).T,
-           header = 'y,' + ','.join([ str(x) for x in np.arange(x.shape[0])]),
+# write dataset
+ds = np.vstack((y,x)).T
+cols = 'y,' + ','.join([ str(x) for x in np.arange(x.shape[0])])
+
+np.savetxt('dataset.csv', ds, header = cols, fmt='%1.3f',
            delimiter = ',', comments='')
 discretization = '-t 0' if '${MODE}' == 'regression' else ''
 
+# run mrmr
 features,samples = x.shape
-
-out = check_output(['mrmr', '-i', 'dataset.csv', discretization, '-n', '${C}', 
-                    '-s', str(samples), '-v', str(features)])
+out = subprocess.check_output(['mrmr', '-i', 'dataset.csv', discretization, '-n', 
+                               '${C}', '-s', str(samples), '-v', str(features)])
 
 flag = False
 features = []
