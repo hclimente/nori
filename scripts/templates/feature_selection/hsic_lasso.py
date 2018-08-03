@@ -9,7 +9,7 @@ Input variables:
     - HL_B: size of the block.
     - HL_M: number of permutations.
 Output files:
-    - features.npy: numpy array with the 0-based index of 
+    - selected_features.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -29,5 +29,11 @@ if $HL_B:
     hl.X_in = np.delete(hl.X_in, discard, 1)
     hl.Y_in = np.delete(hl.Y_in, discard, 1)
 
-hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M)
-np.save('features.npy', hl.A)
+try:
+    hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M)
+except MemoryError:
+    import sys, traceback
+    traceback.print_exc()
+    sys.exit(77)
+
+np.save('selected_features.npy', hl.A)

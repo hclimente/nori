@@ -18,7 +18,7 @@ def non_additive(x1, x2, x3):
     return x1 * np.exp(2*x2) + np.square(x3) + e
 
 for set_type in ['train', 'test']:
-    x = np.random.rand(${D}, ${N})
+    x = 5 * np.random.randn(${D}, ${N})
     y = non_additive(x[0,:], x[1,:], x[2,:])
     y = np.expand_dims(y, 0)
 

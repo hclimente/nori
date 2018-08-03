@@ -6,7 +6,7 @@ Input variables:
     - FEATNAMES: path of a numpy array with feature names.
     - MODE: regression or classification.
 Output files:
-    - features.npy: numpy array with the 0-based index of 
+    - selected_features.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -29,4 +29,4 @@ clf.fit(x_train, y_train)
 
 sfm = SelectFromModel(clf, prefit = True)
 features = featnames[sfm.get_support()]
-np.save('features.npy', features)
+np.save('selected_features.npy', features)

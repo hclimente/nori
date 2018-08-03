@@ -5,7 +5,7 @@ Input variables:
     - Y_TRAIN: path of a numpy array with y.
     - C: number of features to select.
 Output files:
-    - features.npy: numpy array with the 0-based index of 
+    - selected_features.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -21,4 +21,4 @@ clf.fit(x_train, y_train)
 
 sfm = SelectFromModel(clf, prefit = True)
 features = np.where(sfm.get_support())[0]
-np.save('features.npy', features)
+np.save('selected_features.npy', features)

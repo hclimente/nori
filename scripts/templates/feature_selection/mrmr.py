@@ -6,7 +6,7 @@ Input variables:
     - MODE: regression or classification.
     - C: number of features to select.
 Output files:
-    - features.npy: numpy array with the 0-based index of 
+    - selected_features.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -36,4 +36,4 @@ for line in out.decode('ascii').split('\\n'):
         flag = True
 
 feats_pred = np.array(features)
-np.save('features.npy', feats_pred)
+np.save('selected_features.npy', feats_pred)

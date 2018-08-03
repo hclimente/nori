@@ -55,7 +55,7 @@ process run_lars {
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_lars
+        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -64,7 +64,7 @@ process run_lars {
 
 process run_hsic_lasso {
 
-    validExitStatus 0,1,137,140
+    validExitStatus 0,77
     errorStrategy 'ignore'
 
     input:
@@ -74,7 +74,7 @@ process run_hsic_lasso {
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -83,14 +83,14 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
-    validExitStatus 0,134,139,140
+    validExitStatus 0
     errorStrategy 'ignore'
 
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_mrmr
+        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
