@@ -60,13 +60,26 @@ process split_data {
         set val(C), val(I), "x_train.npy","y_train.npy","x_val.npy","y_val.npy","featnames.npy" into split_data
 
     script:
-    template 'analysis/train_test_split.py'
+    template 'data_processing/train_test_split.py'
+
+}
+
+process normalize_data {
+
+    input:
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from split_data
+
+    output:
+        set val(C), val(I), "x_train_normalized.npy","y_train.npy","x_val_normalized.npy","y_val.npy","featnames.npy" into normalized_splits
+
+    script:
+    template 'data_processing/normalize.py'
 
 }
 
 //  FEATURE SELECTION
 /////////////////////////////////////
-split_data.into { data_hsic; data_lasso; data_mrmr }
+normalized_splits.into { data_hsic; data_lasso; data_mrmr }
 
 process run_lars {
 

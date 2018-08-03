@@ -41,9 +41,9 @@ process simulate_data {
         set N,D,I,C,"x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into data
 
     script:
-    if (params.data_generation == 'random') template 'analysis/generate_data.py'
-    else if (params.data_generation == 'yamada_additive') template 'analysis/yamada_additive.py'
-    else if (params.data_generation == 'yamada_nonadditive') template 'analysis/yamada_nonadditive.py'
+    if (params.data_generation == 'random') template 'data_processing/generate_data.py'
+    else if (params.data_generation == 'yamada_additive') template 'data_processing/yamada_additive.py'
+    else if (params.data_generation == 'yamada_nonadditive') template 'data_processing/yamada_nonadditive.py'
 
 }
 
