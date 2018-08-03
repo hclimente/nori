@@ -34,6 +34,7 @@ try:
 except MemoryError:
     import sys, traceback
     traceback.print_exc()
+    np.save('selected_features.npy', np.array([]))
     sys.exit(77)
 
 np.save('selected_features.npy', hl.A)
