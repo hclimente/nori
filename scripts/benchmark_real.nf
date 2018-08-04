@@ -32,8 +32,10 @@ B = params.B .split(",")
 /////////////////////////////////////
 process read_data {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
-        file input_file
+        file INPUT_FILE from input_file
 
     output:
         file 'x.npy' into X
@@ -49,6 +51,8 @@ process read_data {
 
 process split_data {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         file X
         file Y
@@ -57,7 +61,7 @@ process split_data {
         each C from causal
 
     output:
-        set val(C), val(I), "x_train.npy","y_train.npy","x_val.npy","y_val.npy","featnames.npy" into split_data
+        set val(C), val(I), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
 
     script:
     template 'data_processing/train_test_split.py'
@@ -66,11 +70,13 @@ process split_data {
 
 process normalize_data {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from split_data
 
     output:
-        set val(C), val(I), "x_train_normalized.npy","y_train.npy","x_val_normalized.npy","y_val.npy","featnames.npy" into normalized_splits
+        set val(C), val(I), "x_train_normalized.npy","y_train.npy","x_test_normalized.npy","y_test.npy","featnames.npy" into normalized_splits
 
     script:
     template 'data_processing/normalize.py'
@@ -83,11 +89,13 @@ normalized_splits.into { data_hsic; data_lasso; data_mrmr }
 
 process run_lars {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_lars
+        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -96,6 +104,10 @@ process run_lars {
 
 process run_hsic_lasso {
 
+    clusterOptions = '-V -jc pcc-large'
+    validExitStatus 0,77
+    errorStrategy 'ignore'
+
     input:
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_B from B
@@ -103,7 +115,7 @@ process run_hsic_lasso {
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -112,11 +124,13 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
+    clusterOptions = '-V -jc pcc-large'
+
     input:
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features.npy' into features_mrmr
+        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -129,6 +143,10 @@ features_prediction = features_hsic
     .mix( features_lars, features_mrmr ) 
 
 process prediction {
+
+    clusterOptions = '-V -jc pcc-skl'
+
+    validExitStatus 0,77
 
     input:
         set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
@@ -146,6 +164,8 @@ process prediction {
 /////////////////////////////////////
 process analyze_predictions {
 
+    clusterOptions = '-V -jc pcc-skl'
+
     input:
         set MODEL,C,I, file(Y_TEST),file(Y_PRED) from predictions
 
@@ -158,6 +178,8 @@ process analyze_predictions {
 }
 
 process join_prediction_analyses {
+
+    clusterOptions = '-V -jc pcc-skl'
 
     publishDir "$params.out", overwrite: true, mode: "copy"
 

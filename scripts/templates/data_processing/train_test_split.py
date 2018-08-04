@@ -22,9 +22,9 @@ perm = np.random.permutation(n)
 x = x[perm,:]
 y = y[perm,:]
 
-x_train, x_val, y_train, y_val = train_test_split(x, y, test_size = ${SPLIT})
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = ${SPLIT})
 
 np.save("x_train.npy", x_train.T)
-np.save("x_val.npy", x_val.T)
+np.save("x_test.npy", x_test.T)
 np.save("y_train.npy", y_train.T)
-np.save("y_val.npy", y_val.T)
+np.save("y_test.npy", y_test.T)

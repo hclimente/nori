@@ -27,6 +27,7 @@ try:
 except IndexError:
     import sys, traceback
     traceback.print_exc()
+    np.save('predictions.npy', np.array([]))
     sys.exit(77)
 
 y_train = np.load("${Y_TRAIN}").squeeze()

@@ -13,11 +13,11 @@ import numpy as np
 x_train = np.load('${X_TRAIN}')
 x_test = np.load("${X_TEST}")
 
-mean = np.mean(x_train, axis = 0)
-std = np.sd(x_train, axis = 0)
+mean = np.mean(x_train, axis = 1)
+std = np.std(x_train, axis = 1)
 
-x_train = (x_train - mean)/sd
-x_test = (x_test - mean)/sd
+x_train = ((x_train.T - mean)/std).T
+x_test = ((x_test.T - mean)/std).T
 
 np.save('x_train_normalized.npy', x_train)
 np.save('x_test_normalized.npy', x_test)
