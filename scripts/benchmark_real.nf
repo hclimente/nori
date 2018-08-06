@@ -25,8 +25,13 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 params.hl_select = 50
 params.M = 3
 M = params.M
-params.B = '0,5,10,50'
+params.B = '0'
 B = params.B .split(",")
+
+// localized HSIC lasso
+params.lhl_path = '/Users/hclimente/projects/lHSICLasso/pyHSICLasso2/'
+lhl_main_pkg = file("$params.lhl_path/lHSICLasso.py")
+lhl_kernel_pkg = file("$params.lhl_path/kernel_tools.py")
 
 //  GENERATE DATA
 /////////////////////////////////////
@@ -85,7 +90,7 @@ process normalize_data {
 
 //  FEATURE SELECTION
 /////////////////////////////////////
-normalized_splits.into { data_hsic; data_lasso; data_mrmr }
+normalized_splits.into { data_hsic; data_lhsic; data_lasso; data_mrmr }
 
 process run_lars {
 
@@ -122,6 +127,26 @@ process run_hsic_lasso {
 
 }
 
+process run_localized_hsic_lasso {
+
+    clusterOptions = '-V -jc pcc-large'
+    validExitStatus 0,77
+    //errorStrategy 'ignore'
+
+    input:
+        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
+        file lhl_main_pkg
+        file lhl_kernel_pkg
+        each HL_SELECT from params.hl_select
+    
+    output:
+        set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+
+    script:
+    template 'feature_selection/localized_hsic_lasso.py'
+
+}
+
 process run_mrmr {
 
     clusterOptions = '-V -jc pcc-large'
@@ -140,7 +165,7 @@ process run_mrmr {
 //  PREDICTION
 /////////////////////////////////////
 features_prediction = features_hsic
-    .mix( features_lars, features_mrmr ) 
+    .mix( features_lhsic, features_lars, features_mrmr ) 
 
 process prediction {
 
