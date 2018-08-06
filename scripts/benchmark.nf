@@ -27,8 +27,7 @@ params.hl_select = 50
 
 // localized HSIC lasso
 params.lhl_path = '/Users/hclimente/projects/lHSICLasso/'
-lhl_main_pkg = file("$params.lhl_path/pyHSICLasso2/lHSICLasso.py")
-lhl_kernel_pkg = file("$params.lhl_path/pyHSICLasso2/kernel_tools.py")
+lhl_main_pkg = file("$params.lhl_path/pyHSICLasso/")
 
 //  GENERATE DATA
 /////////////////////////////////////
@@ -100,7 +99,6 @@ process run_localized_hsic_lasso {
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
         file lhl_main_pkg
-        file lhl_kernel_pkg
         each HL_SELECT from params.hl_select
     
     output:

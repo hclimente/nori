@@ -12,19 +12,20 @@ Output files:
 '''
 
 import numpy as np
-from lHSICLasso import *
+from pyHSICLasso.api import lHSICLasso
 
-X_in = np.load("${X_TRAIN}")
-Y_in = np.load("${Y_TRAIN}")
-featname = np.load("${FEATNAMES}")
-ykernel = 'Gauss' if '${MODE}' == 'regression' else 'Delta'
+hl = lHSICLasso()
+
+hl.X_in = np.load("${X_TRAIN}")
+hl.Y_in = np.load("${Y_TRAIN}")
+hl.featname = np.load("${FEATNAMES}")
 
 try:
-    _, _, A, _ = lhsiclasso(X_in, Y_in, numFeat=${HL_SELECT}, numClusters=5, ykernel = ykernel)
+    hl.${MODE}($HL_SELECT)
 except MemoryError:
     import sys, traceback
     traceback.print_exc()
     np.save('selected_features.npy', np.array([]))
     sys.exit(77)
 
-np.save('selected_features.npy', A)
+np.save('selected_features.npy', hl.A)
