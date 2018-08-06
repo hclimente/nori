@@ -1,1 +1,1 @@
-../../scripts/benchmark.nf "$@" -with-trace -resume -profile bigmem
+../../scripts/benchmark.nf "$@" -with-trace -resume -profile cluster

@@ -1,131 +1,181 @@
 model	samples	features	causal	selected	i	accuracy
-mRMR	80	10304	10	10	6	0.4
-hsic_lasso	80	10304	50	50	6	0.7
-hsic_lasso-b20	80	10304	10	10	6	0.55
-hsic_lasso-b20	80	10304	30	30	6	0.8
-hsic_lasso-b20	80	10304	50	49	6	0.75
-mRMR	80	10304	50	50	6	0.55
-mRMR	80	10304	30	30	6	0.6
-LogisticRegressionCV	80	10304		4300	6	1.0
-hsic_lasso-b50	80	10304	30	30	6	0.8
-hsic_lasso-b50	80	10304	50	33	6	0.8
-hsic_lasso-b50	80	10304	10	10	6	0.5
-hsic_lasso	80	10304	30	30	6	0.7
-hsic_lasso	80	10304	10	10	6	0.6
-mRMR	80	10304	30	30	1	0.65
-hsic_lasso-b20	80	10304	30	30	1	0.75
-hsic_lasso	80	10304	30	30	1	0.55
-hsic_lasso	80	10304	10	10	1	0.6
-hsic_lasso	80	10304	50	37	1	0.75
-mRMR	80	10304	10	10	1	0.7
-mRMR	80	10304	50	50	1	0.8
-LogisticRegressionCV	80	10304		4462	1	0.95
-hsic_lasso-b50	80	10304	50	39	1	0.7
-hsic_lasso-b50	80	10304	10	10	1	0.75
-hsic_lasso-b50	80	10304	30	30	1	0.7
-hsic_lasso-b20	80	10304	50	50	1	0.7
-hsic_lasso-b20	80	10304	10	10	1	0.6
-mRMR	80	10304	50	50	3	0.35
-hsic_lasso-b20	80	10304	30	30	3	0.9
-hsic_lasso	80	10304	10	10	3	0.35
-hsic_lasso	80	10304	50	49	3	0.7
-hsic_lasso	80	10304	30	30	3	0.55
-mRMR	80	10304	30	30	3	0.25
-LogisticRegressionCV	80	10304		4401	3	0.9
-mRMR	80	10304	10	10	3	0.4
-hsic_lasso-b50	80	10304	30	30	3	0.65
-hsic_lasso-b50	80	10304	50	34	3	0.7
-hsic_lasso-b50	80	10304	10	10	3	0.65
-hsic_lasso-b20	80	10304	10	10	3	0.5
-hsic_lasso-b20	80	10304	50	36	3	0.75
-LogisticRegressionCV	80	10304		4352	9	0.95
-hsic_lasso-b50	80	10304	30	30	9	0.55
-hsic_lasso	80	10304	10	10	9	0.4
-hsic_lasso	80	10304	30	30	9	0.75
-hsic_lasso	80	10304	50	46	9	0.85
-mRMR	80	10304	10	10	9	0.65
-mRMR	80	10304	50	50	9	0.65
-mRMR	80	10304	30	30	9	0.55
-hsic_lasso-b20	80	10304	10	10	9	0.55
-hsic_lasso-b20	80	10304	30	30	9	0.7
-hsic_lasso-b20	80	10304	50	50	9	0.75
-hsic_lasso-b50	80	10304	10	10	9	0.7
-hsic_lasso-b50	80	10304	50	48	9	0.8
-LogisticRegressionCV	80	10304		4432	4	1.0
-hsic_lasso-b50	80	10304	50	44	4	0.7
-hsic_lasso	80	10304	10	10	4	0.5
-hsic_lasso	80	10304	30	30	4	0.55
-hsic_lasso	80	10304	50	41	4	0.55
-mRMR	80	10304	50	50	4	0.8
-mRMR	80	10304	30	30	4	0.8
-mRMR	80	10304	10	10	4	0.7
-hsic_lasso-b20	80	10304	30	30	4	0.75
-hsic_lasso-b20	80	10304	50	47	4	0.8
-hsic_lasso-b20	80	10304	10	10	4	0.65
-hsic_lasso-b50	80	10304	30	30	4	0.6
-hsic_lasso-b50	80	10304	10	10	4	0.5
-mRMR	80	10304	50	50	5	0.8
-hsic_lasso	80	10304	50	50	5	0.85
-hsic_lasso-b20	80	10304	10	10	5	0.35
-hsic_lasso-b20	80	10304	50	36	5	0.55
-hsic_lasso-b20	80	10304	30	30	5	0.6
-mRMR	80	10304	30	30	5	0.65
-LogisticRegressionCV	80	10304		4411	5	1.0
-mRMR	80	10304	10	10	5	0.6
-hsic_lasso-b50	80	10304	30	30	5	0.7
-hsic_lasso-b50	80	10304	50	35	5	0.8
-hsic_lasso-b50	80	10304	10	10	5	0.3
-hsic_lasso	80	10304	30	30	5	0.85
-hsic_lasso	80	10304	10	10	5	0.45
-mRMR	80	10304	50	50	2	0.7
-hsic_lasso	80	10304	50	50	2	0.75
-hsic_lasso-b50	80	10304	10	10	2	0.55
-hsic_lasso-b50	80	10304	30	30	2	0.75
-hsic_lasso-b50	80	10304	50	41	2	0.75
-LogisticRegressionCV	80	10304		4456	2	1.0
-mRMR	80	10304	10	10	2	0.85
-mRMR	80	10304	30	30	2	0.65
-hsic_lasso-b20	80	10304	10	10	2	0.6
-hsic_lasso-b20	80	10304	50	38	2	0.75
-hsic_lasso-b20	80	10304	30	30	2	0.7
-hsic_lasso	80	10304	10	10	2	0.45
-hsic_lasso	80	10304	30	30	2	0.7
-mRMR	80	10304	50	50	10	0.7
-hsic_lasso	80	10304	50	50	10	0.6
-hsic_lasso-b50	80	10304	10	10	10	0.6
-hsic_lasso-b50	80	10304	30	30	10	0.75
-hsic_lasso-b50	80	10304	50	45	10	0.85
-LogisticRegressionCV	80	10304		4378	10	1.0
-mRMR	80	10304	10	10	10	0.7
-mRMR	80	10304	30	30	10	0.65
-hsic_lasso-b20	80	10304	10	10	10	0.4
-hsic_lasso-b20	80	10304	30	30	10	0.55
-hsic_lasso-b20	80	10304	50	43	10	0.55
-hsic_lasso	80	10304	30	30	10	0.65
-hsic_lasso	80	10304	10	10	10	0.5
-mRMR	80	10304	50	50	7	0.6
-hsic_lasso-b50	80	10304	50	29	7	0.75
-hsic_lasso-b20	80	10304	10	10	7	0.7
-hsic_lasso-b20	80	10304	30	30	7	0.7
-hsic_lasso-b20	80	10304	50	47	7	0.85
-mRMR	80	10304	30	30	7	0.5
-mRMR	80	10304	10	10	7	0.3
-LogisticRegressionCV	80	10304		4309	7	1.0
-hsic_lasso	80	10304	10	10	7	0.45
-hsic_lasso	80	10304	50	45	7	0.7
-hsic_lasso	80	10304	30	30	7	0.7
-hsic_lasso-b50	80	10304	30	29	7	0.75
-hsic_lasso-b50	80	10304	10	10	7	0.45
-mRMR	80	10304	30	30	8	0.9
-hsic_lasso-b50	80	10304	50	32	8	0.85
-hsic_lasso	80	10304	10	10	8	0.7
-hsic_lasso	80	10304	30	30	8	0.65
-hsic_lasso	80	10304	50	50	8	0.75
-mRMR	80	10304	10	10	8	0.8
-LogisticRegressionCV	80	10304		4298	8	1.0
-mRMR	80	10304	50	50	8	0.85
-hsic_lasso-b20	80	10304	50	41	8	1.0
-hsic_lasso-b20	80	10304	30	30	8	0.85
-hsic_lasso-b20	80	10304	10	10	8	0.7
-hsic_lasso-b50	80	10304	10	10	8	0.5
-hsic_lasso-b50	80	10304	30	30	8	0.8
+LARS			10	5	0.65
+LARS			50	3	0.8
+mRMR			25	5	0.9
+mRMR			50	7	0.95
+HSIC_lasso-B=50-M=3			50	7	0.8
+HSIC_lasso-B=50-M=3			25	5	0.8
+HSIC_lasso-B=0-M=3			50	7	0.8
+HSIC_lasso-B=10-M=3			25	10	0.8
+HSIC_lasso-B=0-M=3			25	5	0.7
+HSIC_lasso-B=10-M=3			50	7	0.75
+HSIC_lasso-B=10-M=3			25	5	0.65
+HSIC_lasso-B=5-M=3			25	5	0.95
+LARS			50	1	0.75
+HSIC_lasso-B=5-M=3			50	7	0.8
+HSIC_lasso-B=5-M=3			10	8	0.55
+mRMR			10	8	0.75
+mRMR			10	9	0.65
+HSIC_lasso-B=50-M=3			10	8	0.6
+HSIC_lasso-B=50-M=3			10	9	0.45
+HSIC_lasso-B=0-M=3			10	9	0.45
+HSIC_lasso-B=50-M=3			25	8	0.8
+HSIC_lasso-B=0-M=3			10	8	0.75
+HSIC_lasso-B=0-M=3			25	8	0.75
+LARS			10	6	0.55
+HSIC_lasso-B=10-M=3			10	8	0.5
+HSIC_lasso-B=10-M=3			10	9	0.4
+HSIC_lasso-B=10-M=3			25	8	0.85
+HSIC_lasso-B=5-M=3			10	9	0.55
+mRMR			25	8	0.95
+HSIC_lasso-B=5-M=3			25	8	0.75
+mRMR			50	5	1.0
+HSIC_lasso-B=10-M=3			50	5	0.75
+HSIC_lasso-B=50-M=3			50	5	0.75
+mRMR			50	2	0.9
+LARS			25	9	0.65
+HSIC_lasso-B=50-M=3			50	2	0.7
+HSIC_lasso-B=50-M=3			10	3	0.4
+HSIC_lasso-B=0-M=3			50	2	0.7
+HSIC_lasso-B=0-M=3			50	5	0.75
+HSIC_lasso-B=10-M=3			50	2	0.75
+HSIC_lasso-B=10-M=3			10	3	0.7
+HSIC_lasso-B=0-M=3			10	3	0.65
+HSIC_lasso-B=5-M=3			50	5	0.8
+HSIC_lasso-B=5-M=3			50	2	0.7
+HSIC_lasso-B=5-M=3			10	3	0.75
+LARS			25	2	0.65
+mRMR			10	3	0.85
+mRMR			25	4	0.85
+HSIC_lasso-B=50-M=3			25	4	0.85
+HSIC_lasso-B=0-M=3			25	4	0.55
+HSIC_lasso-B=0-M=3			10	7	0.5
+HSIC_lasso-B=10-M=3			25	4	0.65
+HSIC_lasso-B=10-M=3			10	7	0.55
+HSIC_lasso-B=5-M=3			25	4	0.7
+mRMR			10	7	0.9
+mRMR			50	8	0.9
+LARS			10	2	0.6
+mRMR			50	4	0.85
+mRMR			50	9	0.85
+HSIC_lasso-B=50-M=3			10	7	0.6
+HSIC_lasso-B=50-M=3			50	8	0.8
+HSIC_lasso-B=50-M=3			50	4	0.6
+HSIC_lasso-B=50-M=3			50	9	0.6
+HSIC_lasso-B=0-M=3			50	4	0.65
+HSIC_lasso-B=10-M=3			50	8	0.85
+HSIC_lasso-B=0-M=3			50	8	0.65
+HSIC_lasso-B=10-M=3			50	4	0.65
+LARS			25	10	0.65
+HSIC_lasso-B=5-M=3			50	4	0.7
+HSIC_lasso-B=5-M=3			10	7	0.55
+HSIC_lasso-B=5-M=3			50	8	0.85
+mRMR			25	7	0.95
+HSIC_lasso-B=50-M=3			25	7	0.75
+HSIC_lasso-B=50-M=3			25	3	0.6
+HSIC_lasso-B=0-M=3			25	7	0.8
+HSIC_lasso-B=10-M=3			50	9	0.5
+HSIC_lasso-B=10-M=3			25	7	0.75
+HSIC_lasso-B=5-M=3			25	7	0.7
+LARS			25	5	0.65
+mRMR			25	3	0.85
+HSIC_lasso-B=5-M=3			25	3	0.8
+HSIC_lasso-B=5-M=3			50	9	0.7
+HSIC_lasso-B=0-M=3			50	9	0.55
+HSIC_lasso-B=10-M=3			25	3	0.7
+mRMR			10	1	0.85
+HSIC_lasso-B=0-M=3			25	3	0.8
+HSIC_lasso-B=50-M=3			10	1	0.5
+HSIC_lasso-B=0-M=3			10	1	0.5
+HSIC_lasso-B=10-M=3			10	1	0.75
+LARS			50	7	0.8
+HSIC_lasso-B=5-M=3			10	1	0.75
+LARS			10	8	0.65
+mRMR			10	5	0.9
+LARS			10	9	0.35
+LARS			25	8	0.7
+LARS			50	5	0.7
+mRMR			50	6	0.9
+LARS			50	2	0.7
+HSIC_lasso-B=50-M=3			10	5	0.4
+HSIC_lasso-B=50-M=3			10	10	0.45
+mRMR			25	6	0.9
+HSIC_lasso-B=50-M=3			50	6	0.65
+HSIC_lasso-B=0-M=3			10	5	0.65
+LARS			10	10	0.65
+HSIC_lasso-B=50-M=3			25	6	0.8
+HSIC_lasso-B=0-M=3			10	10	0.7
+HSIC_lasso-B=0-M=3			50	6	0.65
+HSIC_lasso-B=50-M=3			25	1	0.5
+LARS			10	3	0.7
+LARS			25	4	0.7
+HSIC_lasso-B=10-M=3			10	5	0.7
+HSIC_lasso-B=10-M=3			10	10	0.45
+HSIC_lasso-B=10-M=3			50	6	0.65
+HSIC_lasso-B=0-M=3			25	6	0.65
+mRMR			10	10	0.75
+LARS			10	7	0.75
+HSIC_lasso-B=0-M=3			25	1	0.7
+HSIC_lasso-B=5-M=3			10	5	0.9
+HSIC_lasso-B=10-M=3			25	6	0.75
+HSIC_lasso-B=5-M=3			10	10	0.45
+HSIC_lasso-B=5-M=3			50	6	0.85
+HSIC_lasso-B=5-M=3			25	6	0.5
+mRMR			25	1	0.9
+HSIC_lasso-B=10-M=3			25	1	0.75
+HSIC_lasso-B=5-M=3			25	1	0.7
+LARS			50	6	0.8
+mRMR			10	4	0.9
+LARS			50	8	0.8
+HSIC_lasso-B=10-M=3			10	4	0.75
+HSIC_lasso-B=50-M=3			10	4	0.75
+LARS			50	4	0.65
+mRMR			50	10	0.75
+HSIC_lasso-B=0-M=3			10	4	0.75
+HSIC_lasso-B=50-M=3			50	10	0.6
+HSIC_lasso-B=0-M=3			50	10	0.7
+HSIC_lasso-B=10-M=3			50	10	0.45
+LARS			25	6	0.8
+LARS			50	9	0.5
+HSIC_lasso-B=5-M=3			10	4	0.5
+HSIC_lasso-B=5-M=3			50	10	0.7
+HSIC_lasso-B=50-M=3			50	3	0.9
+HSIC_lasso-B=5-M=3			50	3	0.75
+mRMR			50	3	1.0
+mRMR			50	1	0.85
+HSIC_lasso-B=50-M=3			50	1	0.7
+mRMR			10	6	0.65
+LARS			25	7	0.7
+LARS			25	1	0.6
+HSIC_lasso-B=0-M=3			50	1	0.9
+HSIC_lasso-B=50-M=3			10	6	0.75
+LARS			25	3	0.9
+HSIC_lasso-B=0-M=3			50	3	0.75
+HSIC_lasso-B=10-M=3			50	1	0.8
+HSIC_lasso-B=10-M=3			10	6	0.6
+HSIC_lasso-B=10-M=3			50	3	0.9
+HSIC_lasso-B=0-M=3			10	6	0.6
+HSIC_lasso-B=5-M=3			50	1	0.7
+HSIC_lasso-B=5-M=3			10	6	0.6
+LARS			10	4	0.7
+mRMR			25	9	0.75
+LARS			10	1	0.7
+HSIC_lasso-B=0-M=3			25	9	0.8
+HSIC_lasso-B=50-M=3			25	9	0.65
+mRMR			25	2	0.9
+mRMR			10	2	0.9
+mRMR			25	10	0.85
+HSIC_lasso-B=50-M=3			10	2	0.7
+HSIC_lasso-B=50-M=3			25	10	0.65
+HSIC_lasso-B=50-M=3			25	2	0.95
+LARS			50	10	0.65
+HSIC_lasso-B=10-M=3			10	2	0.45
+HSIC_lasso-B=0-M=3			25	10	0.7
+HSIC_lasso-B=10-M=3			25	9	0.6
+HSIC_lasso-B=10-M=3			25	2	0.7
+HSIC_lasso-B=5-M=3			10	2	0.6
+HSIC_lasso-B=0-M=3			25	2	0.8
+HSIC_lasso-B=5-M=3			25	10	0.65
+HSIC_lasso-B=0-M=3			10	2	0.35
+HSIC_lasso-B=5-M=3			25	9	0.8
+HSIC_lasso-B=5-M=3			25	2	0.7
