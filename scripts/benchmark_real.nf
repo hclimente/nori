@@ -190,8 +190,8 @@ process join_prediction_analyses {
         file "${input_file.baseName}_prediction.tsv"
 
     """
-    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
-    cat prediction_stats* >>${input_file.baseName}_prediction.tsv
+    echo 'model\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
+    cat prediction_stats* | cut -f1,4- >>${input_file.baseName}_prediction.tsv
     """
 
 }
