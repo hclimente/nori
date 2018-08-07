@@ -94,7 +94,7 @@ process run_localized_hsic_lasso {
 
     clusterOptions = '-V -jc pcc-large'
     validExitStatus 0,77
-    //errorStrategy 'ignore'
+    errorStrategy 'ignore'
 
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
