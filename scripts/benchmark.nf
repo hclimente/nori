@@ -11,7 +11,7 @@ params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 
 params.data_generation = 'yamada_additive'
-if (params.data_generation == 'random') causal = [10, 25, 50]
+if (params.data_generation == 'random') causal = [5, 10, 20]
 else if (params.data_generation == 'yamada_additive') causal = 4
 else if (params.data_generation == 'yamada_nonadditive') causal = 3
 

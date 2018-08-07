@@ -19,9 +19,9 @@ funs = np.random.choice(np.arange(len(F)), ${C})
 
 print('Y = 0', end='')
 for i in range(${C}):
-print(' + {}(X[{},],{})'.format(f.__name__, F[funs[i]][0], F[funs[i]][1]), end='')
+    print(' + {}(X[{},],{})'.format(f.__name__, F[funs[i]][0], F[funs[i]][1]), end='')
 
-for set_type,n in zip(['train', 'test'], [${N}, 100]:
+for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
     x = 10 * np.random.randn(${D}, n)
     y = np.zeros((1, n))

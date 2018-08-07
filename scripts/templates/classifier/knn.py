@@ -30,7 +30,7 @@ except IndexError:
 
 y_train = np.load("${Y_TRAIN}").squeeze()
 
-clf = KNeighborsClassifier()
+clf = KNeighborsClassifier(weights = 'distance')
 clf.fit(x_train, y_train)
 
 x_val = np.load("${X_TEST}").T
