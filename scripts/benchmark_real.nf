@@ -29,8 +29,7 @@ params.B = '0'
 B = params.B .split(",")
 
 // localized HSIC lasso
-params.lhl_path = '/Users/hclimente/projects/lHSICLasso'
-lhl_main_pkg = file("$params.lhl_path/pyHSICLasso")
+params.lhl_path = ''
 
 //  GENERATE DATA
 /////////////////////////////////////
@@ -126,23 +125,30 @@ process run_hsic_lasso {
 
 }
 
-process run_localized_hsic_lasso {
+if (params.lhl_path != '') {
 
-    clusterOptions = '-V -jc pcc-large'
-    validExitStatus 0,77
-    //errorStrategy 'ignore'
+    lhl_main_pkg = file("$params.lhl_path/pyHSICLasso/")
 
-    input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
-        file lhl_main_pkg
-        each HL_SELECT from params.hl_select
-    
-    output:
-        set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+    process run_localized_hsic_lasso {
 
-    script:
-    template 'feature_selection/localized_hsic_lasso.py'
+        clusterOptions = '-V -jc pcc-large'
+        validExitStatus 0,77
+        //errorStrategy 'ignore'
 
+        input:
+            set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
+            file lhl_main_pkg
+            each HL_SELECT from params.hl_select
+        
+        output:
+            set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+
+        script:
+        template 'feature_selection/localized_hsic_lasso.py'
+
+    }
+} else {
+    features_lhsic = Channel. empty()
 }
 
 process run_mrmr {
