@@ -164,7 +164,7 @@ process join_feature_analyses {
 
     """
     echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >${params.data_generation}_feature_selection.tsv
-    cat feature_stats* >>${params.data_generation}_feature_selection.tsv
+    cat feature_stats* | sort >>${params.data_generation}_feature_selection.tsv
     """
 
 }
@@ -218,7 +218,7 @@ process join_prediction_analyses {
 
     """
     echo 'model\tsamples\tfeatures\tcausal\ti\t$STAT' >${params.data_generation}_prediction.tsv
-    cat prediction_stats* >>${params.data_generation}_prediction.tsv
+    cat prediction_stats* | sort >>${params.data_generation}_prediction.tsv
     """
 
 }

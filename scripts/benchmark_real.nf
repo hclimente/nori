@@ -220,7 +220,7 @@ process join_prediction_analyses {
 
     """
     echo 'model\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
-    cat prediction_stats* | cut -f1,4- >>${input_file.baseName}_prediction.tsv
+    cat prediction_stats* | cut -f1,4- | sort >>${input_file.baseName}_prediction.tsv
     """
 
 }
