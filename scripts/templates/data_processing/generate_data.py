@@ -19,20 +19,18 @@ funs = np.random.choice(np.arange(len(F)), ${C})
 
 print('Y = 0', end='')
 for i in range(${C}):
-    print(' + {}(X[{},],{})'.format(f.__name__, F[funs[i]][0], F[funs[i]][1]), end='')
+    f,args = F[funs[i]]
+    print(' + {}(x{},{})'.format(f.__name__, i, args), end='')
 
 for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
-    x = 10 * np.random.randn(n, ${D})
+    x = np.random.randn(n, ${D})
     y = np.zeros(n)
 
     for i in range(${C}):
         f,args = F[funs[i]]
+        y += f(x[:,i], args)
         
-        y_x = f(x[:,i], args)
-        # normalize
-        y += (y_x - min(y_x))/(max(y_x) - min(y_x))
-
     np.save("x_{}.npy".format(set_type), x)
     np.save("y_{}.npy".format(set_type), y)
 
