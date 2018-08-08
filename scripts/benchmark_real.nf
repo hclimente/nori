@@ -25,7 +25,7 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 params.hl_select = 50
 params.M = 3
 M = params.M
-params.B = '0'
+params.B = '0,5,10'
 B = params.B .split(",")
 
 // localized HSIC lasso
