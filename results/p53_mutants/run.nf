@@ -63,7 +63,7 @@ process regression {
   """
   nextflow run $binSplit --x X.npy --y Y.npy -profile cluster
   nextflow run $binKernelSVM --x_train x_train.npy --y_train y_train.npy --x_val x_val.npy --selected_features $features --model SVC -profile cluster
-  nextflow run $binEvaluatePredictions --y_val y_val.npy --predictions predictions.npy --stat stat --n None --d None --causal $c --i None --model hsic_lasso-b$B -profile cluster
+  nextflow run $binEvaluatePredictions --y_val y_val.npy --predictions y_pred.npy --stat stat --n None --d None --causal $c --i None --model hsic_lasso-b$B -profile cluster
   """
 
 }

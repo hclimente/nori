@@ -14,17 +14,17 @@ Output files:
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-x = np.load("${X}").T
-y = np.load("${Y}").T
+x = np.load("${X}")
+y = np.load("${Y}")
 
 n = x.shape[0]
 perm = np.random.permutation(n)
 x = x[perm,:]
-y = y[perm,:]
+y = y[perm]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = ${SPLIT})
 
-np.save("x_train.npy", x_train.T)
-np.save("x_test.npy", x_test.T)
-np.save("y_train.npy", y_train.T)
-np.save("y_test.npy", y_test.T)
+np.save("x_train.npy", x_train)
+np.save("x_test.npy", x_test)
+np.save("y_train.npy", y_train)
+np.save("y_test.npy", y_test)

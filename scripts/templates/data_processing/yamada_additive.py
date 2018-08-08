@@ -18,9 +18,8 @@ def additive(x1, x2, x3, x4):
     return - 2*np.sin(2*x1) + np.square(x2) + x3 + np.exp(-x4) + e
 
 for set_type in ['train', 'test']:
-    x = np.random.randn(${D}, ${N})
-    y = additive(x[0,:], x[1,:], x[2,:], x[3,:])
-    y = np.expand_dims(y, 0)
+    x = np.random.randn(${N}, ${D})
+    y = additive(x[:,0], x[:,1], x[:,2], x[:,3])
 
     np.save("x_{}.npy".format(set_type), x)
     np.save("y_{}.npy".format(set_type), y)

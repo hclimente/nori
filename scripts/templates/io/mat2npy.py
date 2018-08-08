@@ -13,11 +13,11 @@ from scipy import io as spio
 
 data = spio.loadmat("${INPUT_FILE}")
 
-x = data["X"].T
-y = data["Y"].T
+x = data["X"]
+y = data["Y"].squeeze()
 
-d = x.shape[0]
-featname = [('%d' % i) for i in range(1,d+1)]
+d = x.shape[1]
+featname = [('%d' % i) for i in range(1, d+1)]
 
 np.save("x.npy", x)
 np.save("y.npy", y)

@@ -1,31 +1,31 @@
 #!/usr/bin/env python
 '''
 Input variables:
-    - X_TRAIN: path of a numpy array with x.
+    - X_TRAIN: path of a numpy array with _train
     - Y_TRAIN: path of a numpy array with y.
     - MODE: regression or classification.
     - C: number of features to select.
 Output files:
-    - selected_features.npy: numpy array with the 0-based index of 
+    - features_mrmr.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
 import numpy as np
 import subprocess
 
-x = np.load("${X_TRAIN}")
-y = np.load("${Y_TRAIN}")
+x_train = np.load("${X_TRAIN}")
+y_train = np.load("${Y_TRAIN}")
 
 # write dataset
-ds = np.vstack((y,x)).T
-cols = 'y,' + ','.join([ str(x) for x in np.arange(x.shape[0])])
+ds = np.hstack((np.expand_dims(y_train, axis = 1), x_train))
+cols = 'y,' + ','.join([ str(feat) for feat in np.arange(x_train.shape[1])])
 
 np.savetxt('dataset.csv', ds, header = cols, fmt='%1.3f',
            delimiter = ',', comments='')
 discretization = '-t 0' if '${MODE}' == 'regression' else ''
 
 # run mrmr
-features,samples = x.shape
+samples,features = x_train.shape
 out = subprocess.check_output(['mrmr', '-i', 'dataset.csv', discretization, '-n', 
                                '${C}', '-s', str(samples), '-v', str(features)])
 
@@ -39,4 +39,4 @@ for line in out.decode('ascii').split('\\n'):
         flag = True
 
 feats_pred = np.array(features)
-np.save('selected_features.npy', feats_pred)
+np.save('features_mrmr.npy', feats_pred)

@@ -23,13 +23,13 @@ for i in range(${C}):
 
 for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
-    x = 10 * np.random.randn(${D}, n)
-    y = np.zeros((1, n))
+    x = 10 * np.random.randn(n, ${D})
+    y = np.zeros(n)
 
     for i in range(${C}):
         f,args = F[funs[i]]
         
-        y_x = f(x[i,:], args)
+        y_x = f(x[:,i], args)
         # normalize
         y += (y_x - min(y_x))/(max(y_x) - min(y_x))
 

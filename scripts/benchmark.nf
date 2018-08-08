@@ -62,7 +62,7 @@ process run_lars {
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lars
+        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -82,7 +82,7 @@ process run_hsic_lasso {
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_hl.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -105,7 +105,7 @@ if (params.lhl_path != '') {
             each HL_SELECT from params.hl_select
         
         output:
-            set val('localized_HSIC_lasso'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+            set val('localized_HSIC_lasso'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
         script:
         template 'feature_selection/localized_hsic_lasso.py'
@@ -123,7 +123,7 @@ process run_mrmr {
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_mrmr
+        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_mrmr.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -180,7 +180,7 @@ process prediction {
         set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
-        set MODEL,N,D,I,C, file(Y_TEST),'predictions.npy' into predictions
+        set MODEL,N,D,I,C, file(Y_TEST),'y_pred.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'

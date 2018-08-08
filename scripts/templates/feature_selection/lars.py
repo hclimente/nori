@@ -5,7 +5,7 @@ Input variables:
     - Y_TRAIN: path of a numpy array with y.
     - C: number of features to select.
 Output files:
-    - selected_features.npy: numpy array with the 0-based index of 
+    - features_lars.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -13,12 +13,12 @@ import numpy as np
 from sklearn.linear_model import Lars
 from sklearn.feature_selection import SelectFromModel
 
-x_train = np.load('${X_TRAIN}').T
-y_train = np.load('${Y_TRAIN}').squeeze()
+x_train = np.load('${X_TRAIN}')
+y_train = np.load('${Y_TRAIN}')
 
 clf = Lars(n_nonzero_coefs = ${C})
 clf.fit(x_train, y_train)
 
 sfm = SelectFromModel(clf, prefit = True)
 features = np.where(sfm.get_support())[0]
-np.save('selected_features.npy', features)
+np.save('features_lars.npy', features)

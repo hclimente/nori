@@ -6,8 +6,9 @@ Input variables:
     - Y_TRAIN: path to numpy array with train Y vector.
     - X_TEST: path to numpy array with validation X matrix.
     - C: number of causal features.
+    - MODE: regression or classification.
 Output files:
-    - predictions.npy
+    - y_pred.npy
 '''
 
 import numpy as np
@@ -15,9 +16,9 @@ import xgboost as xgb
 from sklearn.model_selection import GridSearchCV
 
 selected_features = np.load("${SELECTED_FEATURES}")
-x_train = np.load("${X_TRAIN}").T
-x_test = np.load("${X_TEST}").T
-y_train = np.load("${Y_TRAIN}").squeeze()
+x_train = np.load("${X_TRAIN}")
+x_test = np.load("${X_TEST}")
+y_train = np.load("${Y_TRAIN}")
 y_train -= 1
 
 try:
@@ -29,25 +30,19 @@ try:
 except IndexError:
     import sys, traceback
     traceback.print_exc()
-    np.save('predictions.npy', np.array([]))
+    np.save('y_pred.npy', np.array([]))
     sys.exit(77)
 
-dtrain = xgb.DMatrix(x_train, label=y_train)
-dtest = xgb.DMatrix(x_test)
+grid_param = {
+    'eta': [.3, .2, .1, .05, .01, .005],  # the training step for each iteration
+}
 
-param = {
-    'max_depth': 3,  # the maximum depth of each tree
-    'eta': 0.3,  # the training step for each iteration
-    'silent': 1,  # logging mode - quiet
-    'objective': 'multi:softprob',  # error evaluation for multiclass training
-    'num_class': len(np.unique(y_train))}  # the number of classes that exist in this datset
-num_round = 20  # the number of training iterations
+clf = xgb.XGBClassifier(objective = 'multi:softmax') if '${MODE}' == 'classification' else xgb.XGBRegressor()
 
-bst = xgb.train(param, dtrain, num_round)
-y_p = bst.predict(dtest)
-y_pred = np.argmax(y_p, axis = 1) + 1
-np.save('predictions.npy', y_pred)
+cv_clf = GridSearchCV(estimator = clf, param_grid = grid_param)
+cv_clf.fit(x_train, y_train, num_class = len(np.unique(y_train)))
 
-
+y_pred = cv_clf.predict(x_test) + 1
+np.save('y_pred.npy', y_pred)
 
 

@@ -8,16 +8,15 @@ Input variables:
     - MODE: regression or classification.
     - C: number of causal features.
 Output files:
-    - predictions.npy
+    - y_pred.npy
 '''
-
 
 import numpy as np
 from sklearn import svm
 from sklearn.model_selection import GridSearchCV
 
 selected_features = np.load("${SELECTED_FEATURES}")
-x_train = np.load('${X_TRAIN}').T
+x_train = np.load('${X_TRAIN}')
 
 try:
     if not selected_features.any():
@@ -27,10 +26,10 @@ try:
 except IndexError:
     import sys, traceback
     traceback.print_exc()
-    np.save('predictions.npy', np.array([]))
+    np.save('y_pred.npy', np.array([]))
     sys.exit(77)
 
-y_train = np.load("${Y_TRAIN}").squeeze()
+y_train = np.load("${Y_TRAIN}")
 
 if '${MODE}' == 'regression':
     clf = svm.SVR()
@@ -38,10 +37,10 @@ elif '${MODE}' == 'classification':
     clf = svm.SVC()
 
 Cs = np.logspace(-6, 1, 10)
-clf = GridSearchCV(estimator=clf, param_grid=dict(C=Cs))
-clf.fit(x_train, y_train)
+cv_clf = GridSearchCV(estimator=clf, param_grid=dict(C=Cs))
+cv_clf.fit(x_train, y_train)
 
-x_val = np.load("${X_TEST}").T
+x_val = np.load("${X_TEST}")
 x_val = x_val[:, selected_features]
-predictions = clf.predict(x_val)
-np.save('predictions.npy', predictions)
+y_pred = cv_clf.predict(x_val)
+np.save('y_pred.npy', y_pred)

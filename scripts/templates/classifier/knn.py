@@ -7,7 +7,7 @@ Input variables:
     - X_TEST: path to numpy array with validation X matrix.
     - C: number of causal features.
 Output files:
-    - predictions.npy
+    - y_pred.npy
 '''
 
 import numpy as np
@@ -15,7 +15,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 
 selected_features = np.load("${SELECTED_FEATURES}")
-x_train = np.load("${X_TRAIN}").T
+x_train = np.load("${X_TRAIN}")
 
 try:
     if not selected_features.any():
@@ -25,15 +25,15 @@ try:
 except IndexError:
     import sys, traceback
     traceback.print_exc()
-    np.save('predictions.npy', np.array([]))
+    np.save('y_pred.npy', np.array([]))
     sys.exit(77)
 
-y_train = np.load("${Y_TRAIN}").squeeze()
+y_train = np.load("${Y_TRAIN}")
 
 clf = KNeighborsClassifier(weights = 'distance')
 clf.fit(x_train, y_train)
 
-x_val = np.load("${X_TEST}").T
-x_val = x_val[:, selected_features]
-predictions = clf.predict(x_val)
-np.save('predictions.npy', predictions)
+x_test = np.load("${X_TEST}")
+x_test = x_test[:, selected_features]
+y_pred = clf.predict(x_test)
+np.save('y_pred.npy', y_pred)

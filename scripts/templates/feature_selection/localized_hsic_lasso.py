@@ -7,7 +7,7 @@ Input variables:
     - MODE: regression or classification.
     - HL_SELECT: number of features to select.
 Output files:
-    - selected_features.npy: numpy array with the 0-based index of 
+    - features_lhl.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -16,8 +16,9 @@ from pyHSICLasso.api import lHSICLasso
 
 hl = lHSICLasso()
 
-hl.X_in = np.load("${X_TRAIN}")
-hl.Y_in = np.load("${Y_TRAIN}")
+hl.X_in = np.load("${X_TRAIN}").T
+hl.Y_in = np.load("${Y_TRAIN}").T
+hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
 try:
@@ -25,7 +26,7 @@ try:
 except MemoryError:
     import sys, traceback
     traceback.print_exc()
-    np.save('selected_features.npy', np.array([]))
+    np.save('features_lhl.npy', np.array([]))
     sys.exit(77)
 
-np.save('selected_features.npy', hl.A)
+np.save('features_lhl.npy', hl.A)

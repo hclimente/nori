@@ -9,7 +9,7 @@ Input variables:
     - HL_B: size of the block.
     - HL_M: number of permutations.
 Output files:
-    - selected_features.npy: numpy array with the 0-based index of 
+    - features_hl.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -18,8 +18,9 @@ from pyHSICLasso import HSICLasso
 
 hl = HSICLasso()
 
-hl.X_in = np.load("${X_TRAIN}")
-hl.Y_in = np.load("${Y_TRAIN}")
+hl.X_in = np.load("${X_TRAIN}").T
+hl.Y_in = np.load("${Y_TRAIN}").T
+hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
 d,n = hl.X_in.shape
@@ -34,7 +35,7 @@ try:
 except MemoryError:
     import sys, traceback
     traceback.print_exc()
-    np.save('selected_features.npy', np.array([]))
+    np.save('features_hl.npy', np.array([]))
     sys.exit(77)
 
-np.save('selected_features.npy', hl.A)
+np.save('features_hl.npy', hl.A)

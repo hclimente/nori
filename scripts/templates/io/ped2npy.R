@@ -17,6 +17,6 @@ gwas <- read.pedfile("${PED}", snps = "${MAP}")
 X <- as(gwas\$genotypes, "numeric")
 Y <- gwas\$fam\$affected
 
-npySave('x_train.npy', X)
-npySave('y_train.npy', Y)
+npySave('x.npy', X)
+npySave('y.npy', Y)
 npySave('featnames.npy', gwas\$map\$snp)

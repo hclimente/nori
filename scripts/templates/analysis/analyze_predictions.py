@@ -18,15 +18,15 @@ import csv
 import numpy as np
 from sklearn.metrics import accuracy_score, mean_squared_error
 
-y_true = np.load('${Y_TEST}').squeeze()
+y_test = np.load('${Y_TEST}')
 y_pred = np.load('${Y_PRED}')
 
 score = np.nan
 if len(y_pred):
     if '${MODE}' == 'regression':
-        score = mean_squared_error(y_true, y_pred, multioutput = 'uniform_average')
+        score = mean_squared_error(y_test, y_pred, multioutput = 'uniform_average')
     else:
-        score = accuracy_score(y_true, y_pred)
+        score = accuracy_score(y_test, y_pred)
 
 row = ['$MODEL', ${N}, ${D}, ${C}, ${I}, score ]
 

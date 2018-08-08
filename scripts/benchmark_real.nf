@@ -52,12 +52,27 @@ process read_data {
 
 }
 
-process split_data {
+process normalize_data {
 
     clusterOptions = '-V -jc pcc-skl'
 
     input:
         file X
+
+    output:
+        file "x_normalized.npy" into normalized_X
+
+    script:
+    template 'data_processing/normalize.py'
+
+}
+
+process split_data {
+
+    clusterOptions = '-V -jc pcc-skl'
+
+    input:
+        file X from normalized_X
         file Y
         file FEATNAMES
         each I from 1..params.perms
@@ -71,24 +86,9 @@ process split_data {
 
 }
 
-process normalize_data {
-
-    clusterOptions = '-V -jc pcc-skl'
-
-    input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from split_data
-
-    output:
-        set val(C), val(I), "x_train_normalized.npy","y_train.npy","x_test_normalized.npy","y_test.npy","featnames.npy" into normalized_splits
-
-    script:
-    template 'data_processing/normalize.py'
-
-}
-
 //  FEATURE SELECTION
 /////////////////////////////////////
-normalized_splits.into { data_hsic; data_lhsic; data_lasso; data_mrmr }
+split_data.into { data_hsic; data_lhsic; data_lasso; data_mrmr }
 
 process run_lars {
 
@@ -98,7 +98,7 @@ process run_lars {
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lars
+        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
 
     script:
     template 'feature_selection/lars.py'
@@ -118,7 +118,7 @@ process run_hsic_lasso {
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_hl.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -141,7 +141,7 @@ if (params.lhl_path != '') {
             each HL_SELECT from params.hl_select
         
         output:
-            set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+            set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
         script:
         template 'feature_selection/localized_hsic_lasso.py'
@@ -159,7 +159,7 @@ process run_mrmr {
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_mrmr
+        set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_mrmr.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -181,11 +181,11 @@ process prediction {
         set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
-        set MODEL,C,I, file(Y_TEST),'predictions.npy' into predictions
+        set MODEL,C,I, file(Y_TEST),'y_pred.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
-    else if (MODE == 'classification') template 'classifier/xgboost.py'
+    else if (MODE == 'classification') template 'classifier/knn.py'
 
 }
 

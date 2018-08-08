@@ -6,7 +6,7 @@ Input variables:
     - FEATNAMES: path of a numpy array with feature names.
     - MODE: regression or classification.
 Output files:
-    - selected_features.npy: numpy array with the 0-based index of 
+    - features_lasso.npy: numpy array with the 0-based index of 
     the selected features.
 '''
 
@@ -16,8 +16,8 @@ import numpy as np
 from sklearn import linear_model
 from sklearn.feature_selection import SelectFromModel
 
-x_train = np.load('${X_TRAIN}').T
-y_train = np.load('${Y_TRAIN}').squeeze()
+x_train = np.load('${X_TRAIN}')
+y_train = np.load('${Y_TRAIN}')
 featnames = np.load('${FEATNAMES}')
 
 if '${MODE}' == 'regression':
@@ -29,4 +29,4 @@ clf.fit(x_train, y_train)
 
 sfm = SelectFromModel(clf, prefit = True)
 features = featnames[sfm.get_support()]
-np.save('selected_features.npy', features)
+np.save('features_lasso.npy', features)
