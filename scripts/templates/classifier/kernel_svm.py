@@ -17,30 +17,31 @@ from sklearn.model_selection import GridSearchCV
 
 selected_features = np.load("${SELECTED_FEATURES}")
 x_train = np.load('${X_TRAIN}')
+y_train = np.load("${Y_TRAIN}")
+x_test = np.load("${X_TEST}")
 
+# filter matrix by extracted features
 try:
     if not selected_features.any():
         raise IndexError('No selected features')
     selected_features = selected_features[0:${C}]
     x_train = x_train[:, selected_features]
+    x_test = x_test[:, selected_features]
 except IndexError:
     import sys, traceback
     traceback.print_exc()
     np.save('y_pred.npy', np.array([]))
     sys.exit(77)
 
-y_train = np.load("${Y_TRAIN}")
-
+# cv, build model and predict
 if '${MODE}' == 'regression':
     clf = svm.SVR()
 elif '${MODE}' == 'classification':
     clf = svm.SVC()
 
-Cs = np.logspace(-6, 1, 10)
-cv_clf = GridSearchCV(estimator=clf, param_grid=dict(C=Cs))
+param_grid = { 'C': np.logspace(-6, 1, 10) }
+cv_clf = GridSearchCV(estimator = clf, param_grid = param_grid)
 cv_clf.fit(x_train, y_train)
 
-x_val = np.load("${X_TEST}")
-x_val = x_val[:, selected_features]
-y_pred = cv_clf.predict(x_val)
+y_pred = cv_clf.predict(x_test)
 np.save('y_pred.npy', y_pred)
