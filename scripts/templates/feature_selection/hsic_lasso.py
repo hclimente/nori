@@ -25,11 +25,6 @@ hl.featname = np.load("${FEATNAMES}")
 
 d,n = hl.X_in.shape
 
-if $HL_B:
-    discard = np.random.choice(np.arange(n), n % $HL_B, replace = False)
-    hl.X_in = np.delete(hl.X_in, discard, 1)
-    hl.Y_in = np.delete(hl.Y_in, discard, 1)
-
 try:
     hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M)
 except MemoryError:
