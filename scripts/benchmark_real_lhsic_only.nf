@@ -23,17 +23,9 @@ params.mode = 'classification'
 MODE = params.mode
 stat = (MODE == 'regression')? 'mse' : 'accuracy'
 
-// HSIC lasso
-params.hl_select = 50
-params.M = 3
-M = params.M
-params.B = '0'
-B = params.B .split(",")
-
-// lHSIC
-params.num_clusters = [5, 10, 15]
-
 // localized HSIC lasso
+params.lhl_select = 50
+params.num_clusters = [5, 10, 15]
 params.lhl_path = ''
 
 //  GENERATE DATA
@@ -57,12 +49,27 @@ process read_data {
 
 }
 
-process split_data {
+process normalize_data {
 
     clusterOptions = '-V -jc pcc-skl'
 
     input:
         file X
+
+    output:
+        file "x_normalized.npy" into normalized_X
+
+    script:
+    template 'data_processing/normalize.py'
+
+}
+
+process split_data {
+
+    clusterOptions = '-V -jc pcc-skl'
+
+    input:
+        file X from normalized_X
         file Y
         file FEATNAMES
         each I from 1..params.perms
@@ -76,46 +83,29 @@ process split_data {
 
 }
 
-process normalize_data {
+//  FEATURE SELECTION
+/////////////////////////////////////
+lhl_main_pkg = file("$params.lhl_path/pyHSICLasso/")
 
-    clusterOptions = '-V -jc pcc-skl'
+process run_localized_hsic_lasso {
+
+    clusterOptions = '-V -jc pcc-large'
+    validExitStatus 0,77
+    //errorStrategy 'ignore'
 
     input:
         set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from split_data
-
+        file lhl_main_pkg
+        each HL_SELECT from params.lhl_select
+        each LHL_NUM_CLUSTERS from params.num_clusters
+    
     output:
-        set val(C), val(I), "x_train_normalized.npy","y_train.npy","x_test_normalized.npy","y_test.npy","featnames.npy" into normalized_splits
+        set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
     script:
-    template 'data_processing/normalize.py'
+    template 'feature_selection/localized_hsic_lasso.py'
 
 }
-
-//  FEATURE SELECTION
-/////////////////////////////////////
-
-
-    lhl_main_pkg = file("$params.lhl_path/pyHSICLasso/")
-
-    process run_localized_hsic_lasso {
-
-        clusterOptions = '-V -jc pcc-large'
-        validExitStatus 0,77
-        //errorStrategy 'ignore'
-
-        input:
-            set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from normalized_splits
-            file lhl_main_pkg
-            each HL_SELECT from params.hl_select
-            each LHL_NUM_CLUSTERS from params.num_clusters
-        
-        output:
-            set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
-
-        script:
-        template 'feature_selection/localized_hsic_lasso.py'
-
-    }
 
 
 //  PREDICTION
