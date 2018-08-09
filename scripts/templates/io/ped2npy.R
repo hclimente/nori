@@ -19,4 +19,4 @@ Y <- gwas\$fam\$affected
 
 npySave('x.npy', X)
 npySave('y.npy', Y)
-npySave('featnames.npy', gwas\$map\$snp)
+npySave('featnames.npy', seq(nrow(gwas\$map)) - 1 )
