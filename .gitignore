@@ -1,5 +1,8 @@
 ### Nextflow ###
 
+.idea/*
+*.pyc
+
 *work*
 *.nextflow*
 *trace.txt*
