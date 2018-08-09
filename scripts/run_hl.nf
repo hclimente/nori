@@ -31,11 +31,32 @@ process read_genotype {
         file MAP from file("${params.input}.map")
 
     output:
-        set 'x.npy', 'y.npy', 'featnames.npy' into data
+        file 'x.npy' into x
+        file 'y.npy' into y
+        file 'featnames.npy' into featnames
 
     script:
     template 'io/ped2npy.R' 
 
+}
+
+process recode_type {
+
+    input:
+        file x
+
+    output:
+        file 'x_int8.npy' into x_int8
+
+    """
+#!/usr/bin/env python
+import numpy as np
+
+x = np.load("$x")
+x = x.astype('int8')
+
+np.save('x_int8.npy', x)
+    """
 }
 
 //  FEATURE SELECTION
@@ -47,7 +68,9 @@ process run_hsic_lasso {
     errorStrategy 'ignore'
 
     input:
-        set file(X_TRAIN), file(Y_TRAIN), file(FEATNAMES) from data
+        file X_TRAIN from x_int8
+        file Y_TRAIN from y
+        file FEATNAMES from featnames
     
     output:
         file 'features_hl.npy' into feature_idx
