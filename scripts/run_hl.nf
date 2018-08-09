@@ -11,8 +11,8 @@ input_file = file(params.input)
 // HSIC lasso
 params.causal = 50
 params.select = 50
-params.M = 3
-params.B = 0
+params.M = '3, discrete_x = True'
+params.B = 5
 
 C = params.causal
 HL_SELECT = params.select

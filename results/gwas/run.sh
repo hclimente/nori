@@ -1,1 +1,1 @@
-../../scripts/run_hl.nf "$@" -profile cluster -resume
+../../scripts/run_hl.nf "$@" -profile cluster -resume -with-trace
