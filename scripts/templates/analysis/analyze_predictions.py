@@ -18,6 +18,7 @@ import csv
 import numpy as np
 from sklearn.metrics import accuracy_score, mean_squared_error
 
+print("load analyze_prediction.py")
 y_test = np.load('${Y_TEST}')
 y_pred = np.load('${Y_PRED}')
 

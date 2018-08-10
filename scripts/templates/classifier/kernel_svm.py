@@ -25,23 +25,31 @@ try:
     if not selected_features.any():
         raise IndexError('No selected features')
     selected_features = selected_features[0:${C}]
+    # print(selected_features)
+    # print(x_train.shape)
     x_train = x_train[:, selected_features]
     x_test = x_test[:, selected_features]
+    print("test1")
 except IndexError:
     import sys, traceback
     traceback.print_exc()
     np.save('y_pred.npy', np.array([]))
     sys.exit(77)
 
+print("test2")
 # cv, build model and predict
 if '${MODE}' == 'regression':
     clf = svm.SVR()
 elif '${MODE}' == 'classification':
     clf = svm.SVC()
 
+print("test3")
 param_grid = { 'C': np.logspace(-6, 1, 10) }
 cv_clf = GridSearchCV(estimator = clf, param_grid = param_grid)
 cv_clf.fit(x_train, y_train)
 
+print("test4")
 y_pred = cv_clf.predict(x_test)
 np.save('y_pred.npy', y_pred)
+
+print("test5")

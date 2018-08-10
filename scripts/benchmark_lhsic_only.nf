@@ -7,8 +7,8 @@ params.out = "."
 /////////////////////////////////////
 // setup
 params.perms = 10
-params.n = [100, 1000, 10000]
-params.d = [1000, 2500, 5000, 10000]
+params.n = [100] 
+params.d = [1000]
 
 params.data_generation = 'yamada_additive'
 if (params.data_generation == 'random') causal = [5, 10, 20]
@@ -19,6 +19,7 @@ else if (params.data_generation == 'yamada_nonadditive') causal = 3
 params.mode = 'regression'
 MODE = params.mode
 STAT = (MODE == 'regression')? 'mse' : 'accuracy'
+params.lhl_select = 50
 
 // localized HSIC lasso
 params.num_clusters = [5, 10, 15]
@@ -55,16 +56,16 @@ process run_localized_hsic_lasso {
 
     clusterOptions = '-V -jc pcc-large'
     validExitStatus 0,77
-    errorStrategy 'ignore'
+    //errorStrategy 'ignore'
 
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data
         file lhl_main_pkg
-        each HL_SELECT from params.hl_select
+        each HL_SELECT from params.lhl_select
         each LHL_NUM_CLUSTERS from params.num_clusters
     
     output:
-        set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'selected_features.npy' into features_lhsic
+        set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
     script:
     template 'feature_selection/localized_hsic_lasso.py'
@@ -120,7 +121,7 @@ process prediction {
         set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
-        set MODEL,N,D,I,C, file(Y_TEST),'predictions.npy' into predictions
+        set MODEL,N,D,I,C, file(Y_TEST),'y_pred.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
