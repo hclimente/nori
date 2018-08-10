@@ -65,7 +65,7 @@ process run_localized_hsic_lasso {
         each LHL_NUM_CLUSTERS from params.num_clusters
     
     output:
-        set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
+        set val("localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
     script:
     template 'feature_selection/localized_hsic_lasso.py'
