@@ -104,8 +104,8 @@ process join_feature_analyses {
         file "${params.data_generation}_feature_selection.tsv"
 
     """
-    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >${params.data_generation}_feature_selection.tsv
-    cat feature_stats* >>${params.data_generation}_feature_selection.tsv
+    echo 'model\tsamples\tfeatures\tcausal\tselected\ti\ttpr' >${params.data_generation}_feature_selection_lhsic.tsv
+    cat feature_stats* >>${params.data_generation}_feature_selection_lhsic.tsv
     """
 
 }
