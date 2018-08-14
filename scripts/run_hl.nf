@@ -24,7 +24,7 @@ MODE = 'classification'
 
 // READ DATA
 /////////////////////////////////////
-process read_genotype {
+process set_phenotypes {
 
     clusterOptions = '-V -jc pcc-skl'
 
@@ -33,10 +33,12 @@ process read_genotype {
         val Y from 1..10000
 
     output:
-        set 'x.npy', 'y.npy','featnames.npy' into experiment
+        set PED,'new_phenotype.map' into experiments
 
     script:
-    template 'io/ped2npy.R' 
+    """
+    awk '{\$6 = "$Y"; print}' $MAP >new_phenotype.map
+    """
 
 }
 
@@ -45,40 +47,31 @@ process merge_datasets {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file 'input*' from experiment. collect()
+        file 'input*' from experiments. collect()
+
+    output:
+        file 'merged.ped' into merged_ped
+        file 'merged.map' into merged_map
+
+    """
+    plink --ped input2 --map input1 --merge input4 input3 --allow-extra-chr --recode --out merged
+    """
+
+}
+
+process read_genotype {
+
+    clusterOptions = '-V -jc pcc-skl'
+
+    input:
+        file MAP from merged_map
+        file PED from merged_ped
 
     output:
         set 'x.npy', 'y.npy','featnames.npy' into gwas
-        file 'featnames.npy' into snps
 
-    """
-#!/usr/bin/env python
-import numpy as np
-from glob import glob
-
-X = []
-Y = []
-
-inputs = [ int(x[5:]) for x in glob('input*') ]
-
-for i in range(min(inputs), max(inputs), 3):
-    x = np.load('input' + str(i))
-    x = x.astype('int8')
-    X.append(x)
-
-    y = np.load('input' + str(i + 1))
-    y = y.astype('int8')
-    Y.append(y)
-
-    featnames = np.load('input' + str(i + 2))
-
-X = np.concatenate(X, axis = 0)
-Y = np.concatenate(Y, axis = 0)
-
-np.save('x.npy', X)
-np.save('y.npy', Y)
-np.save('featnames.npy', featnames)
-    """
+    script:
+    template 'io/ped2npy.R' 
 
 }
 
