@@ -1,1 +1,1 @@
-../../scripts/run_hl.nf --input test "$@"
+../../scripts/run_hl.nf "$@"

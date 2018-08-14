@@ -3,7 +3,9 @@
 params.projectdir = '../../'
 params.out = "."
 
-input_file = file(params.input)
+input_files = Channel
+    .fromFilePairs( '*.{ped,map}' )
+    .map { it -> it.flatten() }
 
 // PARAMETERS
 /////////////////////////////////////
@@ -27,36 +29,57 @@ process read_genotype {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file PED from file("${params.input}.ped")
-        file MAP from file("${params.input}.map")
+        set idx, file(PED), file(MAP) from input_files
+        val Y from 1..10000
 
     output:
-        file 'x.npy' into x
-        file 'y.npy' into y
-        file 'featnames.npy' into featnames
+        set 'x.npy', 'y.npy','featnames.npy' into experiment
 
     script:
     template 'io/ped2npy.R' 
 
 }
 
-process recode_type {
+process merge_datasets {
+
+    clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file x
+        file 'input*' from experiment. collect()
 
     output:
-        file 'x_int8.npy' into x_int8
+        set 'x.npy', 'y.npy','featnames.npy' into gwas
+        file 'featnames.npy' into snps
 
     """
 #!/usr/bin/env python
 import numpy as np
+from glob import glob
 
-x = np.load("$x")
-x = x.astype('int8')
+X = []
+Y = []
 
-np.save('x_int8.npy', x)
+inputs = [ int(x[5:]) for x in glob('input*') ]
+
+for i in range(min(inputs), max(inputs), 3):
+    x = np.load('input' + str(i))
+    x = x.astype('int8')
+    X.append(x)
+
+    y = np.load('input' + str(i + 1))
+    y = y.astype('int8')
+    Y.append(y)
+
+    featnames = np.load('input' + str(i + 2))
+
+X = np.concatenate(X, axis = 0)
+Y = np.concatenate(Y, axis = 0)
+
+np.save('x.npy', X)
+np.save('y.npy', Y)
+np.save('featnames.npy', featnames)
     """
+
 }
 
 //  FEATURE SELECTION
@@ -68,9 +91,7 @@ process run_hsic_lasso {
     errorStrategy 'ignore'
 
     input:
-        file X_TRAIN from x_int8
-        file Y_TRAIN from y
-        file FEATNAMES from featnames
+        set file(X_TRAIN), file(Y_TRAIN), file(FEATNAMES) from gwas
     
     output:
         file 'features_hl.npy' into feature_idx
@@ -85,11 +106,10 @@ process get_features {
     publishDir "$params.out", overwrite: true, mode: "copy"
 
     input:
-        file MAP from file("${params.input}.map")
         file feature_idx
 
     output:
-        file "${params.input}_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}"
+        file "out.txt"
 
     """
 #!/usr/bin/env python
@@ -97,15 +117,7 @@ process get_features {
 import numpy as np
 
 idx = np.load('$feature_idx')
-
-with open('$MAP', 'r') as MAP, \
-     open('${params.input}_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}', 'w') as FEATURES:
-    for i, line in zip(range(np.max(idx) + 1), MAP.readlines()):
-        if i in idx:
-            line = line.strip().split(' ')
-            snp = line[1]
-
-            FEATURES.write(snp + '\\n')
+np.savetxt('out.txt', idx)
     """
 
 }
