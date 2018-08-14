@@ -16,12 +16,7 @@ library(RcppCNPy)
 gwas <- read.pedfile("${PED}", snps = "${MAP}")
 
 X <- as(gwas\$genotypes, "numeric")
-
-if ('${Y}' == 'original') {
-    Y <- gwas\$fam\$affected
-} else {
-    Y <- rep(${Y}, nrow(gwas\$fam))
-}
+Y <- gwas\$fam\$affected
 
 npySave('x.npy', X)
 npySave('y.npy', Y)
