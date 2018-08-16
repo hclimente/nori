@@ -51,7 +51,7 @@ process merge_datasets {
 
     output:
         file 'merged.ped' into merged_ped
-        file 'merged.map' into merged_map
+        file 'merged.map' into merged_map, merged_map_out
 
     """
     plink --ped input2 --map input1 --merge input4 input3 --allow-extra-chr --recode --out merged
@@ -80,8 +80,6 @@ process read_genotype {
 process run_hsic_lasso {
 
     clusterOptions = '-V -jc m1'
-    validExitStatus 0,77
-    errorStrategy 'ignore'
 
     input:
         set file(X_TRAIN), file(Y_TRAIN), file(FEATNAMES) from gwas
@@ -100,9 +98,10 @@ process get_features {
 
     input:
         file feature_idx
+        file merged_map_out
 
     output:
-        file "out.txt"
+        file "gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt"
 
     """
 #!/usr/bin/env python
@@ -110,7 +109,14 @@ process get_features {
 import numpy as np
 
 idx = np.load('$feature_idx')
-np.savetxt('out.txt', idx)
+
+with open('$merged_map_out', 'r') as MAP, \
+     open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
+    for i, line in zip(range(np.max(idx) + 1), MAP.readlines()):
+        if i in idx:
+            line = line.strip().split(' ')
+            snp = line[1]
+            FEATURES.write(snp + '\\n')
     """
 
 }
