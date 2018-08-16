@@ -25,7 +25,7 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 
 // localized HSIC lasso
 params.lhl_select = 50
-params.num_clusters = [5, 10, 15]
+params.num_clusters = [5]
 params.lhl_path = ''
 
 //  GENERATE DATA
@@ -98,9 +98,9 @@ process run_localized_hsic_lasso {
         file lhl_main_pkg
         each HL_SELECT from params.lhl_select
         each LHL_NUM_CLUSTERS from params.num_clusters
-    
+
     output:
-        set val('localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
+        set val("localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
     script:
     template 'feature_selection/localized_hsic_lasso.py'
@@ -122,7 +122,7 @@ process prediction {
         set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_lhsic
 
     output:
-        set MODEL,C,I, file(Y_TEST),'predictions.npy' into predictions
+        set MODEL,C,I, file(Y_TEST),'y_pred.npy' into predictions
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
@@ -157,11 +157,11 @@ process join_prediction_analyses {
         file "prediction_stats*" from prediction_analysis. collect()
 
     output:
-        file "${input_file.baseName}_prediction_lhisc.tsv"
+        file "${input_file.baseName}_prediction.tsv"
 
     """
-    echo 'model\tselected\ti\t$stat' >${input_file.baseName}_prediction_lhsic.tsv
-    cat prediction_stats* | cut -f1,4- >>${input_file.baseName}_prediction_lhsic.tsv
+    echo 'model\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
+    cat prediction_stats* | cut -f1,4- >>${input_file.baseName}_prediction.tsv
     """
 
 }
