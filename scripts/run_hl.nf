@@ -3,10 +3,6 @@
 params.projectdir = '../../'
 params.out = "."
 
-input_files = Channel
-    .fromFilePairs( '*.{ped,map}' )
-    .map { it -> it.flatten() }
-
 // PARAMETERS
 /////////////////////////////////////
 
@@ -24,38 +20,51 @@ MODE = 'classification'
 
 // READ DATA
 /////////////////////////////////////
-process set_phenotypes {
+if (params.gt = null) {
 
-    clusterOptions = '-V -jc pcc-skl'
+    input_files = Channel
+        .fromFilePairs( '*.{ped,map}' )
+        .map { it -> it.flatten() }
 
-    input:
-        set idx, file(PED), file(MAP) from input_files
-        val Y from 1..10000
+    process set_phenotypes {
 
-    output:
-        set PED,'new_phenotype.map' into experiments
+        clusterOptions = '-V -jc pcc-skl'
 
-    script:
-    """
-    awk '{\$6 = "$Y"; print}' $MAP >new_phenotype.map
-    """
+        input:
+            set idx, file(PED), file(MAP) from input_files
+            val Y from 1..10000
 
-}
+        output:
+            set PED,'new_phenotype.map' into experiments
 
-process merge_datasets {
+        script:
+        """
+        awk '{\$6 = "$Y"; print}' $MAP >new_phenotype.map
+        """
 
-    clusterOptions = '-V -jc pcc-skl'
+    }
 
-    input:
-        file 'input*' from experiments. collect()
+    process merge_datasets {
 
-    output:
-        file 'merged.ped' into merged_ped
-        file 'merged.map' into merged_map, merged_map_out
+        clusterOptions = '-V -jc pcc-skl'
 
-    """
-    plink --ped input2 --map input1 --merge input4 input3 --allow-extra-chr --recode --out merged
-    """
+        input:
+            file 'input*' from experiments. collect()
+
+        output:
+            file 'merged.ped' into ped
+            file 'merged.map' into map, map_out
+
+        """
+        plink --ped input2 --map input1 --merge input4 input3 --allow-extra-chr --recode --out merged
+        """
+
+    }
+    
+} else {
+
+    ped = file("${params.gt}.ped")
+    map = file("${params.gt}.map")
 
 }
 
@@ -64,8 +73,8 @@ process read_genotype {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file MAP from merged_map
-        file PED from merged_ped
+        file MAP from map
+        file PED from ped
 
     output:
         set 'x.npy', 'y.npy','featnames.npy' into gwas
@@ -98,7 +107,7 @@ process get_features {
 
     input:
         file feature_idx
-        file merged_map_out
+        file map_out
 
     output:
         file "gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt"
@@ -110,7 +119,7 @@ import numpy as np
 
 idx = np.load('$feature_idx')
 
-with open('$merged_map_out', 'r') as MAP, \
+with open('$map_out', 'r') as MAP, \
      open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
     for i, line in zip(range(np.max(idx) + 1), MAP.readlines()):
         if i in idx:
