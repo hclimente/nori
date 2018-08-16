@@ -25,10 +25,13 @@ for file in features_files:
     ef = np.load(file)
 
     for ef2 in extracted_features:
-        intersection = np.intersect1d(ef, ef2)
-        union = np.union1d(ef, ef2)
-        J = len(intersection)/len(union)
-        jaccards.append(J)
+        if ef.size and ef2.size:
+            intersection = np.intersect1d(ef, ef2)
+            union = np.union1d(ef, ef2)
+            J = len(intersection)/len(union)
+            jaccards.append(J)
+        else:
+            jaccards.append('nan')
 
     extracted_features.append(ef)
 
