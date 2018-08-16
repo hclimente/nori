@@ -65,6 +65,7 @@ if (params.gt == null) {
 
     ped = file("${params.gt}.ped")
     map = file("${params.gt}.map")
+    map_out = file("${params.gt}.map")
 
 }
 
