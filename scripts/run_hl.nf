@@ -20,7 +20,7 @@ MODE = 'classification'
 
 // READ DATA
 /////////////////////////////////////
-if (params.gt = null) {
+if (params.gt == null) {
 
     input_files = Channel
         .fromFilePairs( '*.{ped,map}' )
@@ -60,7 +60,7 @@ if (params.gt = null) {
         """
 
     }
-    
+
 } else {
 
     ped = file("${params.gt}.ped")
