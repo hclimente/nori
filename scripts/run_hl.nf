@@ -120,13 +120,16 @@ import numpy as np
 
 idx = np.load('$feature_idx')
 
-with open('$map_out', 'r') as MAP, \
-     open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
-    for i, line in zip(range(np.max(idx) + 1), MAP.readlines()):
-        if i in idx:
-            line = line.strip().split('\t')
-            snp = line[1]
-            FEATURES.write(snp + '\\n')
+snps = []
+
+with open('$map_out', 'r') as MAP: 
+    for line in MAP.readlines():
+        snp = line.strip().split('\t')[1]
+        snps.append(snp)
+
+with open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
+    for i in idx:
+        FEATURES.write('{}\\n'.format(snps[i]))
     """
 
 }
