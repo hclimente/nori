@@ -25,7 +25,7 @@ hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
 # try:
-hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS}, decomposition=${DECOMPOAITION}, beta_scale = ${BETA_SCALE})
+hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS}, decomposition="${DECOMPOAITION}", beta_scale = ${BETA_SCALE})
 # except MemoryError:
 #     import sys, traceback
 #     traceback.print_exc()
