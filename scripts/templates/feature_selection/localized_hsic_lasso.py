@@ -23,12 +23,12 @@ hl.Y_in = np.load("${Y_TRAIN}").T
 hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
-try:
-    hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS}, beta_scale = ${BETA_SCALE})
-except MemoryError:
-    import sys, traceback
-    traceback.print_exc()
-    np.save('features_lhl.npy', np.array([]))
-    sys.exit(77)
+# try:
+hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS}, beta_scale = ${BETA_SCALE})
+# except MemoryError:
+#     import sys, traceback
+#     traceback.print_exc()
+#     np.save('features_lhl.npy', np.array([]))
+#     sys.exit(77)
 
 np.save('features_lhl.npy', hl.A)
