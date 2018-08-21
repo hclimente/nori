@@ -13,7 +13,7 @@ D = 'None'
 /////////////////////////////////////
 
 // setup
-DECOMPOAITION = PARAMS.decomp
+DECOMPOAITION = params.decomp
 SPLIT = params.split
 params.perms = 10
 params.causal = '10,25,50'
