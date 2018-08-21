@@ -13,7 +13,8 @@ D = 'None'
 /////////////////////////////////////
 
 // setup
-SPLIT = 0.5
+DECOMPOAITION = PARAMS.decomp
+SPLIT = params.split
 params.perms = 10
 params.causal = '10,25,50'
 causal = params .causal.split(",")
