@@ -13,7 +13,7 @@ D = 'None'
 /////////////////////////////////////
 
 // setup
-SPLIT = 0.2
+SPLIT = 0.5
 params.perms = 10
 params.causal = '10,25,50'
 causal = params .causal.split(",")
@@ -27,6 +27,7 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 params.lhl_select = 50
 params.num_clusters = [5]
 params.lhl_path = ''
+params.beta_scale = [2]
 
 //  GENERATE DATA
 /////////////////////////////////////
@@ -98,9 +99,10 @@ process run_localized_hsic_lasso {
         file lhl_main_pkg
         each HL_SELECT from params.lhl_select
         each LHL_NUM_CLUSTERS from params.num_clusters
+        each BETA_SCALE from params.beta_scale
 
     output:
-        set val("localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
+        set val("localized_HSIC_lasso-K=${LHL_NUM_CLUSTERS}-S=${BETA_SCALE}"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
 
     script:
     template 'feature_selection/localized_hsic_lasso.py'

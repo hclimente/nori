@@ -7,6 +7,7 @@ Input variables:
     - MODE: regression or classification.
     - HL_SELECT: number of features to select.
     - LHL_NUM_CLUSTERS
+    - BETA_SCALE
 Output files:
     - features_lhl.npy: numpy array with the 0-based index of 
     the selected features.
@@ -23,7 +24,7 @@ hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
 try:
-    hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS})
+    hl.${MODE}(num_feat = ${HL_SELECT}, numClusters = ${LHL_NUM_CLUSTERS}, beta_scale = ${BETA_SCALE})
 except MemoryError:
     import sys, traceback
     traceback.print_exc()
