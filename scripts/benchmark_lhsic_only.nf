@@ -6,6 +6,7 @@ params.out = "."
 // PARAMETERS
 /////////////////////////////////////
 // setup
+DECOMPOAITION = params.decomp
 params.perms = 10
 params.n = [50] 
 params.d = [1000,2500,5000, 10000]
