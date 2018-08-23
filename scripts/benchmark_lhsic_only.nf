@@ -7,10 +7,7 @@ params.out = "."
 /////////////////////////////////////
 // setup
 DECOMPOAITION = params.decomp
-
-
-if (params.localonly == 'True') LOCALONLY = True
-else LOCALONLY = False
+LOCALONLY = params.localonly
 
 params.perms = 10
 params.n = [50] 

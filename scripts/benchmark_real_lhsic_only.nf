@@ -16,8 +16,7 @@ D = 'None'
 DECOMPOAITION = params.decomp
 SPLIT = params.split
 
-if (params.localonly == 'True') LOCALONLY = True
-else LOCALONLY = False
+LOCALONLY = params.localonly
 
 params.perms = 10
 params.causal = '10,25,50'
@@ -32,7 +31,7 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 params.lhl_select = 50
 params.num_clusters = [5]
 params.lhl_path = ''
-params.beta_scale = [2]
+params.beta_scale = [1]
 
 //  GENERATE DATA
 /////////////////////////////////////
