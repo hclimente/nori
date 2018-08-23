@@ -133,7 +133,7 @@ process prediction {
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
-    else if (MODE == 'classification') template 'classifier/xgboost.py'
+    else if (MODE == 'classification') template 'classifier/knn.py'
 
 }
 
