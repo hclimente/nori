@@ -7,6 +7,11 @@ params.out = "."
 /////////////////////////////////////
 // setup
 DECOMPOAITION = params.decomp
+
+
+if (params.localonly == 'True') LOCALONLY = True
+else LOCALONLY = False
+
 params.perms = 10
 params.n = [50] 
 params.d = [1000,2500,5000, 10000]

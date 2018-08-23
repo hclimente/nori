@@ -15,6 +15,10 @@ D = 'None'
 // setup
 DECOMPOAITION = params.decomp
 SPLIT = params.split
+
+if (params.localonly == 'True') LOCALONLY = True
+else LOCALONLY = False
+
 params.perms = 10
 params.causal = '10,25,50'
 causal = params .causal.split(",")
