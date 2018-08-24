@@ -7,8 +7,9 @@ params.out = "."
 /////////////////////////////////////
 // setup
 params.perms = 10
-params.n = [100, 1000, 10000]
+params.n = [50, 100]
 params.d = [1000, 2500, 5000, 10000]
+NOISE = params.noise
 
 params.data_generation = 'yamada_additive'
 if (params.data_generation == 'random') causal = [5, 10, 20]
@@ -21,7 +22,7 @@ MODE = params.mode
 STAT = (MODE == 'regression')? 'mse' : 'accuracy'
 
 // HSIC lasso
-params.B = [0, 5, 10, 50]
+params.B = [0]
 params.M = 3
 params.hl_select = 50
 
