@@ -3,6 +3,7 @@
 Input variables:
     - N: desired number of samples.
     - D: desired number of features.
+    - I: seed.
     - C: number of causal features.
 Output files:
     - x_train.npy
@@ -14,6 +15,7 @@ Output files:
 
 import numpy as np
 
+np.random.seed(${I})
 F = [(np.square, None), (np.sin, None), (np.cos, None)]
 funs = np.random.choice(np.arange(len(F)), ${C})
 
