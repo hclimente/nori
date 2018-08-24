@@ -3,6 +3,7 @@
 Input variables:
     - N: desired number of samples.
     - D: desired number of features.
+    - NOISE: number of noise to be added
 Output files:
     - x_train.npy
     - y_train.npy
@@ -15,6 +16,8 @@ import numpy as np
 
 def non_additive(x1, x2, x3):
     e = np.random.normal(size = x1.shape)
+    for i in range(${NOISE}-1):
+        e = e + np.random.normal(size = x1.shape)
     return x1 * np.exp(2*x2) + np.square(x3) + e
 
 for set_type in ['train', 'test']:

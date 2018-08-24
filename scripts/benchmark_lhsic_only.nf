@@ -8,6 +8,7 @@ params.out = "."
 // setup
 DECOMPOAITION = params.decomp
 LOCALONLY = params.localonly
+NOISE = params.noise
 
 params.perms = 10
 params.n = [50] 
