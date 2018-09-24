@@ -21,22 +21,23 @@ from glob import glob
 features_files = glob('features_*')
 extracted_features = []
 jaccards = []
-for file in features_files:
-    ef = np.load(file)
+for i in range(len(features_files)):
+    ef = np.load(features_files[i])
 
-    for ef2 in extracted_features:
+    for j in range(len(extracted_features)):
+        ef2 = extracted_features[j]
         if ef.size and ef2.size:
             intersection = np.intersect1d(ef, ef2)
             union = np.union1d(ef, ef2)
             J = len(intersection)/len(union)
-            jaccards.append(J)
+            jaccards.append(('{}-{}'.format(i, j), J))
         else:
-            jaccards.append('nan')
+            jaccards.append(('{}-{}'.format(i, j), 'nan'))
 
     extracted_features.append(ef)
 
 with open('stability_stats', 'w', newline='') as f_output:
     tsv_output = csv.writer(f_output, delimiter='\t')
-    for J in jaccards:
-        row = ['${MODEL}', ${N}, ${D}, ${C}, ${I}, len(features_files), J ]
+    for idx, J in jaccards:
+        row = ['${MODEL}', ${N}, ${D}, ${C}, len(features_files), idx, J ]
         tsv_output.writerow(row)

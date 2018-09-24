@@ -137,10 +137,11 @@ process run_mrmr {
 
 }
 
+features = features_hsic .mix( features_lars, features_mrmr ) 
+features .into { features_prediction; features_stability }
+
 //  PREDICTION
 /////////////////////////////////////
-features_prediction = features_hsic
-    .mix( features_lars, features_mrmr ) 
 
 process prediction {
 
@@ -157,6 +158,45 @@ process prediction {
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
     else if (MODE == 'classification') template 'classifier/knn.py'
+
+}
+
+//  FEATURE STABILITY ANALYSIS
+/////////////////////////////////////
+features_stability
+    .groupTuple( by: [0,1] )
+    .set { grouped_features }
+
+process analyze_stability {
+
+    clusterOptions = '-V -jc pcc-skl'
+
+    input:
+        set MODEL,C,I, 'x_train*', 'y_train*', 'x_test*', 'y_test*', 'features_*' from grouped_features
+
+    output:
+        file 'stability_stats' into stability_stats
+
+    script:
+    template 'analysis/selection_stability.py'
+
+}
+
+process join_stability_stats {
+
+    clusterOptions = '-V -jc pcc-skl'
+    publishDir "$params.out", overwrite: true, mode: "copy"
+
+    input:
+        file "stability_stats*" from stability_stats. collect()
+
+    output:
+        file "${input_file.baseName}_stability.tsv"
+
+    """
+    echo 'model\tsamples\tfeatures\tcausal\treplicates\tcomparison\tjaccard' >${input_file.baseName}_stability.tsv
+    cat stability_stats* | sort >>${input_file.baseName}_stability.tsv
+    """
 
 }
 
