@@ -28,9 +28,6 @@ M = params.M
 params.B = '0,5,10'
 B = params.B .split(",")
 
-// localized HSIC lasso
-params.lhl_path = ''
-
 //  GENERATE DATA
 /////////////////////////////////////
 process read_data {
@@ -125,32 +122,6 @@ process run_hsic_lasso {
 
 }
 
-if (params.lhl_path != '') {
-
-    lhl_main_pkg = file("$params.lhl_path/pyHSICLasso/")
-
-    process run_localized_hsic_lasso {
-
-        clusterOptions = '-V -jc pcc-large'
-        validExitStatus 0,77
-        //errorStrategy 'ignore'
-
-        input:
-            set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lhsic
-            file lhl_main_pkg
-            each HL_SELECT from params.hl_select
-        
-        output:
-            set val('localized_HSIC_lasso'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lhl.npy' into features_lhsic
-
-        script:
-        template 'feature_selection/localized_hsic_lasso.py'
-
-    }
-} else {
-    features_lhsic = Channel. empty()
-}
-
 process run_mrmr {
 
     clusterOptions = '-V -jc pcc-large'
@@ -169,7 +140,7 @@ process run_mrmr {
 //  PREDICTION
 /////////////////////////////////////
 features_prediction = features_hsic
-    .mix( features_lhsic, features_lars, features_mrmr ) 
+    .mix( features_lars, features_mrmr ) 
 
 process prediction {
 
