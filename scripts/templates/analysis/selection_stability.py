@@ -23,6 +23,7 @@ extracted_features = []
 jaccards = []
 for i in range(len(features_files)):
     ef = np.load(features_files[i])
+    ef = ef[0:${C}]
 
     for j in range(len(extracted_features)):
         ef2 = extracted_features[j]
