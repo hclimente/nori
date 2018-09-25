@@ -9,6 +9,7 @@
 
 ### Data: Big files and binaries ###
 
+.pytest_cache
 *npy
 *ped
 *map

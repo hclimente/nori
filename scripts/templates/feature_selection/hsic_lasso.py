@@ -18,6 +18,7 @@ from pyHSICLasso import HSICLasso
 
 hl = HSICLasso()
 
+np.random.seed(0)
 hl.X_in = np.load("${X_TRAIN}").T
 hl.Y_in = np.load("${Y_TRAIN}").T
 hl.Y_in = np.expand_dims(hl.Y_in, 0)
