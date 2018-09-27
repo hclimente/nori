@@ -72,10 +72,10 @@ process split_data {
         file X from normalized_X
         file Y
         file FEATNAMES
-        each I from 1..params.perms
+        each SEED from 1..params.perms
 
     output:
-        set val(I), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
+        set val(SEED), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
 
     script:
     template 'data_processing/train_test_split.py'

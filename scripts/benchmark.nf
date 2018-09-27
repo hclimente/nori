@@ -56,6 +56,7 @@ data.into { data_hsic; data_lhsic; data_lasso; data_mrmr }
 
 process run_lars {
 
+    tag { "${C} (${I})" }
     clusterOptions = '-V -jc pcc-skl'
 
     input:
@@ -71,6 +72,7 @@ process run_lars {
 
 process run_hsic_lasso {
 
+    tag { "${C}, B = ${HL_B} (${I})" }
     clusterOptions = '-V -jc pcc-large'
     validExitStatus 0,77
     errorStrategy 'ignore'
@@ -91,6 +93,7 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
+    tag { "${C} (${I})" }
     clusterOptions = '-V -jc pcc-large'
 
     input:
@@ -112,6 +115,7 @@ features_hsic
 
 process analyze_features {
 
+    tag { "${MODEL}, ${C} causal (${I})" }
     clusterOptions = '-V -jc pcc-skl'
 
     input:
@@ -147,6 +151,7 @@ process join_feature_analyses {
 /////////////////////////////////////
 process prediction {
 
+    tag { "${MODEL}, ${C} causal (${I})" }
     clusterOptions = '-V -jc pcc-skl'
     validExitStatus 0,77
 
@@ -166,6 +171,7 @@ process prediction {
 /////////////////////////////////////
 process analyze_predictions {
 
+    tag { "${MODEL}, ${C} causal (${I})" }
     clusterOptions = '-V -jc pcc-skl'
     
     input:

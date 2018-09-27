@@ -4,6 +4,7 @@ Input variables:
     - X: path of a numpy array with x.
     - Y: path of a numpy array with y.
     - SPLIT: [0-1] proportion of test dataset.
+    - SEED: random seed.
 Output files:
     - x_train.npy
     - y_train.npy
@@ -14,6 +15,7 @@ Output files:
 import numpy as np
 from sklearn.model_selection import train_test_split
 
+np.random.seed(${SEED})
 x = np.load("${X}")
 y = np.load("${Y}")
 
