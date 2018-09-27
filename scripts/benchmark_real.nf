@@ -73,10 +73,9 @@ process split_data {
         file Y
         file FEATNAMES
         each I from 1..params.perms
-        each C from causal
 
     output:
-        set val(C), val(I), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
+        set val(I), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
 
     script:
     template 'data_processing/train_test_split.py'
@@ -85,15 +84,16 @@ process split_data {
 
 //  FEATURE SELECTION
 /////////////////////////////////////
-split_data.into { data_hsic; data_lhsic; data_lasso; data_mrmr }
+split_data.into { data_hsic; data_lasso; data_mrmr }
 
 process run_lars {
 
-    tag { "${I}" }
+    tag { "${C} (${I})" }
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
+        each C from causal
+        set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
         set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
@@ -105,13 +105,12 @@ process run_lars {
 
 process run_hsic_lasso {
 
-    tag { "B = ${HL_B} (${I})" }
+    tag { "${C}, B = ${HL_B} (${I})" }
     clusterOptions = '-V -jc pcc-large'
-    validExitStatus 0,77
-    errorStrategy 'ignore'
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
+	each C from causal
+        set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_B from B
         each HL_M from M
         each HL_SELECT from params.hl_select
@@ -126,11 +125,12 @@ process run_hsic_lasso {
 
 process run_mrmr {
 
-    tag { "${I}" }
+    tag { "${C} (${I})" }
     clusterOptions = '-V -jc pcc-large'
 
     input:
-        set C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
+        each C from causal
+        set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
         set val("mRMR"), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_mrmr.npy' into features_mrmr
