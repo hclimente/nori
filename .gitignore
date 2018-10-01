@@ -17,6 +17,8 @@ test*
 *data
 *mat
 *p53
+normalized_expression.tsv
+metadata.tsv
 
 # Created by https://www.gitignore.io/api/visualstudiocode
 
