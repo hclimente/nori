@@ -15,12 +15,12 @@ import pandas as pd
 # read gene expression
 expression = pd.read_csv('${INPUT_FILE}', sep = '\t')
 featnames = expression.pop('tracking_id').tolist()
-x = expression.values
+x = expression.values.T
 
 # read phenotypes
 meta = pd.read_csv('${METADATA}', sep = '\t')
 meta = meta.set_index('UID')
-cell_lines = meta['C4_Cell_Line_ID'].to_dict()
+cell_lines = meta['Cell_Type_of_Origin'].to_dict()
 y = np.array([ cell_lines[c] for c in expression.columns ])
 y = pd.factorize(y)[0]
 
