@@ -46,6 +46,10 @@ process read_data {
 
     if (input_file.getExtension() == 'mat') template 'io/mat2npy.py'
     else if (input_file.getExtension() == 'p53') template 'io/p53data2npy.py'
+    else if (input_file.getExtension() == 'tsv') {
+        METADATA = file('metadata.tsv')
+        template 'io/pcbc2npy.py'
+    }
 
 }
 
