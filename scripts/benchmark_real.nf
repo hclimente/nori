@@ -32,7 +32,7 @@ B = params.B .split(",")
 /////////////////////////////////////
 if (input_file.getExtension() == 'mat') {
 
-    process read_data {
+    process read_matlab {
 
         clusterOptions = '-V -jc pcc-skl'
 
@@ -52,7 +52,7 @@ if (input_file.getExtension() == 'mat') {
 
     metadata = file(params.metadata)
     
-    process read_data {
+    process read_tsv {
 
         clusterOptions = '-V -jc pcc-skl'
 

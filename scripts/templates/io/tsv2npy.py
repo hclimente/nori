@@ -24,7 +24,7 @@ x = expression.values.T
 meta = pd.read_csv('${METADATA}', sep = '\t')
 meta = meta.set_index('${COL_ID}')
 cell_lines = meta['${COL_Y}'].to_dict()
-y = np.array([ cell_lines[c] for c in expression.columns ])
+y = np.array([ cell_lines.get(c,None) for c in expression.columns ])
 y = pd.factorize(y)[0]
 
 np.save("x.npy", x)
