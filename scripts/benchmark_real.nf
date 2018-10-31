@@ -30,27 +30,63 @@ B = params.B .split(",")
 
 //  GENERATE DATA
 /////////////////////////////////////
-process read_data {
+if (input_file.getExtension() == 'mat') {
 
-    clusterOptions = '-V -jc pcc-skl'
+    process read_data {
 
-    input:
-        file INPUT_FILE from input_file
+        clusterOptions = '-V -jc pcc-skl'
 
-    output:
-        file 'x.npy' into X
-        file 'y.npy' into Y
-        file 'featnames.npy' into FEATNAMES
+        input:
+            file INPUT_FILE from input_file
 
-    script:
+        output:
+            file 'x.npy' into X
+            file 'y.npy' into Y
+            file 'featnames.npy' into FEATNAMES
 
-    if (input_file.getExtension() == 'mat') template 'io/mat2npy.py'
-    else if (input_file.getExtension() == 'p53') template 'io/p53data2npy.py'
-    else if (input_file.getExtension() == 'tsv') {
-        METADATA = file('metadata.tsv')
-        template 'io/pcbc2npy.py'
+        script:
+        template 'io/mat2npy.py'
+
+    }
+} else if (input_file.getExtension() == 'tsv') {
+
+    metadata = file(params.metadata)
+    
+    process read_data {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file INPUT_FILE from input_file
+            file METADATA from metadata
+            val COL_FEATS from params.col_feats
+            val COL_ID from params.col_id
+            val COL_Y from params.col_y
+
+        output:
+            file 'x.npy' into RAW_X
+            file 'y.npy' into Y
+            file 'featnames.npy' into FEATNAMES
+
+        script:
+        template 'io/tsv2npy.py'
+
     }
 
+    process impute_expression {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file X from RAW_X
+
+        output:
+            file 'x_imputed.npy' into X
+
+        script:
+        template 'data_processing/impute_magic.py'
+
+    }
 }
 
 process normalize_data {

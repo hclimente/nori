@@ -32,9 +32,12 @@ out = subprocess.check_output(['mrmr', '-i', 'dataset.csv', discretization, '-n'
 flag = False
 features = []
 for line in out.decode('ascii').split('\\n'):
-    if flag and len(features) < ${C} and 'Name' not in line:
-        f = line.split('\\t')[2].strip()
-        features.append(int(f))
+    if flag and 'Name' not in line:
+        if not line:
+            flag = False
+        else:
+            f = line.split('\\t')[2].strip()
+            features.append(int(f))
     elif 'mRMR features' in line:
         flag = True
 

@@ -1,1 +1,1 @@
-nextflow run ../../scripts/benchmark_real.nf --input test.tsv --i 2 --causal 5,50 --B 0,10 --perms 3 "$@"
+nextflow run ../../scripts/benchmark_real.nf --input test.tsv --i 2 --causal 5,50 --B 0,10 --perms 3 --metadata metadata.tsv --col_feats tracking_id --col_id UID --col_y Cell_Type_of_Origin "$@"
