@@ -1,3 +1,3 @@
 villani	villani	raw_expression_matrix.tsv	metadata.txt	Gene.ID	NAME	CellType
-habib   habib   DATA_MATRIX_LOG_TPM.txt CLUSTER_AND_SUBCLUSTER_INDEX.txt    GENE    NAME    SUB-CLUSTER
-haber   haber   atlas_Log2Tpm_round2.txt    atlas_metadata.txt  GENE    NAME    Cluster
+habib	habib	DATA_MATRIX_LOG_TPM.txt	CLUSTER_AND_SUBCLUSTER_INDEX.txt	GENE	NAME	SUB-CLUSTER
+haber	haber	atlas_Log2Tpm_round2.txt	atlas_metadata.txt	GENE	NAME	Cluster
