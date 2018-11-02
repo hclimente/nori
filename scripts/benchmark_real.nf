@@ -48,7 +48,7 @@ if (input_file.getExtension() == 'mat') {
         template 'io/mat2npy.py'
 
     }
-} else if (input_file.getExtension() == 'tsv') {
+} else if (input_file.getExtension() == 'tsv' & input_file.getExtension() == 'txt') {
 
     metadata = file(params.metadata)
     
