@@ -181,7 +181,6 @@ process run_mrmr {
 }
 
 features = features_hsic .mix( features_lars, features_mrmr ) 
-features .into { features_prediction; features_stability }
 
 //  PREDICTION
 /////////////////////////////////////
@@ -194,7 +193,7 @@ process prediction {
     validExitStatus 0,77
 
     input:
-        set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
+        set MODEL,C,I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features
 
     output:
         set MODEL,C,I, file(Y_TEST),'y_pred.npy' into predictions
@@ -236,46 +235,6 @@ process join_prediction_analyses {
     """
     echo 'model\tselected\ti\t$stat' >${input_file.baseName}_prediction.tsv
     cat prediction_stats* | cut -f1,4- | sort >>${input_file.baseName}_prediction.tsv
-    """
-
-}
-
-//  FEATURE STABILITY ANALYSIS
-/////////////////////////////////////
-features_stability
-    .groupTuple( by: [0,1] )
-    .set { grouped_features }
-
-process analyze_stability {
-
-    tag { "${MODEL}, ${C} causal (${I})" }
-    clusterOptions = '-V -jc pcc-skl'
-
-    input:
-        set MODEL,C,I, 'x_train*', 'y_train*', 'x_test*', 'y_test*', 'features_*' from grouped_features
-
-    output:
-        file 'stability_stats' into stability_stats
-
-    script:
-    template 'analysis/selection_stability.py'
-
-}
-
-process join_stability_stats {
-
-    clusterOptions = '-V -jc pcc-skl'
-    publishDir "$params.out", overwrite: true, mode: "copy"
-
-    input:
-        file "stability_stats*" from stability_stats. collect()
-
-    output:
-        file "${input_file.baseName}_stability.tsv"
-
-    """
-    echo 'model\tsamples\tfeatures\tcausal\treplicates\tcomparison\tjaccard' >${input_file.baseName}_stability.tsv
-    cat stability_stats* | sort >>${input_file.baseName}_stability.tsv
     """
 
 }
