@@ -147,6 +147,8 @@ process run_hsic_lasso {
 
     tag { "${C}, B = ${HL_B} (${I})" }
     clusterOptions = '-V -jc pcc-large'
+    validExitStatus 0,77
+    errorStrategy 'ignore'
 
     input:
 	each C from causal
