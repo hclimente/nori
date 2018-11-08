@@ -3,7 +3,6 @@
 Input variables:
     - PED: input .ped file.
     - MAP: input .map file.
-    - Y:   (Optional.) Output variable.
 Output files:
     - x.npy
     - y.npy

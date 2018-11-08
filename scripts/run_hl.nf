@@ -9,14 +9,11 @@ params.out = "."
 // HSIC lasso
 params.causal = 50
 params.select = 50
-params.M = '3, discrete_x = True'
+params.M = 3
 params.B = 5
+params.type = 'classification'
 
-C = params.causal
-HL_SELECT = params.select
-HL_M = params.M
-HL_B = params.B
-MODE = 'classification'
+M = String.valueOf(params.M) + ', discrete_x = True'
 
 // READ DATA
 /////////////////////////////////////
@@ -93,6 +90,11 @@ process run_hsic_lasso {
 
     input:
         set file(X_TRAIN), file(Y_TRAIN), file(FEATNAMES) from gwas
+        val C from params.causal
+        val HL_SELECT from params.select
+        val HL_M from params.M
+        val HL_B from params.B
+        val MODE from params.type
     
     output:
         file 'features_hl.npy' into feature_idx
@@ -109,27 +111,31 @@ process get_features {
     input:
         file feature_idx
         file map_out
+        val C from params.causal
+        val HL_SELECT from params.select
+        val HL_M from params.M
+        val HL_B from params.B
 
     output:
         file "gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt"
 
     """
-#!/usr/bin/env python
+    #!/usr/bin/env python
 
-import numpy as np
+    import numpy as np
 
-idx = np.load('$feature_idx')
+    idx = np.load('$feature_idx')
 
-snps = []
+    snps = []
 
-with open('$map_out', 'r') as MAP: 
-    for line in MAP.readlines():
-        snp = line.strip().split('\t')[1]
-        snps.append(snp)
+    with open('$map_out', 'r') as MAP: 
+        for line in MAP.readlines():
+            snp = line.strip().split('\t')[1]
+            snps.append(snp)
 
-with open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
-    for i in idx:
-        FEATURES.write('{}\\n'.format(snps[i]))
+    with open('gwas_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}.txt', 'w') as FEATURES:
+        for i in idx:
+            FEATURES.write('{}\\n'.format(snps[i]))
     """
 
 }
