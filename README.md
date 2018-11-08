@@ -4,5 +4,9 @@ Study of non-linear phenotype-genotype relationships in high-dimensional experim
 
 - [Data simulation](doc/data_generation.ipynb): brief analysis on how the data for benchmark are generated.
 - [Benchmark on synthetic data](doc/benchmark.ipynb): analysis of synthetic data.
-- [Benchmark on real data](doc/benchmark_real.ipynb): analysis of real data.
 - [Required computational resources](doc/computational_resources.ipynb).
+
+## Aplication to real world datasets
+
+- [Images and microarrays](doc/benchmark_real.ipynb): prediction of 3 image datasets and 3 gene expression microarrays.
+- [Single-cell RNA-seq](doc/single_cell.ipynb): prediction of cell phenotypes on three single-cell datasets.
