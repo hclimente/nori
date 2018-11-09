@@ -1,1 +1,1 @@
-../../scripts/run_hl.nf "$@" -profile cluster -resume -with-trace
+../../scripts/select_features.nf "$@" -profile cluster -resume -with-trace

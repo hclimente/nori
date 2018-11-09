@@ -87,50 +87,6 @@ if (input_file.getExtension() == 'mat') {
         template 'data_processing/impute_magic.py'
 
     }
-} else if (input_file.getExtension() == 'ped') {
-
-    map1 = file(params.map)
-    ped2 = file(params.ped2)
-    map2 = file(params.map2)
-
-    process merge {
-
-        clusterOptions = '-V -jc pcc-skl'
-
-        input:
-            file PED1 from input_file
-            file MAP1 from map1
-            file PED2 from ped2
-            file MAP2 from map2
-
-        output:
-            file 'out.ped' into ped
-            file 'out.map' into map
-
-        """
-        echo "$PED1\t$MAP1\n$PED2\t$MAP2" >datasets
-        plink --merge-list datasets -out out
-        """
-
-    }
-
-    process read_ped {
-
-        clusterOptions = '-V -jc pcc-skl'
-
-        input:
-            file PED from ped
-            file MAP from map
-
-        output:
-            file 'x.npy' into RAW_X
-            file 'y.npy' into Y
-            file 'featnames.npy' into FEATNAMES
-
-        script:
-        template 'io/ped2npy.py'
-
-    }
 }
 
 process normalize_data {
