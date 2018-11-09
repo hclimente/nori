@@ -154,7 +154,7 @@ process run_mrmr {
         file X_TRAIN from X
         file Y_TRAIN from Y
         file FEATNAMES
-        each C from params.causal
+        val C from params.causal
         val MODE from params.type
     
     output:
@@ -173,7 +173,7 @@ process run_lars {
         file X_TRAIN from X
         file Y_TRAIN from Y
         file FEATNAMES
-        each C from params.causal
+        val C from params.causal
         val MODE from params.type
     
     output:
@@ -193,6 +193,7 @@ if (input_file.getExtension() == 'ped') {
     process get_snps {
 
         publishDir "$params.out", overwrite: true, mode: "copy"
+        clusterOptions = '-V -jc pcc-skl'
 
         input:
             set METHOD, file(FEATURES) from features
@@ -227,6 +228,7 @@ if (input_file.getExtension() == 'ped') {
     process get_features {
 
         publishDir "$params.out", overwrite: true, mode: "copy"
+        clusterOptions = '-V -jc pcc-skl'
 
         input:
             set METHOD, file(FEATURES) from features
