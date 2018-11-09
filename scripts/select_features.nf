@@ -126,7 +126,7 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 /////////////////////////////////////
 process run_hsic_lasso {
 
-    clusterOptions = '-V -jc m1'
+    clusterOptions = '-V -jc pcc-large'
 
     input:
         file X_TRAIN from X
