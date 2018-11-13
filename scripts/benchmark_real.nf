@@ -124,7 +124,23 @@ process split_data {
 
 //  FEATURE SELECTION
 /////////////////////////////////////
-split_data.into { data_hsic; data_lasso; data_mrmr }
+split_data.into { data_raw; data_hsic; data_lasso; data_mrmr }
+
+process do_nothing {
+
+    tag { "${I}" }
+    clusterOptions = '-V -jc pcc-skl'
+
+    input:
+        set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_raw
+    
+    output:
+        set val('Raw'), val('None'), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'all_features.npy' into features_raw
+
+    script:
+    template 'feature_selection/all_features.py'
+
+}
 
 process run_lars {
 
@@ -182,7 +198,7 @@ process run_mrmr {
 
 }
 
-features = features_hsic .mix( features_lars, features_mrmr ) 
+features = features_hsic .mix( features_lars, features_mrmr, features_raw ) 
 
 //  PREDICTION
 /////////////////////////////////////
