@@ -149,6 +149,7 @@ process run_hsic_lasso {
 process run_mrmr {
 
     clusterOptions = '-V -jc pcc-large'
+    errorStrategy 'ignore'
 
     input:
         file X_TRAIN from X
