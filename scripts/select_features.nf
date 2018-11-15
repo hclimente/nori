@@ -76,7 +76,8 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
             val Y from 1..2
 
         output:
-            set PED,'new_phenotype.map' into experiments
+            file 'new_phenotype.map' into maps
+            file PED into peds
 
         script:
         """
@@ -90,14 +91,15 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
         clusterOptions = '-V -jc pcc-skl'
 
         input:
-            file 'input*' from experiments. collect()
+            file 'map*' from maps. collect()
+            file 'ped*' from peds. collect()
 
         output:
             file 'merged.ped' into ped
             file 'merged.map' into map, map_out
 
         """
-        plink --ped input1 --map input2 --merge input3 input4 --allow-extra-chr --recode --out merged
+        plink --ped ped1 --map map1 --merge ped2 map2 --allow-extra-chr --recode --out merged
         """
 
     }
