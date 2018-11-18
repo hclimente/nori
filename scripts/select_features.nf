@@ -76,12 +76,12 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
             val Y from 1..2
 
         output:
-            file 'new_phenotype.map' into maps
-            file PED into peds
+            file MAP into maps
+            file 'new_phenotype.ped' into peds
 
         script:
         """
-        awk '{\$6 = "$Y"; print}' $MAP >new_phenotype.map
+        awk '{\$6 = "$Y"; print}' $PED >new_phenotype.ped
         """
 
     }
