@@ -15,6 +15,8 @@ library(RcppCNPy)
 gwas <- read.pedfile("${PED}", snps = "${MAP}")
 
 X <- as(gwas\$genotypes, "numeric")
+X[is.na(X)] = 0 # safeguard against missing genotypes
+
 Y <- gwas\$fam\$affected
 
 npySave('x.npy', X)
