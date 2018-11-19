@@ -15,7 +15,8 @@ library(RcppCNPy)
 gwas <- read.pedfile("${PED}", snps = "${MAP}")
 
 X <- as(gwas\$genotypes, "numeric")
-X[is.na(X)] = 0 # safeguard against missing genotypes
+X[is.na(X)] <- 0 # safeguard against missing genotypes
+X <- X + rnorm(X, mean = 0, sd = .00001) # add Gaussian noise
 
 Y <- gwas\$fam\$affected
 
