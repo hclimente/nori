@@ -136,7 +136,7 @@ process run_hsic_lasso {
         file FEATNAMES
         val C from params.causal
         val HL_SELECT from params.select
-        val HL_M from params.M
+        val HL_M from M
         val HL_B from params.B
         val MODE from params.type
     
