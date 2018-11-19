@@ -15,13 +15,12 @@ params.M = 3
 params.B = 5
 params.type = 'classification'
 
-M = String.valueOf(params.M) + ', discrete_x = True'
-
 // READ DATA
 /////////////////////////////////////
 if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 
     metadata = file(params.metadata)
+    M = params.M
     
     process read_tsv {
 
@@ -66,6 +65,10 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
     map2 = file(params.map2)
 
     input_files = Channel.from ( [ped1,map1], [ped2,map2] )
+
+    // Uncomment
+    //M = String.valueOf(params.M) + ', discrete_x = True'
+    M = params.M
 
     process set_phenotypes {
 
