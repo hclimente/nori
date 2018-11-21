@@ -167,7 +167,7 @@ process run_hsic_lasso {
     errorStrategy 'ignore'
 
     input:
-	each C from causal
+        each C from causal
         set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_B from B
         each HL_M from M
