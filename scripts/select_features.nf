@@ -15,13 +15,12 @@ params.M = 3
 params.B = 5
 params.type = 'classification'
 
-M = String.valueOf(params.M) + ', discrete_x = True'
-
 // READ DATA
 /////////////////////////////////////
 if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 
     metadata = file(params.metadata)
+    M = params.M
     
     process read_tsv {
 
@@ -66,6 +65,10 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
     map2 = file(params.map2)
 
     input_files = Channel.from ( [ped1,map1], [ped2,map2] )
+
+    // Uncomment
+    //M = String.valueOf(params.M) + ', discrete_x = True'
+    M = params.M
 
     process set_phenotypes {
 
@@ -136,7 +139,7 @@ process run_hsic_lasso {
         file FEATNAMES
         val C from params.causal
         val HL_SELECT from params.select
-        val HL_M from params.M
+        val HL_M from M
         val HL_B from params.B
         val MODE from params.type
     
