@@ -163,7 +163,7 @@ process prediction {
 
     script:
     if (MODE == 'regression') template 'classifier/kernel_svm.py'
-    else if (MODE == 'classification') template 'classifier/knn.py'
+    else if (MODE == 'classification') template 'classifier/random_forest.py'
 
 }
 
