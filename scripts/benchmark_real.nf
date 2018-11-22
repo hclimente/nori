@@ -48,6 +48,22 @@ if (input_file.getExtension() == 'mat') {
         template 'io/mat2npy.py'
 
     }
+
+    process normalize_data {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file X
+
+        output:
+            file "x_normalized.npy" into normalized_X
+
+        script:
+        template 'data_processing/normalize.py'
+
+    }
+
 } else if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 
     metadata = file(params.metadata)
@@ -87,20 +103,87 @@ if (input_file.getExtension() == 'mat') {
         template 'data_processing/impute_magic.py'
 
     }
-}
 
-process normalize_data {
+    process normalize_data {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file X
+
+        output:
+            file "x_normalized.npy" into normalized_X
+
+        script:
+        template 'data_processing/normalize.py'
+
+    }
+
+}  else if (input_file.getExtension() == 'ped') {
+
+    ped1 = input_file
+    map1 = file(params.map1)
+    ped2 = file(params.ped2)
+    map2 = file(params.map2)
+
+    input_files = Channel.from ( [ped1,map1], [ped2,map2] )
+
+    M = String.valueOf(params.M) + ', discrete_x = True'
+
+    process set_phenotypes {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            set file(PED), file(MAP) from input_files
+            val Y from 1..2
+
+        output:
+            file MAP into maps
+            file 'new_phenotype.ped' into peds
+
+        script:
+        """
+        awk '{\$6 = "$Y"; print}' $PED >new_phenotype.ped
+        """
+
+    }
+
+    process merge_datasets {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file 'map*' from maps. collect()
+            file 'ped*' from peds. collect()
+
+        output:
+            file 'merged.ped' into ped
+            file 'merged.map' into map, map_out
+
+        """
+        plink --ped ped1 --map map1 --merge ped2 map2 --allow-extra-chr --allow-no-sex --recode --out merged
+        """
+
+    }
+
+    process read_genotype {
 
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file X
+        file MAP from map
+        file PED from ped
 
     output:
-        file "x_normalized.npy" into normalized_X
+        file 'x.npy' into normalized_X
+        file 'y.npy' into Y
+        file 'featnames.npy' into FEATNAMES
 
     script:
-    template 'data_processing/normalize.py'
+    template 'io/ped2npy.R' 
+
+    }
 
 }
 
