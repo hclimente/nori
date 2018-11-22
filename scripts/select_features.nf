@@ -66,9 +66,7 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 
     input_files = Channel.from ( [ped1,map1], [ped2,map2] )
 
-    // Uncomment
-    //M = String.valueOf(params.M) + ', discrete_x = True'
-    M = params.M
+    M = String.valueOf(params.M) + ', discrete_x = True'
 
     process set_phenotypes {
 
@@ -102,7 +100,7 @@ if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
             file 'merged.map' into map, map_out
 
         """
-        plink --ped ped1 --map map1 --merge ped2 map2 --allow-extra-chr --recode --out merged
+        plink --ped ped1 --map map1 --merge ped2 map2 --allow-extra-chr --allow-no-sex --recode --out merged
         """
 
     }
@@ -144,7 +142,7 @@ process run_hsic_lasso {
         val MODE from params.type
     
     output:
-        set val("hsic_lasso_C=${C}_SELECT=${HL_SELECT}_M=${HL_M}_B=${HL_B}"), 'features_hl.npy' into features_hl
+        set val("hsic_lasso_C=${C}_SELECT=${HL_SELECT}_M=${params.M}_B=${HL_B}"), 'features_hl.npy' into features_hl
 
     script:
     template 'feature_selection/hsic_lasso.py'
