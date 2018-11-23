@@ -24,8 +24,6 @@ hl.Y_in = np.load("${Y_TRAIN}").T
 hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
-d,n = hl.X_in.shape
-
 try:
     hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M)
 except MemoryError:
