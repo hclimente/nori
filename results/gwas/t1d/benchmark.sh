@@ -1,0 +1,1 @@
+nextflow run ../../../scripts/benchmark_real.nf  --input EGAD00000000008.ped --map1  EGAD00000000008.map --ped2  EGAD00000000001.ped --map2 EGAD00000000001.map --causal 10,50 --B 5,10 --perms 5 -profile cluster -resume "$@"
