@@ -14,5 +14,5 @@ Study of non-linear phenotype-genotype relationships in high-dimensional experim
 
 ## Manuscript
 
-- [Figures](doc/figures.ipynb)
-- [Supplementary figures](doc/supplementary_figures.ipynb)
+- [Figures](doc/figures.ipynb): draft main figures.
+- [Supplementary figures](doc/supplementary_figures.ipynb): draft supplementary figures.
