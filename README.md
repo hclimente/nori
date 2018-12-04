@@ -11,3 +11,8 @@ Study of non-linear phenotype-genotype relationships in high-dimensional experim
 - [Images and microarrays](doc/benchmark_real.ipynb): prediction of 3 image datasets and 3 gene expression microarrays.
 - [Single-cell RNA-seq](doc/single_cell.ipynb): prediction of cell phenotypes on three single-cell datasets.
 - [GWAS](doc/gwas.ipynb): phenotype prediction and biomarker discovery on WTCCC1 datasets.
+
+## Manuscript
+
+- [Figures](doc/figures.ipynb)
+- [Supplementary figures](doc/supplementary_figures.ipynb)
