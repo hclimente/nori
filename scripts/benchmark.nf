@@ -66,7 +66,7 @@ process run_lars {
         set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
 
     script:
-    template 'feature_selection/lars.py'
+    template 'feature_selection/lars_spams.py'
 
 }
 
