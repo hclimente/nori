@@ -16,8 +16,9 @@ x_train = np.load('${X_TRAIN}')
 x_train = np.asfortranarray(x_train)
 y_train = np.load('${Y_TRAIN}')
 y_train  = np.expand_dims(y_train, 1)
+y_train = y_train.astype(float)
 y_train = np.asfortranarray(y_train)
 
-alpha = spams.lasso(y_train, D = x_train, return_reg_path = False, L = ${C}, lambda1 = 10e6)
+alpha = spams.lasso(y_train, D = x_train, return_reg_path = False, L = ${C}, lambda1 = 1e-10)
 features = np.nonzero(alpha)[0]
 np.save('features_lars.npy', features)
