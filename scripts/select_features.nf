@@ -17,7 +17,41 @@ params.type = 'classification'
 
 // READ DATA
 /////////////////////////////////////
-if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
+if (input_file.getExtension() == 'mat') {
+
+    process read_matlab {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file INPUT_FILE from input_file
+
+        output:
+            file 'x.npy' into X
+            file 'y.npy' into Y
+            file 'featnames.npy' into FEATNAMES
+
+        script:
+        template 'io/mat2npy.py'
+
+    }
+
+    process normalize_data {
+
+        clusterOptions = '-V -jc pcc-skl'
+
+        input:
+            file X
+
+        output:
+            file "x_normalized.npy" into normalized_X
+
+        script:
+        template 'data_processing/normalize.py'
+
+    }
+
+} else if (input_file.getExtension() == 'tsv' || input_file.getExtension() == 'txt') {
 
     metadata = file(params.metadata)
     M = params.M
@@ -137,7 +171,7 @@ process run_hsic_lasso {
         file FEATNAMES
         val C from params.causal
         val HL_SELECT from params.select
-        val HL_M from M
+        val HL_M from params.M
         val HL_B from params.B
         val MODE from params.type
     
