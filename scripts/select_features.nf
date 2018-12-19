@@ -91,14 +91,17 @@ if (input_file.getExtension() == 'mat') {
         template 'data_processing/impute_magic.py'
 
     }
-} else if (input_file.getExtension() == 'ped') {
 
-    ped1 = input_file
-    map1 = file(params.map1)
-    ped2 = file(params.ped2)
-    map2 = file(params.map2)
+}  else if (input_file.getExtension() == 'bed') {
 
-    input_files = Channel.from ( [ped1,map1], [ped2,map2] )
+    bed1 = input_file
+    bim1 = file(params.bim1)
+    fam1 = file(params.fam1)
+    bed2 = file(params.bed2)
+    bim2 = file(params.bim2)
+    fam2 = file(params.fam2)
+
+    input_files = Channel.from ( [bed1,bim1,fam1], [bed2,bim2,fam2] )
 
     M = String.valueOf(params.M) + ', discrete_x = True'
 
@@ -107,16 +110,17 @@ if (input_file.getExtension() == 'mat') {
         clusterOptions = '-V -jc pcc-skl'
 
         input:
-            set file(PED), file(MAP) from input_files
+            set file(BED), file(BIM), file(FAM) from input_files
             val Y from 1..2
 
         output:
-            file MAP into maps
-            file 'new_phenotype.ped' into peds
+            file BED into beds
+            file BIM into bims
+            file 'new_phenotype.fam' into fams
 
         script:
         """
-        awk '{\$6 = "$Y"; print}' $PED >new_phenotype.ped
+        awk '{\$6 = "$Y"; print}' $FAM >new_phenotype.fam
         """
 
     }
@@ -126,15 +130,17 @@ if (input_file.getExtension() == 'mat') {
         clusterOptions = '-V -jc pcc-skl'
 
         input:
-            file 'map*' from maps. collect()
-            file 'ped*' from peds. collect()
+            file 'bed*' from beds. collect()
+            file 'bim*' from bims. collect()
+            file 'fam*' from fams. collect()
 
         output:
-            file 'merged.ped' into ped
-            file 'merged.map' into map, map_out
+            file 'merged.bed' into bed
+            file 'merged.bim' into bim
+            file 'merged.fam' into fam, fam_out
 
         """
-        plink --ped ped1 --map map1 --merge ped2 map2 --allow-extra-chr --allow-no-sex --recode --out merged
+        plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --make-bed --out merged
         """
 
     }
@@ -144,8 +150,9 @@ if (input_file.getExtension() == 'mat') {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        file MAP from map
-        file PED from ped
+        file BED from bed
+        file BIM from bim
+        file FAM from fam
 
     output:
         file 'x.npy' into X
@@ -153,7 +160,7 @@ if (input_file.getExtension() == 'mat') {
         file 'featnames.npy' into FEATNAMES
 
     script:
-    template 'io/ped2npy.R' 
+    template 'io/bed2npy.R' 
 
     }
 
