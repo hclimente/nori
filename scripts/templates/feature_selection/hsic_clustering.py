@@ -25,7 +25,7 @@ hl.Y_in = np.expand_dims(hl.Y_in, 0)
 hl.featname = np.load("${FEATNAMES}")
 
 try:
-    hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M)
+    hl.${MODE}($HL_SELECT, B = $HL_B, M = $HL_M, max_neighbors = 50)
 except MemoryError:
     import sys, traceback
     traceback.print_exc()

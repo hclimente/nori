@@ -164,6 +164,7 @@ if (input_file.getExtension() == 'mat') {
 process run_hsic_clustering {
 
     clusterOptions = '-V -jc pcc-large'
+    publishDir "$params.out", overwrite: true, mode: "copy"
 
     input:
         file X_TRAIN from X
