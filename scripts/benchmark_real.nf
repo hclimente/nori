@@ -167,7 +167,8 @@ if (input_file.getExtension() == 'mat') {
             file 'merged.fam' into fam, fam_out
 
         """
-        plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --make-bed --out merged
+        cut -f2 bim1 bim2 | sort | uniq -c | grep ' 2' | cut -d' ' -f8 >intersection
+        plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --maf --extract intersection --make-bed --out merged
         """
 
     }
