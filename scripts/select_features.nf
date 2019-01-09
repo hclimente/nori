@@ -136,11 +136,12 @@ if (input_file.getExtension() == 'mat') {
 
         output:
             file 'merged.bed' into bed
-            file 'merged.bim' into bim
-            file 'merged.fam' into fam, fam_out
+            file 'merged.bim' into bim, bim_out
+            file 'merged.fam' into fam
 
         """
-        plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --make-bed --out merged
+	cut -f2 bim1 bim2 | sort | uniq -c | grep ' 2' | cut -d' ' -f8 >intersection
+	plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --maf --extract intersection --make-bed --out merged
         """
 
     }
@@ -178,7 +179,7 @@ process run_hsic_lasso {
         file FEATNAMES
         val C from params.causal
         val HL_SELECT from params.select
-        val HL_M from params.M
+        val HL_M from M
         val HL_B from params.B
         val MODE from params.type
     
@@ -225,7 +226,7 @@ process run_lars {
         set val("lars_C=${C}"), 'features_lars.npy' into features_lars
 
     script:
-    template 'feature_selection/lars.py'
+    template 'feature_selection/lars_spams.py'
 
 }
 
@@ -233,7 +234,7 @@ features = features_hl .mix( features_mrmr, features_lars )
 
 //  OUTPUT FEATURE NAMES
 /////////////////////////////////////
-if (input_file.getExtension() == 'ped') {
+if (input_file.getExtension() == 'bed') {
 
     process get_snps {
 
@@ -242,7 +243,7 @@ if (input_file.getExtension() == 'ped') {
 
         input:
             set METHOD, file(FEATURES) from features
-            file map_out
+            file bim_out
 
         output:
             file "${input_file.baseName}_${METHOD}.txt"
@@ -256,8 +257,8 @@ if (input_file.getExtension() == 'ped') {
 
         snps = []
 
-        with open('$map_out', 'r') as MAP: 
-            for line in MAP.readlines():
+        with open('$bim_out', 'r') as BIM: 
+            for line in BIM.readlines():
                 snp = line.strip().split('\t')[1]
                 snps.append(snp)
 
