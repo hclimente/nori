@@ -1,1 +1,3 @@
-gwas_univariate --ped1 EGAD00000000008.ped --map1  EGAD00000000008.map --ped2  EGAD00000000001.ped --map2 EGAD00000000001.map -with-trace -with-docker hclimente/gwas-tools -resume
+merge_cc --file1 controls.bed --file2 t1d.bed -with-docker hclimente/gwas-tools
+plink --bfile merged --assoc fisher
+sed 's/^ \+//' plink.assoc.fisher | sed 's/ \+/\t/g' | sed 's/\t$//' >univariate_association.tsv
