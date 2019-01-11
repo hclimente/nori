@@ -1,1 +1,1 @@
-../../../scripts/select_features.nf --input EGAD00000000007.ped --map1  EGAD00000000007.map --ped2  EGAD00000000001.ped --map2 EGAD00000000001.map -resume -with-trace
+../../../scripts/select_features.nf --input ra.bed --bim1 ra.bim --fam1 ra.fam --bed2 controls.bed --bim2 controls.bim --fam2 controls.fam --B 20 -resume -with-trace

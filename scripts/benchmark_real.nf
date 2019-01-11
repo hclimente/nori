@@ -14,7 +14,7 @@ D = 'None'
 SPLIT = 0.2
 params.perms = 10
 params.causal = '10,25,50'
-causal = params .causal.split(",")
+causal = params.causal .toString().split(",")
 
 // classifier
 params.mode = 'classification'
@@ -26,7 +26,7 @@ params.hl_select = 50
 params.M = 3
 M = params.M
 params.B = '0,5,10'
-B = params.B .split(",")
+B = params.B .toString().split(",")
 
 //  GENERATE DATA
 /////////////////////////////////////

@@ -72,7 +72,7 @@ process run_lars {
 
 process run_hsic_lasso {
 
-    tag { "${C}, B = ${HL_B} (${I})" }
+    tag { "${C}, B = ${HL_B}, M = ${HL_M} (${I})" }
     clusterOptions = '-V -jc pcc-large'
     validExitStatus 0,77
     errorStrategy 'ignore'
