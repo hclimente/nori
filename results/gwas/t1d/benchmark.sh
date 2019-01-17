@@ -1,1 +1,1 @@
-nextflow run ../../../scripts/benchmark_real.nf  --input t1d.bed --bim1 t1d.bim --fam1 t1d.fam --bed2 controls.bed --bim2 controls.bim --fam2 controls.fam --causal 50 --B 20 --perms 5 -profile cluster -resume "$@"
+nextflow run ../../../scripts/benchmark_real.nf  --input t1d.bed --bim1 t1d.bim --fam1 t1d.fam --bed2 controls.bed --bim2 controls.bim --fam2 controls.fam --B 20 --perms 5 -profile cluster -resume "$@"
