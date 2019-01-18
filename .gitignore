@@ -23,6 +23,7 @@ test*
 *p53
 normalized_expression.tsv
 metadata.tsv
+univariate_models.tsv
 
 # Created by https://www.gitignore.io/api/visualstudiocode
 
