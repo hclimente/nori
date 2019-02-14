@@ -1,6 +1,10 @@
 # Non-linear genetics
 
-Study of non-linear phenotype-genotype relationships in high-dimensional experiments, such as GWAS.
+Study of non-linear phenotype-genotype relationships in high-dimensional experiments. Contains all the analyses of:
+
+Climente-González, H., Azencott, C-A., Kaski, S., and Yamada, M., [Block HSIC Lasso: model-free biomarker detection for ultra-high dimensional data.](https://www.biorxiv.org/content/10.1101/532192v1) bioRxiv 2019.
+
+## Experiments on synthetic data
 
 - [Data simulation](doc/data_generation.ipynb): brief analysis on how the data for benchmark are generated.
 - [Benchmark on synthetic data](doc/benchmark.ipynb): analysis of synthetic data.
