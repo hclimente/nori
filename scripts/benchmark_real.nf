@@ -162,33 +162,34 @@ if (input_file.getExtension() == 'mat') {
             file 'fam*' from fams. collect()
 
         output:
-            file 'merged.bed' into bed
-            file 'merged.bim' into bim
-            file 'merged.fam' into fam, fam_out
+            file 'filtered.bed' into bed
+            file 'filtered.bim' into bim
+            file 'filtered.fam' into fam, fam_out
 
         """
         cut -f2 bim1 bim2 | sort | uniq -c | grep ' 2' | cut -d' ' -f8 >intersection
         plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --maf --extract intersection --make-bed --out merged
+        plink -bfile merged --maf 0.05 --mind 0.1 --geno 0.1 --hwe 0.001 --make-bed --out filtered
         """
 
     }
 
     process read_genotype {
 
-    clusterOptions = '-V -jc pcc-skl'
+        clusterOptions = '-V -jc pcc-skl'
 
-    input:
-        file BED from bed
-        file BIM from bim
-        file FAM from fam
+        input:
+            file BED from bed
+            file BIM from bim
+            file FAM from fam
 
-    output:
-        file 'x.npy' into normalized_X
-        file 'y.npy' into Y
-        file 'featnames.npy' into FEATNAMES
+        output:
+            file 'x.npy' into normalized_X
+            file 'y.npy' into Y
+            file 'featnames.npy' into FEATNAMES
 
-    script:
-    template 'io/bed2npy.R' 
+        script:
+        template 'io/bed2npy.R' 
 
     }
 
