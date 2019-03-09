@@ -135,13 +135,14 @@ if (input_file.getExtension() == 'mat') {
             file 'fam*' from fams. collect()
 
         output:
-            file 'merged.bed' into bed
-            file 'merged.bim' into bim, bim_out
-            file 'merged.fam' into fam
+            file 'filtered.bed' into bed
+            file 'filtered.bim' into bim, bim_out
+            file 'filtered.fam' into fam
 
         """
         cut -f2 bim1 bim2 | sort | uniq -c | grep ' 2' | cut -d' ' -f8 >intersection
         plink --bed bed1 --bim bim1 --fam fam1 --bmerge bed2 bim2 fam2 --maf --extract intersection --make-bed --out merged
+        plink -bfile merged --maf 0.05 --mind 0.1 --geno 0.1 --hwe 0.001 --make-bed --out filtered
         """
 
     }

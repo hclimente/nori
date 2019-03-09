@@ -12,7 +12,8 @@ params.d = [1000, 2500, 5000, 10000]
 params.noise = 0
 
 params.data_generation = 'yamada_additive'
-if (params.data_generation == 'random') causal = [5, 10, 20]
+if (params.data_generation == 'continuous') causal = [5, 10, 20]
+else if (params.data_generation == 'discrete') causal = [5, 10, 20]
 else if (params.data_generation == 'yamada_additive') causal = 4
 else if (params.data_generation == 'yamada_nonadditive') causal = 3
 NOISE = params.noise
@@ -22,11 +23,12 @@ params.mode = 'regression'
 MODE = params.mode
 STAT = (MODE == 'regression')? 'mse' : 'accuracy'
 
-
 // HSIC lasso
 params.B = [0,5,10,20]
 params.M = 3
 params.hl_select = 50
+
+M = (params.data_generation == 'discrete')? String.valueOf(params.M) + ', discrete_x = True' : params.M
 
 //  GENERATE DATA
 /////////////////////////////////////
@@ -44,7 +46,8 @@ process simulate_data {
         set N,D,I,C,"x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into data
 
     script:
-    if (params.data_generation == 'random') template 'data_processing/generate_data.py'
+    if (params.data_generation == 'continuous') template 'data_processing/generate_continuous_data.py'
+    else if (params.data_generation == 'discrete') template 'data_processing/generate_discrete_data.py'
     else if (params.data_generation == 'yamada_additive') template 'data_processing/yamada_additive.py'
     else if (params.data_generation == 'yamada_nonadditive') template 'data_processing/yamada_nonadditive.py'
 
@@ -79,7 +82,7 @@ process run_hsic_lasso {
 
     input:
         set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
-        each HL_M from params.M
+        each HL_M from M
         each HL_B from params.B
         each HL_SELECT from params.hl_select
     
