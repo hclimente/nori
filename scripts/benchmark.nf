@@ -11,7 +11,7 @@ params.n = [100, 1000, 10000]
 params.d = [1000, 2500, 5000, 10000]
 params.noise = 0
 
-params.data_generation = 'yamada_additive'
+params.data_generation = 'continuous'
 if (params.data_generation == 'continuous') causal = [5, 10, 20]
 else if (params.data_generation == 'discrete') causal = [5, 10, 20]
 else if (params.data_generation == 'yamada_additive') causal = 4
@@ -43,7 +43,7 @@ process simulate_data {
         each C from causal
 
     output:
-        set N,D,I,C,"x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into data
+        set N,D,I,C,"x_train.npy","y_train.npy",'covars_train.npy',"x_test.npy","y_test.npy","featnames.npy" into data
 
     script:
     if (params.data_generation == 'continuous') template 'data_processing/generate_continuous_data.py'
@@ -63,10 +63,10 @@ process run_lars {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
+        set val('LARS'),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
 
     script:
     template 'feature_selection/lars_spams.py'
@@ -81,13 +81,13 @@ process run_hsic_lasso {
     errorStrategy 'ignore'
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
         each HL_M from M
         each HL_B from params.B
         each HL_SELECT from params.hl_select
     
     output:
-        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_hl.npy' into features_hsic
+        set val("HSIC_lasso-B=$HL_B-M=$HL_M"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), 'features_hl.npy' into features_hsic
 
     script:
     template 'feature_selection/hsic_lasso.py'
@@ -100,10 +100,10 @@ process run_mrmr {
     clusterOptions = '-V -jc pcc-large'
 
     input:
-        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
+        set N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_mrmr
     
     output:
-        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_mrmr.npy' into features_mrmr
+        set val("mRMR"),N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), 'features_mrmr.npy' into features_mrmr
 
     script:
     template 'feature_selection/mrmr.py'
@@ -122,7 +122,7 @@ process analyze_features {
     clusterOptions = '-V -jc pcc-skl'
 
     input:
-        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_qc
+        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_qc
 
     output:
         file 'feature_stats' into feature_analyses
@@ -159,7 +159,7 @@ process prediction {
     validExitStatus 0,77
 
     input:
-        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
+        set MODEL,N,D,I,C, file(X_TRAIN), file(Y_TRAIN), file(COVARS), file(X_TEST), file(Y_TEST), file(SELECTED_FEATURES) from features_prediction
 
     output:
         set MODEL,N,D,I,C, file(Y_TEST),'y_pred.npy' into predictions
