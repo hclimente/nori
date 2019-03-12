@@ -41,6 +41,7 @@ for set_type,n in zip(['train', 'test'], [${N}, 100]):
         
     np.save("x_{}.npy".format(set_type), x[selected,:].astype(float))
     np.save("y_{}.npy".format(set_type), y_bin[selected].astype(int))
+    np.save("covars_{}.npy".format(set_type), np.array([]))
 
 featnames = [ str(x) for x in np.arange(${D}) ]
 
