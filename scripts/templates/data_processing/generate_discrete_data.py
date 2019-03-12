@@ -26,18 +26,20 @@ for i in range(${C}):
 
 for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
-    x = np.random.random_integers(0, 2, size = (10 * n,${D}))
-    y = np.zeros(10 * n)
+    x = np.random.randint(0, 2, size = (5 * n,${D}))
+    y = np.zeros(5 * n)
 
     for i in range(${C}):
         f,args = F[funs[i]]
         y += f(x[:,i], args)
 
-    y_bin = y > np.quantile(y, 0.9)
+    y_bin = y >= np.quantile(y, 0.9)
 
-    unaffected = np.random.choice(np.where(np.logical_not(y_bin))[0], 
-                                  size = int(n/10), replace=False)
-    selected = np.concatenate((np.where(y_bin)[0], unaffected))
+    unaffected = np.random.choice(np.where(np.logical_not(y_bin))[0],
+                                  size = int(n/2), replace=False)
+    affected = np.random.choice(np.where(y_bin)[0],
+                                size = int(n/2), replace=False)
+    selected = np.concatenate((affected, unaffected))
         
     np.save("x_{}.npy".format(set_type), x[selected,:].astype(float))
     np.save("y_{}.npy".format(set_type), y_bin[selected].astype(int))
