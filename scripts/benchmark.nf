@@ -34,7 +34,7 @@ M = (params.data_generation == 'discrete')? String.valueOf(params.M) + ', discre
 /////////////////////////////////////
 process simulate_data {
 
-    clusterOptions = '-V -jc pcc-skl'
+    clusterOptions = '-V -jc pcc-large'
 
     input:
         each N from params.n

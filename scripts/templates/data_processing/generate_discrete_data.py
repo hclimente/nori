@@ -26,8 +26,8 @@ for i in range(${C}):
 
 for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
-    x = np.random.randint(0, 2, size = (5 * n,${D}))
-    y = np.zeros(5 * n)
+    x = np.random.randint(0, 2, size = (10 * n,${D}))
+    y = np.zeros(10 * n)
 
     for i in range(${C}):
         f,args = F[funs[i]]
