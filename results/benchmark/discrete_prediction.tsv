@@ -1,1951 +1,1951 @@
 model	samples	features	causal	i	accuracy
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	10	0.97
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	1	0.98
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	2	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	3	0.98
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	4	0.95
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	5	0.97
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	6	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	7	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	8	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	9	0.97
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	10	0.99
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	1	0.96
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	2	0.93
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	3	0.92
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	4	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	5	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	6	0.95
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	7	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	8	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	10	9	0.88
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	10	0.89
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	1	0.92
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	1	0.86
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	2	0.9
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	3	0.9
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	4	0.89
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	5	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	6	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	7	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	8	0.86
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	9	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	3	0.92
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	4	0.9
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	5	0.86
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	6	0.89
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	7	0.93
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	8	0.82
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	20	9	0.9
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	10	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	1	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	2	0.98
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	3	0.96
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	2	1.0
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	3	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	4	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	5	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	6	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	7	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	8	0.97
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	1000	5	9	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	10	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	1	0.97
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	10	0.95
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	1	0.92
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	2	0.95
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	3	0.91
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	4	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	5	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	6	0.95
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	7	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	3	0.95
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	4	0.95
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	5	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	6	0.96
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	7	0.96
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	8	0.95
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	10	9	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	10	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	1	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	2	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	3	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	4	0.9
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	5	0.86
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	6	0.91
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	7	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	8	0.88
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	9	0.92
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	10	0.86
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	1	0.88
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	2	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	3	0.9
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	4	0.89
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	5	0.87
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	6	0.88
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	7	0.85
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	8	0.89
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	20	9	0.89
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	10	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	1	0.98
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	1	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	2	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	3	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	4	0.97
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	3	0.99
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	4	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	5	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	6	0.95
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	6	1.0
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	7	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	8	1.0
+HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	8	0.91
 HSIC_lasso-B=0-M=3, discrete_x = True	1000	2500	5	9	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	10	0.62
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	1	0.81
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	2	0.81
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	3	0.77
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	4	0.74
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	5	0.79
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	6	0.69
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	7	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	8	0.77
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	9	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	10	0.49
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	1	0.51
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	2	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	3	0.59
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	4	0.55
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	5	0.62
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	6	0.67
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	7	0.67
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	8	0.67
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	9	0.61
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	10	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	1	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	2	0.83
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	3	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	4	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	5	0.89
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	6	0.7
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	7	0.93
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	8	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	9	0.97
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	10	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	1	0.81
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	2	0.88
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	3	0.86
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	4	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	5	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	6	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	7	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	8	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	9	0.81
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	10	0.63
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	1	0.74
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	2	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	3	0.69
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	4	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	5	0.66
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	6	0.79
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	7	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	8	0.58
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	9	0.68
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	10	0.97
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	1	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	2	0.99
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	3	0.71
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	4	0.83
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	5	1.0
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	6	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	7	0.91
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	8	0.98
-HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	9	0.89
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	10	0.81
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	10	0.52
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	1	0.57
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	2	0.72
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	3	0.55
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	4	0.67
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	5	0.74
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	6	0.73
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	7	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	8	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	10	9	0.62
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	10	0.53
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	1	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	2	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	3	0.52
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	4	0.61
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	5	0.63
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	6	0.61
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	7	0.6
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	8	0.51
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	20	9	0.56
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	10	0.75
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	1	0.75
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	2	0.66
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	3	0.87
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	4	0.77
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	5	0.86
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	6	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	7	0.85
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	8	0.83
+HSIC_lasso-B=0-M=3, discrete_x = True	100	10000	5	9	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	10	0.7
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	1	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	2	0.77
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	3	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	4	0.81
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	5	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	6	0.69
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	7	0.69
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	8	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	10	9	0.64
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	10	0.69
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	1	0.7
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	2	0.7
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	3	0.63
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	4	0.63
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	5	0.72
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	6	0.73
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	7	0.66
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	8	0.63
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	20	9	0.55
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	10	0.85
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	1	0.82
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	2	0.84
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	3	0.88
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	4	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	5	0.94
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	6	0.83
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	7	0.83
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	8	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	100	1000	5	9	0.88
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	10	0.74
 HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	1	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	2	0.84
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	3	0.69
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	4	0.78
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	5	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	6	0.76
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	7	0.79
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	8	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	9	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	10	0.66
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	1	0.67
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	2	0.61
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	3	0.62
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	4	0.73
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	5	0.65
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	6	0.62
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	7	0.72
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	8	0.64
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	9	0.57
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	10	0.87
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	1	0.96
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	2	0.88
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	3	0.84
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	4	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	5	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	6	0.79
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	7	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	8	0.97
-HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	9	0.88
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	10	0.8
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	1	0.73
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	2	0.73
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	3	0.7
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	4	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	5	0.82
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	6	0.71
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	7	0.65
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	8	0.78
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	9	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	10	0.59
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	1	0.67
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	2	0.68
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	3	0.58
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	4	0.74
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	5	0.58
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	6	0.68
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	7	0.66
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	8	0.63
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	9	0.57
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	10	0.89
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	1	0.98
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	2	0.94
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	3	0.85
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	4	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	5	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	6	0.76
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	7	0.92
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	8	0.75
-HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	9	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	10	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	1	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	2	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	3	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	4	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	5	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	6	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	7	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	8	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	9	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	10	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	1	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	2	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	3	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	4	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	5	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	6	0.93
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	2	0.72
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	3	0.7
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	4	0.82
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	5	0.68
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	6	0.68
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	7	0.77
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	8	0.67
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	10	9	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	10	0.52
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	1	0.64
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	2	0.51
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	3	0.59
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	4	0.57
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	5	0.57
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	6	0.64
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	7	0.61
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	8	0.61
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	20	9	0.7
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	10	0.8
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	1	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	2	0.93
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	3	0.75
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	4	0.73
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	5	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	6	0.71
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	7	0.9
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	8	0.78
+HSIC_lasso-B=0-M=3, discrete_x = True	100	2500	5	9	0.89
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	10	0.71
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	1	0.67
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	2	0.74
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	3	0.62
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	4	0.72
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	5	0.8
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	6	0.58
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	7	0.85
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	8	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	10	9	0.72
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	10	0.51
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	1	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	2	0.63
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	3	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	4	0.64
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	5	0.54
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	6	0.49
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	7	0.62
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	8	0.51
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	20	9	0.67
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	10	0.76
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	1	0.87
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	2	0.77
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	3	0.75
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	4	0.69
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	5	0.91
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	6	0.75
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	7	0.83
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	8	0.82
+HSIC_lasso-B=0-M=3, discrete_x = True	100	5000	5	9	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	10	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	1	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	2	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	3	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	4	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	5	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	6	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	7	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	8	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	10	9	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	10	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	1	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	2	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	3	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	4	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	5	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	6	0.86
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	7	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	8	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	9	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	10	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	1	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	8	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	20	9	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	10	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	1	0.95
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	2	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	3	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	4	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	5	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	4	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	5	0.86
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	6	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	8	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	8	0.97
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	10000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	10	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	1	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	2	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	3	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	4	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	5	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	6	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	7	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	8	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	10	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	1	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	2	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	3	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	4	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	5	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	6	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	7	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	8	0.97
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	10	9	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	10	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	1	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	2	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	3	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	4	0.87
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	5	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	6	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	7	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	8	0.86
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	9	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	10	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	1	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	2	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	3	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	4	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	5	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	6	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	7	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	8	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	20	9	0.93
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	10	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	1	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	2	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	3	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	5	0.83
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	6	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	10	0.84
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	5	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	6	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	7	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	8	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	1000	5	9	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	10	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	1	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	2	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	3	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	4	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	2	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	3	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	4	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	5	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	6	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	6	0.97
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	8	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	9	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	10	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	1	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	2	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	3	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	4	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	5	0.87
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	6	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	7	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	8	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	9	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	10	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	8	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	10	9	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	10	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	1	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	2	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	3	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	4	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	5	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	6	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	7	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	8	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	20	9	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	10	0.96
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	1	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	2	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	3	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	3	0.82
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	5	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	5	0.91
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	6	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	10	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	1	0.86
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	2	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	3	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	4	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	5	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	6	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	7	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	8	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	2500	5	9	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	10	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	1	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	2	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	3	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	4	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	5	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	6	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	7	0.95
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	8	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	9	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	10	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	1	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	2	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	3	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	4	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	5	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	6	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	7	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	8	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	9	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	10	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	1	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	2	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	3	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	10	9	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	10	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	1	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	2	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	3	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	4	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	5	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	6	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	7	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	8	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	20	9	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	10	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	1	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	2	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	3	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	5	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	6	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	5	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	6	0.95
 HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	10	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	1	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	2	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	3	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	4	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	5	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	6	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	7	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	8	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	9	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	10	0.84
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	1	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	2	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	3	0.75
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	4	0.83
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	5	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	6	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	7	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	8	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	9	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	10	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	1	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	2	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	3	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	8	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	10000	5000	5	9	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	10	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	1	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	2	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	3	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	4	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	5	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	6	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	7	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	8	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	10	9	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	10	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	1	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	2	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	3	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	4	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	5	0.76
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	6	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	7	0.77
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	8	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	20	9	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	10	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	1	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	2	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	3	0.99
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	5	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	6	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	10	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	1	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	2	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	3	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	4	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	5	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	6	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	7	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	8	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	9	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	10	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	1	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	5	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	6	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	7	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	8	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	10000	5	9	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	10	0.99
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	1	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	2	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	3	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	4	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	5	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	6	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	7	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	8	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	10	9	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	10	0.81
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	1	0.82
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	2	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	3	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	4	0.86
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	5	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	6	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	7	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	8	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	9	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	3	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	4	0.88
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	5	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	6	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	7	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	8	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	20	9	0.89
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	10	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	1	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	2	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	3	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	3	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	5	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	5	0.94
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	6	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	10	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	1	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	2	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	3	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	4	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	8	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	1000	5	9	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	10	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	1	0.84
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	2	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	3	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	4	0.89
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	5	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	6	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	7	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	8	0.96
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	9	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	10	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	1	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	2	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	3	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	4	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	5	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	6	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	7	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	8	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	9	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	6	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	7	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	8	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	10	9	0.87
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	10	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	1	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	2	0.76
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	3	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	4	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	5	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	6	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	7	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	8	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	20	9	0.87
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	10	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	1	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	2	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	3	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	3	0.99
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	4	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	5	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	6	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	8	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	10	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	1	0.95
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	2	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	3	0.94
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	5	0.84
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	6	1.0
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	7	0.95
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	8	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	2500	5	9	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	10	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	1	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	2	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	3	0.95
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	4	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	5	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	6	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	7	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	8	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	9	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	10	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	1	0.81
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	2	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	3	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	4	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	5	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	6	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	7	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	8	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	9	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	5	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	6	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	7	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	8	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	10	9	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	10	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	1	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	2	0.84
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	3	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	4	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	5	0.77
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	6	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	7	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	8	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	20	9	0.74
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	10	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	1	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	2	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	3	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	4	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	2	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	3	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	4	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	5	1.0
 HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	6	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	7	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	8	0.98
-HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	9	1.0
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	10	0.57
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	1	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	2	0.76
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	3	0.72
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	4	0.71
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	5	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	7	0.96
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	8	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	1000	5000	5	9	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	10	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	1	0.62
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	2	0.7
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	3	0.61
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	4	0.69
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	5	0.69
 HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	6	0.69
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	7	0.73
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	8	0.74
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	9	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	7	0.79
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	8	0.56
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	10	9	0.61
 HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	10	0.61
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	1	0.59
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	2	0.7
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	3	0.57
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	4	0.53
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	5	0.62
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	6	0.65
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	7	0.46
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	8	0.58
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	9	0.46
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	10	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	1	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	2	0.83
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	3	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	4	0.85
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	5	0.87
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	6	0.7
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	7	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	8	0.84
-HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	9	0.97
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	10	0.81
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	1	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	2	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	3	0.8
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	4	0.78
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	5	0.7
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	6	0.8
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	7	0.65
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	8	0.74
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	9	0.7
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	10	0.64
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	1	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	2	0.73
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	3	0.5
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	4	0.66
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	5	0.66
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	6	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	7	0.71
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	8	0.51
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	9	0.65
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	10	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	1	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	2	0.99
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	3	0.71
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	4	0.83
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	5	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	6	0.86
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	7	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	8	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	9	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	10	0.78
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	1	0.77
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	2	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	3	0.78
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	4	0.72
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	5	0.76
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	6	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	7	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	8	0.77
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	9	0.84
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	10	0.65
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	1	0.64
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	2	0.57
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	3	0.74
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	4	0.73
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	5	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	6	0.61
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	7	0.71
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	8	0.49
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	9	0.64
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	10	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	1	0.9
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	2	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	3	0.84
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	4	0.82
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	5	0.91
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	6	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	7	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	8	0.92
-HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	9	0.88
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	10	0.77
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	1	0.77
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	2	0.72
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	3	0.73
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	4	0.7
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	5	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	6	0.72
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	7	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	8	0.74
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	9	0.77
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	10	0.55
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	1	0.69
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	2	0.68
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	3	0.59
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	4	0.72
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	5	0.59
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	6	0.62
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	7	0.66
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	8	0.62
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	9	0.48
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	10	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	1	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	2	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	3	0.79
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	4	0.93
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	5	0.94
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	6	0.76
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	7	0.89
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	8	0.73
-HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	9	0.81
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	10	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	1	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	2	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	3	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	4	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	5	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	6	0.98
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	1	0.37
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	2	0.49
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	3	0.52
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	4	0.54
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	5	0.54
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	6	0.61
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	7	0.48
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	8	0.54
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	20	9	0.56
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	10	0.78
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	1	0.74
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	2	0.66
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	3	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	4	0.78
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	5	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	6	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	7	0.73
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	8	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	100	10000	5	9	0.89
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	10	0.66
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	1	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	2	0.65
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	3	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	4	0.74
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	5	0.72
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	6	0.58
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	7	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	8	0.77
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	10	9	0.66
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	10	0.59
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	1	0.62
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	2	0.72
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	3	0.61
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	4	0.64
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	5	0.59
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	6	0.59
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	7	0.6
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	8	0.63
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	20	9	0.61
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	10	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	1	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	2	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	3	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	4	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	5	0.93
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	6	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	7	0.97
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	8	0.76
+HSIC_lasso-B=10-M=3, discrete_x = True	100	1000	5	9	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	10	0.61
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	1	0.6
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	2	0.7
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	3	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	4	0.71
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	5	0.7
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	6	0.74
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	7	0.65
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	8	0.62
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	10	9	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	10	0.6
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	1	0.63
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	2	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	3	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	4	0.62
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	5	0.57
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	6	0.57
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	7	0.62
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	8	0.5
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	20	9	0.63
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	10	0.91
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	1	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	2	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	3	0.67
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	4	0.63
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	5	0.92
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	6	0.8
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	7	0.76
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	8	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	2500	5	9	0.9
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	10	0.71
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	1	0.67
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	2	0.68
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	3	0.63
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	4	0.65
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	5	0.78
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	6	0.54
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	7	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	8	0.58
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	10	9	0.6
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	10	0.52
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	1	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	2	0.66
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	3	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	4	0.57
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	5	0.55
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	6	0.58
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	7	0.52
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	8	0.65
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	20	9	0.6
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	10	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	1	0.83
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	2	0.85
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	3	0.75
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	4	0.73
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	5	0.86
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	6	0.74
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	7	0.82
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	8	0.71
+HSIC_lasso-B=10-M=3, discrete_x = True	100	5000	5	9	0.8
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	10	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	1	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	2	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	3	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	4	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	5	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	6	0.96
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	7	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	8	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	8	0.98
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	10	9	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	10	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	10	0.96
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	1	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	2	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	3	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	2	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	3	0.93
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	4	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	5	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	6	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	7	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	8	0.86
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	9	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	5	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	6	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	7	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	8	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	20	9	0.92
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	10	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	1	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	2	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	2	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	3	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	4	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	5	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	6	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	8	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	9	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	10	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	1	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	2	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	5	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	6	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	7	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	8	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	1000	5	9	0.85
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	10	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	1	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	2	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	3	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	4	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	4	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	5	0.97
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	6	0.98
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	8	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	9	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	10	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	1	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	2	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	3	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	4	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	5	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	6	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	8	0.99
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	10	9	0.99
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	10	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	1	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	2	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	3	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	4	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	5	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	6	0.9
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	7	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	8	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	9	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	10	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	8	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	20	9	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	10	0.96
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	1	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	2	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	3	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	3	0.82
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	4	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	5	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	5	0.91
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	6	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	8	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	9	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	8	0.99
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	2500	5	9	0.85
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	10	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	1	0.86
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	2	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	3	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	4	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	5	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	6	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	7	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	8	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	9	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	10	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	1	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	2	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	3	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	4	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	5	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	6	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	7	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	8	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	9	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	10	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	1	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	2	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	3	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	1	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	2	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	3	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	4	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	5	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	6	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	7	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	8	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	10	9	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	10	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	1	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	2	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	3	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	4	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	5	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	6	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	7	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	8	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	20	9	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	10	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	1	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	2	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	3	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	4	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	5	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	6	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	5	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	6	0.95
 HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	8	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	9	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	10	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	1	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	2	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	3	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	4	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	5	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	6	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	7	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	8	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	9	0.86
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	10	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	1	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	2	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	3	0.82
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	4	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	5	0.88
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	6	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	7	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	8	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	9	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	10	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	1	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	2	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	3	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	8	0.98
+HSIC_lasso-B=20-M=3, discrete_x = True	10000	5000	5	9	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	10	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	1	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	2	0.86
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	3	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	4	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	5	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	6	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	7	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	8	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	10	9	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	10	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	1	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	2	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	3	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	4	0.83
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	5	0.84
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	6	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	7	0.8
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	8	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	20	9	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	10	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	1	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	2	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	3	0.99
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	4	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	5	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	6	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	5	0.99
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	6	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	8	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	8	0.98
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	10000	5	9	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	10	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	1	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	2	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	3	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	4	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	5	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	6	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	7	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	8	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	9	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	10	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	1	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	2	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	3	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	4	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	5	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	6	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	7	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	8	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	9	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	10	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	1	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	2	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	3	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	4	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	5	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	6	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	7	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	8	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	10	9	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	10	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	1	0.86
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	2	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	3	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	4	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	5	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	6	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	7	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	8	0.84
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	20	9	0.89
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	10	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	1	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	2	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	3	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	3	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	4	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	5	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	5	0.94
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	6	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	8	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	9	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	8	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	1000	5	9	0.94
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	10	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	1	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	2	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	3	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	4	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	5	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	6	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	7	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	8	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	1	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	2	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	3	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	4	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	5	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	6	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	7	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	8	0.93
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	10	9	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	10	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	1	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	2	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	3	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	4	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	5	0.88
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	6	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	7	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	8	0.88
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	9	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	10	0.81
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	1	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	2	0.75
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	3	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	4	0.83
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	5	0.85
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	6	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	7	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	8	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	20	9	0.87
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	10	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	1	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	2	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	3	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	3	0.99
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	4	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	5	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	6	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	7	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	8	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	6	1.0
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	7	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	8	0.9
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	2500	5	9	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	10	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	1	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	2	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	3	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	10	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	1	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	2	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	3	0.95
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	4	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	5	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	6	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	7	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	8	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	9	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	5	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	6	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	7	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	8	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	10	9	0.92
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	10	0.89
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	1	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	2	0.93
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	2	0.83
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	3	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	4	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	5	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	6	0.86
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	7	0.93
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	8	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	9	0.92
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	4	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	5	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	6	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	7	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	8	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	20	9	0.85
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	10	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	1	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	2	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	3	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	4	0.96
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	2	0.85
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	3	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	4	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	5	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	6	1.0
 HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	7	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	8	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	9	1.0
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	10	0.61
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	1	0.76
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	2	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	3	0.69
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	4	0.72
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	5	0.82
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	6	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	7	0.65
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	8	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	9	0.71
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	10	0.54
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	1	0.57
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	2	0.69
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	3	0.63
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	4	0.55
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	5	0.61
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	6	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	7	0.65
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	8	0.73
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	9	0.58
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	10	0.82
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	1	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	2	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	3	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	4	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	5	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	6	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	7	0.81
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	8	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	9	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	10	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	1	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	2	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	3	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	4	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	5	0.72
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	6	0.78
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	7	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	8	0.74
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	9	0.76
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	10	0.65
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	1	0.71
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	2	0.71
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	3	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	4	0.67
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	5	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	6	0.73
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	7	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	8	0.58
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	9	0.6
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	10	0.97
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	1	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	2	0.99
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	3	0.71
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	4	0.8
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	5	0.98
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	6	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	7	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	8	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	9	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	10	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	1	0.75
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	2	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	3	0.76
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	4	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	5	0.74
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	6	0.72
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	7	0.8
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	8	0.81
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	9	0.83
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	10	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	1	0.69
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	2	0.69
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	3	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	4	0.72
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	8	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	1000	5000	5	9	0.95
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	10	0.54
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	1	0.63
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	2	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	3	0.65
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	4	0.71
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	5	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	6	0.67
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	7	0.76
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	8	0.69
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	10	9	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	10	0.56
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	1	0.55
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	2	0.65
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	3	0.49
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	4	0.56
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	5	0.6
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	6	0.64
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	7	0.53
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	8	0.55
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	20	9	0.51
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	10	0.78
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	1	0.77
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	2	0.6
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	3	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	4	0.82
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	5	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	6	0.8
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	7	0.85
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	8	0.81
+HSIC_lasso-B=20-M=3, discrete_x = True	100	10000	5	9	0.88
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	10	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	1	0.79
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	2	0.74
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	3	0.74
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	4	0.75
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	5	0.76
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	6	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	7	0.72
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	8	0.73
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	10	9	0.67
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	10	0.52
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	1	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	2	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	3	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	4	0.62
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	5	0.66
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	6	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	7	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	8	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	20	9	0.59
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	10	0.83
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	1	0.81
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	2	0.81
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	3	0.84
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	4	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	5	0.94
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	6	0.84
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	7	0.97
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	8	0.79
+HSIC_lasso-B=20-M=3, discrete_x = True	100	1000	5	9	0.89
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	10	0.64
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	1	0.61
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	2	0.73
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	3	0.64
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	4	0.78
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	5	0.67
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	6	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	7	0.66
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	8	0.7
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	10	9	0.75
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	10	0.55
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	1	0.64
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	2	0.55
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	3	0.59
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	4	0.5
 HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	5	0.63
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	6	0.6
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	7	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	8	0.52
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	9	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	10	0.87
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	1	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	2	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	3	0.84
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	4	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	5	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	6	0.79
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	7	0.9
-HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	8	0.91
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	6	0.71
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	7	0.64
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	8	0.65
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	20	9	0.6
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	10	0.82
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	1	0.83
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	2	0.7
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	3	0.74
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	4	0.77
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	5	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	6	0.74
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	7	0.8
+HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	8	0.81
 HSIC_lasso-B=20-M=3, discrete_x = True	100	2500	5	9	0.91
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	10	0.85
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	1	0.72
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	2	0.71
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	3	0.74
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	4	0.78
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	5	0.75
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	6	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	7	0.67
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	8	0.78
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	9	0.8
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	10	0.52
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	1	0.68
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	2	0.69
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	3	0.57
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	4	0.7
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	5	0.63
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	6	0.67
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	7	0.67
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	8	0.63
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	9	0.59
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	10	0.89
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	1	0.95
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	2	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	3	0.75
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	4	0.92
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	5	0.96
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	6	0.76
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	7	0.94
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	8	0.75
-HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	9	0.87
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	10	0.63
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	1	0.69
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	2	0.77
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	3	0.6
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	4	0.66
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	5	0.78
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	6	0.54
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	7	0.8
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	8	0.55
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	10	9	0.57
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	10	0.54
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	1	0.53
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	2	0.63
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	3	0.5
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	4	0.65
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	5	0.49
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	6	0.58
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	7	0.6
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	8	0.54
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	20	9	0.56
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	10	0.85
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	1	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	2	0.75
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	3	0.69
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	4	0.68
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	5	0.9
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	6	0.74
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	7	0.81
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	8	0.65
+HSIC_lasso-B=20-M=3, discrete_x = True	100	5000	5	9	0.8
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	10	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	1	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	2	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	3	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	4	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	5	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	6	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	7	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	8	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	9	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	10	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	1	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	1	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	2	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	3	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	4	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	5	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	6	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	7	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	8	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	10	9	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	10	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	1	0.96
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	2	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	3	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	4	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	5	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	6	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	7	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	8	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	9	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	3	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	4	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	5	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	6	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	7	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	8	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	20	9	0.89
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	10	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	1	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	1	0.95
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	2	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	3	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	4	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	5	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	4	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	5	0.86
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	6	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	8	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	8	0.97
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	10000	5	9	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	10	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	1	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	2	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	3	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	4	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	5	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	6	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	10	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	1	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	2	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	3	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	4	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	5	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	6	0.96
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	7	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	8	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	8	0.98
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	10	9	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	10	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	1	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	2	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	10	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	1	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	2	0.83
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	3	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	4	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	5	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	6	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	4	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	5	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	6	0.87
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	7	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	8	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	9	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	8	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	20	9	0.92
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	10	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	1	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	2	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	3	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	4	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	5	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	6	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	9	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	10	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	5	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	6	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	7	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	8	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	1000	5	9	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	10	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	1	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	2	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	3	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	4	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	2	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	3	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	4	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	5	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	6	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	6	0.97
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	8	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	9	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	10	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	1	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	2	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	3	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	4	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	5	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	6	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	8	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	10	9	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	10	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	1	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	2	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	3	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	4	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	5	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	6	0.9
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	7	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	8	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	9	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	10	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	8	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	20	9	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	10	0.96
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	1	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	2	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	3	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	3	0.82
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	4	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	5	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	5	0.91
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	6	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	9	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	10	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	1	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	2	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	3	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	4	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	5	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	6	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	7	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	8	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	9	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	10	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	1	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	2	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	3	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	4	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	5	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	6	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	7	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	8	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	9	0.89
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	10	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	1	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	2	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	3	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	8	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	2500	5	9	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	10	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	1	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	2	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	3	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	4	0.94
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	5	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	6	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	7	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	8	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	10	9	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	10	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	1	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	2	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	3	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	4	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	5	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	6	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	7	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	8	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	20	9	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	10	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	1	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	2	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	3	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	4	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	5	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	6	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	5	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	6	0.95
 HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	9	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	10	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	1	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	2	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	3	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	4	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	5	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	6	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	7	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	8	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	9	0.82
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	10	0.75
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	1	0.77
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	2	0.89
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	3	0.77
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	4	0.78
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	5	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	6	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	7	0.85
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	8	0.84
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	9	0.81
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	10	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	1	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	2	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	3	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	8	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	10000	5000	5	9	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	10	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	1	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	2	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	3	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	4	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	5	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	6	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	7	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	8	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	10	9	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	10	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	1	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	2	0.82
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	3	0.76
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	4	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	5	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	6	0.82
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	7	0.7
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	8	0.76
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	20	9	0.76
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	10	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	1	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	2	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	3	0.99
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	4	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	5	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	6	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	9	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	10	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	1	0.89
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	2	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	3	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	4	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	5	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	6	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	7	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	8	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	9	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	10	0.87
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	1	0.87
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	2	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	3	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	4	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	5	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	6	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	7	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	8	0.81
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	9	0.8
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	6	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	7	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	8	0.98
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	10000	5	9	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	10	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	1	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	2	0.82
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	3	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	4	0.77
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	5	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	6	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	7	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	8	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	10	9	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	10	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	1	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	2	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	3	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	4	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	5	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	6	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	7	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	8	0.77
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	20	9	0.84
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	10	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	1	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	1	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	2	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	3	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	4	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	5	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	3	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	4	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	5	0.91
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	6	1.0
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	9	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	10	0.87
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	1	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	2	0.87
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	3	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	4	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	5	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	6	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	7	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	8	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	9	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	10	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	1	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	2	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	3	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	4	0.81
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	5	0.85
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	6	0.85
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	7	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	8	0.8
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	9	0.85
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	10	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	1	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	8	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	1000	5	9	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	10	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	1	0.82
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	2	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	3	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	4	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	5	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	6	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	7	0.88
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	8	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	10	9	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	10	0.7
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	1	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	2	0.66
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	3	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	4	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	5	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	6	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	7	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	8	0.73
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	20	9	0.72
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	10	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	1	0.91
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	2	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	3	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	4	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	5	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	6	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	7	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	9	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	10	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	3	0.99
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	4	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	5	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	6	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	7	0.95
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	8	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	2500	5	9	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	10	0.81
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	1	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	2	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	3	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	4	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	5	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	6	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	7	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	8	0.87
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	9	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	10	0.82
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	1	0.79
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	2	0.84
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	3	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	4	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	5	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	6	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	7	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	8	0.84
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	9	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	10	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	1	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	2	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	3	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	4	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	5	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	2	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	3	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	4	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	5	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	6	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	7	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	8	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	10	9	0.93
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	10	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	1	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	2	0.74
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	3	0.73
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	4	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	5	0.8
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	6	0.74
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	7	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	8	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	20	9	0.72
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	10	0.85
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	1	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	2	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	3	0.97
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	4	1.0
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	5	0.97
 HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	6	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	7	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	8	1.0
-HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	9	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	10	0.55
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	1	0.68
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	2	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	3	0.7
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	4	0.64
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	5	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	6	0.71
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	7	0.69
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	8	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	9	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	10	0.56
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	1	0.54
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	2	0.64
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	3	0.54
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	4	0.49
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	5	0.65
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	6	0.64
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	7	0.57
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	8	0.63
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	9	0.46
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	10	0.82
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	1	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	2	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	7	0.96
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	8	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	1000	5000	5	9	0.87
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	10	0.47
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	1	0.72
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	2	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	3	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	4	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	5	0.62
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	6	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	7	0.72
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	8	0.53
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	10	9	0.5
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	10	0.57
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	1	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	2	0.48
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	3	0.42
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	4	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	5	0.6
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	6	0.54
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	7	0.52
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	8	0.54
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	20	9	0.55
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	10	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	1	0.77
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	2	0.54
 HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	3	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	4	0.78
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	5	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	6	0.7
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	7	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	8	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	9	0.98
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	10	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	1	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	2	0.69
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	3	0.72
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	4	0.69
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	5	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	6	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	4	0.74
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	5	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	6	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	7	0.77
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	8	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	100	10000	5	9	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	10	0.67
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	1	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	2	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	3	0.73
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	4	0.66
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	5	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	6	0.49
 HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	7	0.72
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	8	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	9	0.82
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	10	0.66
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	1	0.71
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	2	0.65
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	3	0.5
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	4	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	5	0.51
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	6	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	7	0.65
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	8	0.54
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	9	0.57
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	10	0.8
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	1	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	2	0.99
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	3	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	4	0.8
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	5	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	6	0.79
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	7	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	8	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	9	0.89
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	10	0.77
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	1	0.72
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	2	0.77
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	3	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	4	0.73
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	5	0.84
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	6	0.67
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	7	0.64
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	8	0.63
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	8	0.75
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	10	9	0.6
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	10	0.5
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	1	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	2	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	3	0.65
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	4	0.56
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	5	0.55
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	6	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	7	0.57
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	8	0.5
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	20	9	0.5
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	10	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	1	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	2	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	3	0.89
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	4	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	5	0.86
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	6	0.77
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	7	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	8	0.74
+HSIC_lasso-B=5-M=3, discrete_x = True	100	1000	5	9	0.82
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	10	0.49
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	1	0.7
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	2	0.68
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	3	0.68
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	4	0.72
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	5	0.68
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	6	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	7	0.67
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	8	0.6
 HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	10	9	0.81
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	10	0.58
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	1	0.56
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	2	0.6
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	3	0.8
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	4	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	5	0.65
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	6	0.53
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	7	0.57
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	8	0.48
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	9	0.67
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	10	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	1	0.9
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	2	0.86
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	3	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	4	0.81
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	5	0.91
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	6	0.79
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	7	0.93
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	8	0.97
-HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	9	0.92
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	10	0.68
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	1	0.69
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	2	0.72
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	3	0.74
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	4	0.65
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	5	0.83
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	6	0.66
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	7	0.67
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	8	0.77
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	9	0.78
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	10	0.55
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	1	0.6
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	2	0.68
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	3	0.56
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	4	0.69
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	5	0.56
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	6	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	10	0.53
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	1	0.62
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	2	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	3	0.47
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	4	0.54
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	5	0.51
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	6	0.48
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	7	0.66
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	8	0.55
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	20	9	0.63
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	10	0.79
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	1	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	2	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	3	0.69
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	4	0.71
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	5	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	6	0.71
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	7	0.81
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	8	0.83
+HSIC_lasso-B=5-M=3, discrete_x = True	100	2500	5	9	0.91
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	10	0.6
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	1	0.63
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	2	0.64
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	3	0.64
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	4	0.68
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	5	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	6	0.57
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	7	0.64
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	8	0.51
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	10	9	0.58
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	10	0.56
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	1	0.51
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	2	0.53
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	3	0.5
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	4	0.52
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	5	0.44
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	6	0.56
 HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	7	0.6
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	8	0.58
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	9	0.49
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	10	0.89
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	1	0.96
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	2	0.94
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	3	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	4	0.92
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	8	0.54
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	20	9	0.56
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	10	0.76
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	1	0.61
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	2	0.73
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	3	0.65
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	4	0.73
 HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	5	0.88
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	6	0.76
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	7	0.95
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	8	0.71
-HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	9	0.9
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	6	0.73
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	7	0.84
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	8	0.78
+HSIC_lasso-B=5-M=3, discrete_x = True	100	5000	5	9	0.72
 LARS	10000	10000	10	10	0.96
-LARS	10000	10000	10	1	0.89
-LARS	10000	10000	10	2	0.97
-LARS	10000	10000	10	3	0.93
-LARS	10000	10000	10	4	0.98
-LARS	10000	10000	10	5	0.98
-LARS	10000	10000	10	6	0.97
-LARS	10000	10000	10	7	0.98
-LARS	10000	10000	10	8	0.92
-LARS	10000	10000	10	9	0.91
-LARS	10000	10000	20	10	0.94
-LARS	10000	10000	20	1	0.94
-LARS	10000	10000	20	2	0.91
-LARS	10000	10000	20	3	0.94
-LARS	10000	10000	20	4	0.92
-LARS	10000	10000	20	5	0.96
-LARS	10000	10000	20	6	0.93
-LARS	10000	10000	20	7	0.91
-LARS	10000	10000	20	8	0.93
-LARS	10000	10000	20	9	0.97
-LARS	10000	10000	5	10	nan
-LARS	10000	10000	5	1	nan
-LARS	10000	10000	5	2	nan
-LARS	10000	10000	5	3	1.0
-LARS	10000	10000	5	4	0.94
-LARS	10000	10000	5	5	nan
+LARS	10000	10000	10	1	1.0
+LARS	10000	10000	10	2	0.94
+LARS	10000	10000	10	3	0.99
+LARS	10000	10000	10	4	0.97
+LARS	10000	10000	10	5	0.94
+LARS	10000	10000	10	6	0.95
+LARS	10000	10000	10	7	1.0
+LARS	10000	10000	10	8	0.98
+LARS	10000	10000	10	9	0.99
+LARS	10000	10000	20	10	0.92
+LARS	10000	10000	20	1	0.95
+LARS	10000	10000	20	2	0.92
+LARS	10000	10000	20	3	0.93
+LARS	10000	10000	20	4	0.9
+LARS	10000	10000	20	5	0.9
+LARS	10000	10000	20	6	0.87
+LARS	10000	10000	20	7	0.92
+LARS	10000	10000	20	8	0.98
+LARS	10000	10000	20	9	0.92
+LARS	10000	10000	5	10	1.0
+LARS	10000	10000	5	1	0.95
+LARS	10000	10000	5	2	1.0
+LARS	10000	10000	5	3	nan
+LARS	10000	10000	5	4	0.95
+LARS	10000	10000	5	5	0.86
 LARS	10000	10000	5	6	1.0
-LARS	10000	10000	5	7	nan
+LARS	10000	10000	5	7	1.0
 LARS	10000	10000	5	8	1.0
-LARS	10000	10000	5	9	nan
-LARS	10000	1000	10	10	0.96
-LARS	10000	1000	10	1	0.98
-LARS	10000	1000	10	2	0.95
-LARS	10000	1000	10	3	0.97
-LARS	10000	1000	10	4	0.99
-LARS	10000	1000	10	5	0.98
-LARS	10000	1000	10	6	0.98
-LARS	10000	1000	10	7	0.96
-LARS	10000	1000	10	8	0.94
+LARS	10000	10000	5	9	1.0
+LARS	10000	1000	10	10	0.97
+LARS	10000	1000	10	1	0.89
+LARS	10000	1000	10	2	0.98
+LARS	10000	1000	10	3	0.89
+LARS	10000	1000	10	4	0.97
+LARS	10000	1000	10	5	0.97
+LARS	10000	1000	10	6	nan
+LARS	10000	1000	10	7	0.95
+LARS	10000	1000	10	8	0.97
 LARS	10000	1000	10	9	0.97
-LARS	10000	1000	20	10	0.93
-LARS	10000	1000	20	1	0.94
-LARS	10000	1000	20	2	0.95
-LARS	10000	1000	20	3	nan
-LARS	10000	1000	20	4	0.9
-LARS	10000	1000	20	5	0.93
-LARS	10000	1000	20	6	0.94
-LARS	10000	1000	20	7	0.91
-LARS	10000	1000	20	8	0.87
-LARS	10000	1000	20	9	0.91
-LARS	10000	1000	5	10	nan
-LARS	10000	1000	5	1	nan
-LARS	10000	1000	5	2	nan
+LARS	10000	1000	20	10	0.97
+LARS	10000	1000	20	1	0.91
+LARS	10000	1000	20	2	0.84
+LARS	10000	1000	20	3	0.93
+LARS	10000	1000	20	4	0.93
+LARS	10000	1000	20	5	0.92
+LARS	10000	1000	20	6	0.92
+LARS	10000	1000	20	7	0.92
+LARS	10000	1000	20	8	0.91
+LARS	10000	1000	20	9	0.92
+LARS	10000	1000	5	10	1.0
+LARS	10000	1000	5	1	1.0
+LARS	10000	1000	5	2	1.0
 LARS	10000	1000	5	3	1.0
 LARS	10000	1000	5	4	1.0
-LARS	10000	1000	5	5	nan
-LARS	10000	1000	5	6	0.97
-LARS	10000	1000	5	7	nan
+LARS	10000	1000	5	5	0.91
+LARS	10000	1000	5	6	nan
+LARS	10000	1000	5	7	0.93
 LARS	10000	1000	5	8	1.0
-LARS	10000	1000	5	9	nan
-LARS	10000	2500	10	10	0.89
-LARS	10000	2500	10	1	0.99
-LARS	10000	2500	10	2	0.95
-LARS	10000	2500	10	3	0.95
-LARS	10000	2500	10	4	0.99
+LARS	10000	1000	5	9	0.85
+LARS	10000	2500	10	10	0.99
+LARS	10000	2500	10	1	0.98
+LARS	10000	2500	10	2	0.99
+LARS	10000	2500	10	3	0.96
+LARS	10000	2500	10	4	1.0
 LARS	10000	2500	10	5	0.97
-LARS	10000	2500	10	6	0.98
+LARS	10000	2500	10	6	0.97
 LARS	10000	2500	10	7	1.0
-LARS	10000	2500	10	8	0.96
-LARS	10000	2500	10	9	0.92
-LARS	10000	2500	20	10	0.89
-LARS	10000	2500	20	1	0.93
-LARS	10000	2500	20	2	0.92
-LARS	10000	2500	20	3	0.92
-LARS	10000	2500	20	4	0.94
-LARS	10000	2500	20	5	0.88
-LARS	10000	2500	20	6	0.96
-LARS	10000	2500	20	7	0.93
+LARS	10000	2500	10	8	0.98
+LARS	10000	2500	10	9	0.99
+LARS	10000	2500	20	10	0.93
+LARS	10000	2500	20	1	0.88
+LARS	10000	2500	20	2	0.87
+LARS	10000	2500	20	3	0.86
+LARS	10000	2500	20	4	0.95
+LARS	10000	2500	20	5	0.93
+LARS	10000	2500	20	6	0.9
+LARS	10000	2500	20	7	0.9
 LARS	10000	2500	20	8	0.91
-LARS	10000	2500	20	9	0.91
-LARS	10000	2500	5	10	nan
-LARS	10000	2500	5	1	nan
-LARS	10000	2500	5	2	nan
-LARS	10000	2500	5	3	1.0
+LARS	10000	2500	20	9	0.89
+LARS	10000	2500	5	10	0.96
+LARS	10000	2500	5	1	1.0
+LARS	10000	2500	5	2	1.0
+LARS	10000	2500	5	3	0.82
 LARS	10000	2500	5	4	1.0
-LARS	10000	2500	5	5	nan
+LARS	10000	2500	5	5	0.91
 LARS	10000	2500	5	6	1.0
-LARS	10000	2500	5	7	nan
+LARS	10000	2500	5	7	1.0
 LARS	10000	2500	5	8	1.0
-LARS	10000	2500	5	9	nan
-LARS	10000	5000	10	10	0.96
-LARS	10000	5000	10	1	0.86
+LARS	10000	2500	5	9	0.85
+LARS	10000	5000	10	10	0.97
+LARS	10000	5000	10	1	0.99
 LARS	10000	5000	10	2	0.96
-LARS	10000	5000	10	3	0.97
-LARS	10000	5000	10	4	0.98
-LARS	10000	5000	10	5	0.99
-LARS	10000	5000	10	6	0.9
-LARS	10000	5000	10	7	0.97
-LARS	10000	5000	10	8	1.0
-LARS	10000	5000	10	9	0.99
-LARS	10000	5000	20	10	0.95
-LARS	10000	5000	20	1	0.93
-LARS	10000	5000	20	2	0.95
-LARS	10000	5000	20	3	0.95
+LARS	10000	5000	10	3	0.94
+LARS	10000	5000	10	4	0.95
+LARS	10000	5000	10	5	0.97
+LARS	10000	5000	10	6	0.99
+LARS	10000	5000	10	7	0.94
+LARS	10000	5000	10	8	0.99
+LARS	10000	5000	10	9	0.96
+LARS	10000	5000	20	10	0.92
+LARS	10000	5000	20	1	0.91
+LARS	10000	5000	20	2	0.92
+LARS	10000	5000	20	3	0.91
 LARS	10000	5000	20	4	0.94
-LARS	10000	5000	20	5	0.97
-LARS	10000	5000	20	6	0.96
-LARS	10000	5000	20	7	0.97
-LARS	10000	5000	20	8	0.91
-LARS	10000	5000	20	9	0.9
-LARS	10000	5000	5	10	nan
-LARS	10000	5000	5	1	nan
-LARS	10000	5000	5	2	nan
-LARS	10000	5000	5	3	0.97
+LARS	10000	5000	20	5	0.9
+LARS	10000	5000	20	6	0.92
+LARS	10000	5000	20	7	0.9
+LARS	10000	5000	20	8	0.94
+LARS	10000	5000	20	9	0.92
+LARS	10000	5000	5	10	1.0
+LARS	10000	5000	5	1	0.9
+LARS	10000	5000	5	2	1.0
+LARS	10000	5000	5	3	1.0
 LARS	10000	5000	5	4	1.0
-LARS	10000	5000	5	5	nan
-LARS	10000	5000	5	6	0.98
-LARS	10000	5000	5	7	nan
-LARS	10000	5000	5	8	0.97
-LARS	10000	5000	5	9	nan
-LARS	1000	10000	10	10	0.97
-LARS	1000	10000	10	1	0.86
-LARS	1000	10000	10	2	0.96
+LARS	10000	5000	5	5	0.88
+LARS	10000	5000	5	6	0.95
+LARS	10000	5000	5	7	1.0
+LARS	10000	5000	5	8	1.0
+LARS	10000	5000	5	9	0.93
+LARS	1000	10000	10	10	0.91
+LARS	1000	10000	10	1	0.93
+LARS	1000	10000	10	2	0.89
 LARS	1000	10000	10	3	0.93
-LARS	1000	10000	10	4	0.93
-LARS	1000	10000	10	5	0.98
-LARS	1000	10000	10	6	nan
-LARS	1000	10000	10	7	0.94
+LARS	1000	10000	10	4	0.94
+LARS	1000	10000	10	5	0.95
+LARS	1000	10000	10	6	0.98
+LARS	1000	10000	10	7	0.95
 LARS	1000	10000	10	8	0.93
-LARS	1000	10000	10	9	0.91
-LARS	1000	10000	20	10	0.87
-LARS	1000	10000	20	1	0.88
-LARS	1000	10000	20	2	0.94
-LARS	1000	10000	20	3	0.83
-LARS	1000	10000	20	4	0.91
-LARS	1000	10000	20	5	0.91
-LARS	1000	10000	20	6	0.88
-LARS	1000	10000	20	7	0.87
-LARS	1000	10000	20	8	0.91
-LARS	1000	10000	20	9	0.92
-LARS	1000	10000	5	10	nan
-LARS	1000	10000	5	1	nan
-LARS	1000	10000	5	2	nan
-LARS	1000	10000	5	3	1.0
+LARS	1000	10000	10	9	0.99
+LARS	1000	10000	20	10	0.92
+LARS	1000	10000	20	1	0.94
+LARS	1000	10000	20	2	0.88
+LARS	1000	10000	20	3	0.88
+LARS	1000	10000	20	4	nan
+LARS	1000	10000	20	5	0.86
+LARS	1000	10000	20	6	0.89
+LARS	1000	10000	20	7	0.81
+LARS	1000	10000	20	8	0.88
+LARS	1000	10000	20	9	0.9
+LARS	1000	10000	5	10	0.93
+LARS	1000	10000	5	1	0.93
+LARS	1000	10000	5	2	1.0
+LARS	1000	10000	5	3	0.99
 LARS	1000	10000	5	4	1.0
-LARS	1000	10000	5	5	nan
-LARS	1000	10000	5	6	0.95
-LARS	1000	10000	5	7	nan
-LARS	1000	10000	5	8	1.0
-LARS	1000	10000	5	9	nan
-LARS	1000	1000	10	10	0.92
-LARS	1000	1000	10	1	nan
-LARS	1000	1000	10	2	0.94
-LARS	1000	1000	10	3	0.98
-LARS	1000	1000	10	4	0.96
-LARS	1000	1000	10	5	0.98
-LARS	1000	1000	10	6	0.96
-LARS	1000	1000	10	7	nan
-LARS	1000	1000	10	8	0.95
-LARS	1000	1000	10	9	0.97
-LARS	1000	1000	20	10	0.92
-LARS	1000	1000	20	1	0.91
+LARS	1000	10000	5	5	1.0
+LARS	1000	10000	5	6	1.0
+LARS	1000	10000	5	7	1.0
+LARS	1000	10000	5	8	0.98
+LARS	1000	10000	5	9	1.0
+LARS	1000	1000	10	10	0.95
+LARS	1000	1000	10	1	0.97
+LARS	1000	1000	10	2	0.91
+LARS	1000	1000	10	3	0.95
+LARS	1000	1000	10	4	0.92
+LARS	1000	1000	10	5	0.94
+LARS	1000	1000	10	6	0.95
+LARS	1000	1000	10	7	0.92
+LARS	1000	1000	10	8	0.94
+LARS	1000	1000	10	9	0.89
+LARS	1000	1000	20	10	0.86
+LARS	1000	1000	20	1	0.87
 LARS	1000	1000	20	2	0.9
-LARS	1000	1000	20	3	0.91
-LARS	1000	1000	20	4	0.89
-LARS	1000	1000	20	5	0.85
-LARS	1000	1000	20	6	0.93
-LARS	1000	1000	20	7	0.89
-LARS	1000	1000	20	8	0.83
+LARS	1000	1000	20	3	0.95
+LARS	1000	1000	20	4	0.92
+LARS	1000	1000	20	5	0.86
+LARS	1000	1000	20	6	0.9
+LARS	1000	1000	20	7	0.92
+LARS	1000	1000	20	8	0.82
 LARS	1000	1000	20	9	0.9
-LARS	1000	1000	5	10	nan
-LARS	1000	1000	5	1	nan
-LARS	1000	1000	5	2	nan
-LARS	1000	1000	5	3	nan
-LARS	1000	1000	5	4	0.96
-LARS	1000	1000	5	5	nan
+LARS	1000	1000	5	10	1.0
+LARS	1000	1000	5	1	1.0
+LARS	1000	1000	5	2	1.0
+LARS	1000	1000	5	3	1.0
+LARS	1000	1000	5	4	1.0
+LARS	1000	1000	5	5	1.0
 LARS	1000	1000	5	6	1.0
-LARS	1000	1000	5	7	nan
-LARS	1000	1000	5	8	1.0
-LARS	1000	1000	5	9	nan
-LARS	1000	2500	10	10	0.94
-LARS	1000	2500	10	1	0.92
-LARS	1000	2500	10	2	0.95
-LARS	1000	2500	10	3	0.91
-LARS	1000	2500	10	4	0.96
-LARS	1000	2500	10	5	0.96
-LARS	1000	2500	10	6	0.95
-LARS	1000	2500	10	7	0.95
+LARS	1000	1000	5	7	1.0
+LARS	1000	1000	5	8	0.97
+LARS	1000	1000	5	9	1.0
+LARS	1000	2500	10	10	0.93
+LARS	1000	2500	10	1	0.89
+LARS	1000	2500	10	2	0.96
+LARS	1000	2500	10	3	0.94
+LARS	1000	2500	10	4	0.95
+LARS	1000	2500	10	5	0.94
+LARS	1000	2500	10	6	0.94
+LARS	1000	2500	10	7	0.97
 LARS	1000	2500	10	8	0.94
-LARS	1000	2500	10	9	0.94
-LARS	1000	2500	20	1	0.93
-LARS	1000	2500	20	10	nan
-LARS	1000	2500	20	2	0.86
-LARS	1000	2500	20	3	0.93
-LARS	1000	2500	20	4	0.91
-LARS	1000	2500	20	5	0.9
-LARS	1000	2500	20	6	0.92
-LARS	1000	2500	20	7	nan
+LARS	1000	2500	10	9	0.77
+LARS	1000	2500	20	10	0.88
+LARS	1000	2500	20	1	0.89
+LARS	1000	2500	20	2	0.8
+LARS	1000	2500	20	3	0.89
+LARS	1000	2500	20	4	0.86
+LARS	1000	2500	20	5	0.88
+LARS	1000	2500	20	6	0.88
+LARS	1000	2500	20	7	0.89
 LARS	1000	2500	20	8	0.88
 LARS	1000	2500	20	9	0.91
-LARS	1000	2500	5	10	nan
-LARS	1000	2500	5	1	nan
-LARS	1000	2500	5	2	nan
-LARS	1000	2500	5	3	1.0
+LARS	1000	2500	5	10	1.0
+LARS	1000	2500	5	1	1.0
+LARS	1000	2500	5	2	1.0
+LARS	1000	2500	5	3	0.99
 LARS	1000	2500	5	4	1.0
-LARS	1000	2500	5	5	nan
-LARS	1000	2500	5	6	0.95
-LARS	1000	2500	5	7	nan
-LARS	1000	2500	5	8	1.0
-LARS	1000	2500	5	9	nan
-LARS	1000	5000	10	10	0.93
-LARS	1000	5000	10	1	0.94
-LARS	1000	5000	10	2	0.94
-LARS	1000	5000	10	3	0.96
-LARS	1000	5000	10	4	0.93
+LARS	1000	2500	5	5	1.0
+LARS	1000	2500	5	6	1.0
+LARS	1000	2500	5	7	1.0
+LARS	1000	2500	5	8	0.91
+LARS	1000	2500	5	9	1.0
+LARS	1000	5000	10	10	0.9
+LARS	1000	5000	10	1	0.93
+LARS	1000	5000	10	2	0.93
+LARS	1000	5000	10	3	0.95
+LARS	1000	5000	10	4	0.95
 LARS	1000	5000	10	5	0.95
-LARS	1000	5000	10	6	0.97
-LARS	1000	5000	10	7	0.96
-LARS	1000	5000	10	8	0.95
+LARS	1000	5000	10	6	0.95
+LARS	1000	5000	10	7	0.94
+LARS	1000	5000	10	8	0.91
 LARS	1000	5000	10	9	0.95
-LARS	1000	5000	20	10	0.91
-LARS	1000	5000	20	1	0.85
-LARS	1000	5000	20	2	0.92
-LARS	1000	5000	20	3	0.93
-LARS	1000	5000	20	4	0.89
-LARS	1000	5000	20	5	0.91
-LARS	1000	5000	20	6	0.92
-LARS	1000	5000	20	7	0.93
-LARS	1000	5000	20	8	0.88
+LARS	1000	5000	20	10	0.89
+LARS	1000	5000	20	1	0.92
+LARS	1000	5000	20	2	0.84
+LARS	1000	5000	20	3	0.92
+LARS	1000	5000	20	4	nan
+LARS	1000	5000	20	5	0.85
+LARS	1000	5000	20	6	nan
+LARS	1000	5000	20	7	0.89
+LARS	1000	5000	20	8	0.91
 LARS	1000	5000	20	9	0.9
-LARS	1000	5000	5	10	nan
-LARS	1000	5000	5	1	nan
-LARS	1000	5000	5	2	nan
-LARS	1000	5000	5	3	1.0
-LARS	1000	5000	5	4	0.96
-LARS	1000	5000	5	5	nan
+LARS	1000	5000	5	10	1.0
+LARS	1000	5000	5	1	1.0
+LARS	1000	5000	5	2	0.85
+LARS	1000	5000	5	3	0.97
+LARS	1000	5000	5	4	1.0
+LARS	1000	5000	5	5	1.0
 LARS	1000	5000	5	6	1.0
-LARS	1000	5000	5	7	nan
-LARS	1000	5000	5	8	1.0
-LARS	1000	5000	5	9	nan
+LARS	1000	5000	5	7	1.0
+LARS	1000	5000	5	8	0.95
+LARS	1000	5000	5	9	1.0
 LARS	100	10000	10	10	0.67
-LARS	100	10000	10	1	0.8
-LARS	100	10000	10	2	0.83
-LARS	100	10000	10	3	0.75
-LARS	100	10000	10	4	nan
-LARS	100	10000	10	5	0.8
-LARS	100	10000	10	6	0.75
-LARS	100	10000	10	7	0.83
-LARS	100	10000	10	8	nan
-LARS	100	10000	10	9	0.79
-LARS	100	10000	20	1	0.61
-LARS	100	10000	20	10	nan
-LARS	100	10000	20	2	0.73
-LARS	100	10000	20	3	0.61
-LARS	100	10000	20	4	nan
-LARS	100	10000	20	5	0.68
-LARS	100	10000	20	6	0.59
-LARS	100	10000	20	7	0.69
+LARS	100	10000	10	1	0.69
+LARS	100	10000	10	2	0.76
+LARS	100	10000	10	3	nan
+LARS	100	10000	10	4	0.74
+LARS	100	10000	10	5	0.79
+LARS	100	10000	10	6	0.55
+LARS	100	10000	10	7	0.68
+LARS	100	10000	10	8	0.77
+LARS	100	10000	10	9	0.71
+LARS	100	10000	20	10	0.56
+LARS	100	10000	20	1	nan
+LARS	100	10000	20	2	nan
+LARS	100	10000	20	3	0.58
+LARS	100	10000	20	4	0.59
+LARS	100	10000	20	5	0.55
+LARS	100	10000	20	6	0.56
+LARS	100	10000	20	7	nan
 LARS	100	10000	20	8	nan
-LARS	100	10000	20	9	0.64
-LARS	100	10000	5	10	nan
-LARS	100	10000	5	1	nan
-LARS	100	10000	5	2	nan
-LARS	100	10000	5	3	nan
-LARS	100	10000	5	4	0.86
-LARS	100	10000	5	5	0.82
+LARS	100	10000	20	9	0.62
+LARS	100	10000	5	10	0.81
+LARS	100	10000	5	1	0.83
+LARS	100	10000	5	2	0.73
+LARS	100	10000	5	3	0.95
+LARS	100	10000	5	4	0.8
+LARS	100	10000	5	5	0.89
 LARS	100	10000	5	6	nan
-LARS	100	10000	5	7	nan
-LARS	100	10000	5	8	0.8
-LARS	100	10000	5	9	nan
-LARS	100	1000	10	10	0.84
-LARS	100	1000	10	1	0.85
-LARS	100	1000	10	2	0.82
-LARS	100	1000	10	3	0.84
-LARS	100	1000	10	4	0.83
-LARS	100	1000	10	5	0.67
-LARS	100	1000	10	6	0.78
-LARS	100	1000	10	7	0.8
-LARS	100	1000	10	8	nan
-LARS	100	1000	10	9	0.82
-LARS	100	1000	20	10	0.66
-LARS	100	1000	20	1	0.79
+LARS	100	10000	5	7	0.86
+LARS	100	10000	5	8	0.92
+LARS	100	10000	5	9	0.89
+LARS	100	1000	10	10	0.78
+LARS	100	1000	10	1	0.79
+LARS	100	1000	10	2	nan
+LARS	100	1000	10	3	nan
+LARS	100	1000	10	4	0.78
+LARS	100	1000	10	5	0.76
+LARS	100	1000	10	6	0.74
+LARS	100	1000	10	7	0.72
+LARS	100	1000	10	8	0.77
+LARS	100	1000	10	9	0.59
+LARS	100	1000	20	10	0.6
+LARS	100	1000	20	1	0.62
 LARS	100	1000	20	2	nan
-LARS	100	1000	20	3	0.75
-LARS	100	1000	20	4	0.58
-LARS	100	1000	20	5	0.6
+LARS	100	1000	20	3	0.66
+LARS	100	1000	20	4	0.64
+LARS	100	1000	20	5	0.63
 LARS	100	1000	20	6	0.75
-LARS	100	1000	20	7	0.79
-LARS	100	1000	20	8	0.71
-LARS	100	1000	20	9	0.69
-LARS	100	1000	5	10	nan
-LARS	100	1000	5	1	nan
-LARS	100	1000	5	2	nan
-LARS	100	1000	5	3	nan
-LARS	100	1000	5	4	0.79
-LARS	100	1000	5	5	nan
-LARS	100	1000	5	6	0.94
-LARS	100	1000	5	7	nan
-LARS	100	1000	5	8	0.98
-LARS	100	1000	5	9	nan
-LARS	100	2500	10	10	0.74
-LARS	100	2500	10	1	0.76
-LARS	100	2500	10	2	0.84
-LARS	100	2500	10	3	0.8
-LARS	100	2500	10	4	0.76
-LARS	100	2500	10	5	nan
-LARS	100	2500	10	6	0.71
-LARS	100	2500	10	7	0.67
-LARS	100	2500	10	8	0.9
+LARS	100	1000	20	7	0.72
+LARS	100	1000	20	8	0.63
+LARS	100	1000	20	9	0.63
+LARS	100	1000	5	10	0.91
+LARS	100	1000	5	1	0.82
+LARS	100	1000	5	2	0.92
+LARS	100	1000	5	3	0.94
+LARS	100	1000	5	4	0.86
+LARS	100	1000	5	5	0.94
+LARS	100	1000	5	6	0.93
+LARS	100	1000	5	7	0.9
+LARS	100	1000	5	8	0.87
+LARS	100	1000	5	9	0.8
+LARS	100	2500	10	10	0.77
+LARS	100	2500	10	1	0.83
+LARS	100	2500	10	2	0.79
+LARS	100	2500	10	3	0.75
+LARS	100	2500	10	4	0.78
+LARS	100	2500	10	5	0.71
+LARS	100	2500	10	6	nan
+LARS	100	2500	10	7	0.76
+LARS	100	2500	10	8	0.71
 LARS	100	2500	10	9	nan
-LARS	100	2500	20	10	0.63
-LARS	100	2500	20	1	0.73
+LARS	100	2500	20	10	0.61
+LARS	100	2500	20	1	0.65
 LARS	100	2500	20	2	nan
-LARS	100	2500	20	3	0.78
+LARS	100	2500	20	3	0.65
 LARS	100	2500	20	4	0.62
-LARS	100	2500	20	5	0.71
-LARS	100	2500	20	6	0.65
-LARS	100	2500	20	7	0.77
-LARS	100	2500	20	8	0.77
-LARS	100	2500	20	9	0.69
-LARS	100	2500	5	10	nan
-LARS	100	2500	5	1	nan
-LARS	100	2500	5	2	nan
-LARS	100	2500	5	3	0.92
-LARS	100	2500	5	4	0.83
-LARS	100	2500	5	5	nan
-LARS	100	2500	5	6	nan
-LARS	100	2500	5	7	nan
-LARS	100	2500	5	8	0.92
-LARS	100	2500	5	9	nan
-LARS	100	5000	10	10	0.79
-LARS	100	5000	10	1	nan
-LARS	100	5000	10	2	0.79
-LARS	100	5000	10	3	0.72
-LARS	100	5000	10	4	nan
-LARS	100	5000	10	5	0.8
-LARS	100	5000	10	6	0.71
-LARS	100	5000	10	7	0.7
-LARS	100	5000	10	8	0.88
-LARS	100	5000	10	9	0.84
-LARS	100	5000	20	10	0.6
-LARS	100	5000	20	1	nan
-LARS	100	5000	20	2	0.76
-LARS	100	5000	20	3	0.64
-LARS	100	5000	20	4	0.72
+LARS	100	2500	20	5	nan
+LARS	100	2500	20	6	nan
+LARS	100	2500	20	7	0.68
+LARS	100	2500	20	8	nan
+LARS	100	2500	20	9	0.65
+LARS	100	2500	5	10	0.87
+LARS	100	2500	5	1	0.85
+LARS	100	2500	5	2	0.78
+LARS	100	2500	5	3	nan
+LARS	100	2500	5	4	0.81
+LARS	100	2500	5	5	0.89
+LARS	100	2500	5	6	0.77
+LARS	100	2500	5	7	0.95
+LARS	100	2500	5	8	0.89
+LARS	100	2500	5	9	0.89
+LARS	100	5000	10	1	0.77
+LARS	100	5000	10	10	nan
+LARS	100	5000	10	2	0.8
+LARS	100	5000	10	3	0.7
+LARS	100	5000	10	4	0.78
+LARS	100	5000	10	5	0.83
+LARS	100	5000	10	6	0.78
+LARS	100	5000	10	7	nan
+LARS	100	5000	10	8	0.78
+LARS	100	5000	10	9	nan
+LARS	100	5000	20	10	0.65
+LARS	100	5000	20	1	0.62
+LARS	100	5000	20	2	0.62
+LARS	100	5000	20	3	0.5
+LARS	100	5000	20	4	0.69
 LARS	100	5000	20	5	nan
-LARS	100	5000	20	6	nan
+LARS	100	5000	20	6	0.6
 LARS	100	5000	20	7	nan
-LARS	100	5000	20	8	0.65
-LARS	100	5000	20	9	0.62
-LARS	100	5000	5	10	nan
-LARS	100	5000	5	1	nan
-LARS	100	5000	5	2	nan
+LARS	100	5000	20	8	0.58
+LARS	100	5000	20	9	0.69
+LARS	100	5000	5	10	0.9
+LARS	100	5000	5	1	0.88
+LARS	100	5000	5	2	0.78
 LARS	100	5000	5	3	0.89
-LARS	100	5000	5	4	0.87
-LARS	100	5000	5	5	nan
-LARS	100	5000	5	6	nan
-LARS	100	5000	5	7	nan
-LARS	100	5000	5	8	0.82
-LARS	100	5000	5	9	nan
-mRMR	10000	10000	10	10	0.96
-mRMR	10000	10000	10	1	0.9
-mRMR	10000	10000	10	2	0.97
-mRMR	10000	10000	10	3	0.93
-mRMR	10000	10000	10	4	0.98
-mRMR	10000	10000	10	5	0.98
-mRMR	10000	10000	10	6	0.97
-mRMR	10000	10000	10	7	0.98
-mRMR	10000	10000	10	8	0.92
-mRMR	10000	10000	10	9	0.91
-mRMR	10000	10000	20	10	0.93
-mRMR	10000	10000	20	1	0.94
-mRMR	10000	10000	20	2	0.91
-mRMR	10000	10000	20	3	0.95
-mRMR	10000	10000	20	4	0.95
-mRMR	10000	10000	20	5	0.95
-mRMR	10000	10000	20	6	0.93
-mRMR	10000	10000	20	7	0.91
-mRMR	10000	10000	20	8	0.93
-mRMR	10000	10000	20	9	0.97
+LARS	100	5000	5	4	0.75
+LARS	100	5000	5	5	0.91
+LARS	100	5000	5	6	0.73
+LARS	100	5000	5	7	0.85
+LARS	100	5000	5	8	0.96
+LARS	100	5000	5	9	0.76
+mRMR	10000	10000	10	10	0.97
+mRMR	10000	10000	10	1	0.99
+mRMR	10000	10000	10	2	0.94
+mRMR	10000	10000	10	3	0.99
+mRMR	10000	10000	10	4	0.97
+mRMR	10000	10000	10	5	0.93
+mRMR	10000	10000	10	6	0.95
+mRMR	10000	10000	10	7	1.0
+mRMR	10000	10000	10	8	0.98
+mRMR	10000	10000	10	9	0.98
+mRMR	10000	10000	20	10	0.92
+mRMR	10000	10000	20	1	0.95
+mRMR	10000	10000	20	2	0.94
+mRMR	10000	10000	20	3	0.94
+mRMR	10000	10000	20	4	0.91
+mRMR	10000	10000	20	5	0.88
+mRMR	10000	10000	20	6	0.85
+mRMR	10000	10000	20	7	0.92
+mRMR	10000	10000	20	8	0.99
+mRMR	10000	10000	20	9	0.91
 mRMR	10000	10000	5	10	1.0
-mRMR	10000	10000	5	1	1.0
+mRMR	10000	10000	5	1	0.95
 mRMR	10000	10000	5	2	1.0
 mRMR	10000	10000	5	3	1.0
-mRMR	10000	10000	5	4	0.94
-mRMR	10000	10000	5	5	1.0
+mRMR	10000	10000	5	4	0.95
+mRMR	10000	10000	5	5	0.86
 mRMR	10000	10000	5	6	1.0
 mRMR	10000	10000	5	7	1.0
 mRMR	10000	10000	5	8	1.0
 mRMR	10000	10000	5	9	1.0
-mRMR	10000	1000	10	10	0.96
-mRMR	10000	1000	10	1	0.97
-mRMR	10000	1000	10	2	0.95
-mRMR	10000	1000	10	3	0.97
-mRMR	10000	1000	10	4	0.99
-mRMR	10000	1000	10	5	0.98
-mRMR	10000	1000	10	6	0.98
+mRMR	10000	1000	10	10	1.0
+mRMR	10000	1000	10	1	0.89
+mRMR	10000	1000	10	2	0.97
+mRMR	10000	1000	10	3	0.9
+mRMR	10000	1000	10	4	0.97
+mRMR	10000	1000	10	5	0.92
+mRMR	10000	1000	10	6	0.96
 mRMR	10000	1000	10	7	0.96
-mRMR	10000	1000	10	8	0.94
+mRMR	10000	1000	10	8	0.98
 mRMR	10000	1000	10	9	0.97
-mRMR	10000	1000	20	10	0.93
-mRMR	10000	1000	20	1	0.93
-mRMR	10000	1000	20	2	0.94
-mRMR	10000	1000	20	3	0.92
-mRMR	10000	1000	20	4	0.89
-mRMR	10000	1000	20	5	0.92
-mRMR	10000	1000	20	6	0.93
+mRMR	10000	1000	20	10	0.97
+mRMR	10000	1000	20	1	0.9
+mRMR	10000	1000	20	2	0.84
+mRMR	10000	1000	20	3	0.94
+mRMR	10000	1000	20	4	0.94
+mRMR	10000	1000	20	5	0.91
+mRMR	10000	1000	20	6	0.91
 mRMR	10000	1000	20	7	0.92
-mRMR	10000	1000	20	8	0.86
+mRMR	10000	1000	20	8	0.91
 mRMR	10000	1000	20	9	0.91
 mRMR	10000	1000	5	10	1.0
 mRMR	10000	1000	5	1	1.0
 mRMR	10000	1000	5	2	1.0
 mRMR	10000	1000	5	3	1.0
 mRMR	10000	1000	5	4	1.0
-mRMR	10000	1000	5	5	0.83
-mRMR	10000	1000	5	6	0.97
-mRMR	10000	1000	5	7	1.0
+mRMR	10000	1000	5	5	0.91
+mRMR	10000	1000	5	6	1.0
+mRMR	10000	1000	5	7	0.93
 mRMR	10000	1000	5	8	1.0
-mRMR	10000	1000	5	9	0.98
-mRMR	10000	2500	10	10	0.84
-mRMR	10000	2500	10	1	0.99
-mRMR	10000	2500	10	2	0.95
-mRMR	10000	2500	10	3	0.95
-mRMR	10000	2500	10	4	0.99
+mRMR	10000	1000	5	9	0.85
+mRMR	10000	2500	10	10	1.0
+mRMR	10000	2500	10	1	0.98
+mRMR	10000	2500	10	2	1.0
+mRMR	10000	2500	10	3	0.93
+mRMR	10000	2500	10	4	0.98
 mRMR	10000	2500	10	5	0.97
-mRMR	10000	2500	10	6	0.98
+mRMR	10000	2500	10	6	0.97
 mRMR	10000	2500	10	7	1.0
-mRMR	10000	2500	10	8	0.96
-mRMR	10000	2500	10	9	0.92
-mRMR	10000	2500	20	10	0.88
-mRMR	10000	2500	20	1	0.91
-mRMR	10000	2500	20	2	0.93
-mRMR	10000	2500	20	3	0.93
-mRMR	10000	2500	20	4	0.93
-mRMR	10000	2500	20	5	0.87
-mRMR	10000	2500	20	6	0.96
-mRMR	10000	2500	20	7	0.93
-mRMR	10000	2500	20	8	0.91
-mRMR	10000	2500	20	9	0.92
-mRMR	10000	2500	5	10	1.0
+mRMR	10000	2500	10	8	0.99
+mRMR	10000	2500	10	9	0.99
+mRMR	10000	2500	20	10	0.91
+mRMR	10000	2500	20	1	0.85
+mRMR	10000	2500	20	2	0.87
+mRMR	10000	2500	20	3	0.86
+mRMR	10000	2500	20	4	0.95
+mRMR	10000	2500	20	5	0.93
+mRMR	10000	2500	20	6	0.9
+mRMR	10000	2500	20	7	0.9
+mRMR	10000	2500	20	8	0.92
+mRMR	10000	2500	20	9	0.89
+mRMR	10000	2500	5	10	0.96
 mRMR	10000	2500	5	1	1.0
 mRMR	10000	2500	5	2	1.0
-mRMR	10000	2500	5	3	1.0
+mRMR	10000	2500	5	3	0.82
 mRMR	10000	2500	5	4	1.0
-mRMR	10000	2500	5	5	1.0
+mRMR	10000	2500	5	5	0.91
 mRMR	10000	2500	5	6	1.0
 mRMR	10000	2500	5	7	1.0
 mRMR	10000	2500	5	8	1.0
-mRMR	10000	2500	5	9	1.0
-mRMR	10000	5000	10	10	0.97
-mRMR	10000	5000	10	1	0.86
-mRMR	10000	5000	10	2	0.96
-mRMR	10000	5000	10	3	0.97
-mRMR	10000	5000	10	4	0.98
-mRMR	10000	5000	10	5	0.99
-mRMR	10000	5000	10	6	0.9
+mRMR	10000	2500	5	9	0.85
+mRMR	10000	5000	10	10	0.95
+mRMR	10000	5000	10	1	0.99
+mRMR	10000	5000	10	2	0.97
+mRMR	10000	5000	10	3	0.94
+mRMR	10000	5000	10	4	0.95
+mRMR	10000	5000	10	5	0.97
+mRMR	10000	5000	10	6	0.98
 mRMR	10000	5000	10	7	0.97
-mRMR	10000	5000	10	8	1.0
-mRMR	10000	5000	10	9	0.99
-mRMR	10000	5000	20	10	0.95
-mRMR	10000	5000	20	1	0.93
-mRMR	10000	5000	20	2	0.95
-mRMR	10000	5000	20	3	0.96
-mRMR	10000	5000	20	4	0.94
-mRMR	10000	5000	20	5	0.97
-mRMR	10000	5000	20	6	0.94
-mRMR	10000	5000	20	7	0.95
-mRMR	10000	5000	20	8	0.9
-mRMR	10000	5000	20	9	0.9
-mRMR	10000	5000	5	10	0.96
-mRMR	10000	5000	5	1	1.0
-mRMR	10000	5000	5	2	0.98
-mRMR	10000	5000	5	3	0.97
+mRMR	10000	5000	10	8	0.99
+mRMR	10000	5000	10	9	0.97
+mRMR	10000	5000	20	10	0.93
+mRMR	10000	5000	20	1	0.9
+mRMR	10000	5000	20	2	0.92
+mRMR	10000	5000	20	3	0.9
+mRMR	10000	5000	20	4	0.93
+mRMR	10000	5000	20	5	0.91
+mRMR	10000	5000	20	6	0.92
+mRMR	10000	5000	20	7	0.9
+mRMR	10000	5000	20	8	0.94
+mRMR	10000	5000	20	9	0.91
+mRMR	10000	5000	5	10	1.0
+mRMR	10000	5000	5	1	0.9
+mRMR	10000	5000	5	2	1.0
+mRMR	10000	5000	5	3	1.0
 mRMR	10000	5000	5	4	1.0
-mRMR	10000	5000	5	5	1.0
-mRMR	10000	5000	5	6	0.98
+mRMR	10000	5000	5	5	0.88
+mRMR	10000	5000	5	6	0.95
 mRMR	10000	5000	5	7	1.0
 mRMR	10000	5000	5	8	1.0
-mRMR	10000	5000	5	9	1.0
-mRMR	1000	10000	10	10	0.92
-mRMR	1000	10000	10	1	0.98
-mRMR	1000	10000	10	2	0.96
+mRMR	10000	5000	5	9	0.93
+mRMR	1000	10000	10	10	0.91
+mRMR	1000	10000	10	1	0.96
+mRMR	1000	10000	10	2	0.86
 mRMR	1000	10000	10	3	0.94
-mRMR	1000	10000	10	4	0.93
-mRMR	1000	10000	10	5	0.99
-mRMR	1000	10000	10	6	0.99
-mRMR	1000	10000	10	7	0.94
-mRMR	1000	10000	10	8	0.97
-mRMR	1000	10000	10	9	0.9
-mRMR	1000	10000	20	10	0.89
-mRMR	1000	10000	20	1	0.91
-mRMR	1000	10000	20	2	0.93
-mRMR	1000	10000	20	3	0.83
-mRMR	1000	10000	20	4	0.89
-mRMR	1000	10000	20	5	0.89
-mRMR	1000	10000	20	6	0.89
-mRMR	1000	10000	20	7	0.91
+mRMR	1000	10000	10	4	0.94
+mRMR	1000	10000	10	5	0.95
+mRMR	1000	10000	10	6	0.96
+mRMR	1000	10000	10	7	0.96
+mRMR	1000	10000	10	8	0.92
+mRMR	1000	10000	10	9	0.98
+mRMR	1000	10000	20	10	0.9
+mRMR	1000	10000	20	1	0.94
+mRMR	1000	10000	20	2	0.88
+mRMR	1000	10000	20	3	0.89
+mRMR	1000	10000	20	4	0.87
+mRMR	1000	10000	20	5	0.84
+mRMR	1000	10000	20	6	0.9
+mRMR	1000	10000	20	7	0.82
 mRMR	1000	10000	20	8	0.9
 mRMR	1000	10000	20	9	0.92
-mRMR	1000	10000	5	10	0.99
-mRMR	1000	10000	5	1	1.0
-mRMR	1000	10000	5	2	0.98
-mRMR	1000	10000	5	3	1.0
+mRMR	1000	10000	5	10	0.93
+mRMR	1000	10000	5	1	0.93
+mRMR	1000	10000	5	2	1.0
+mRMR	1000	10000	5	3	0.99
 mRMR	1000	10000	5	4	1.0
 mRMR	1000	10000	5	5	1.0
-mRMR	1000	10000	5	6	0.96
+mRMR	1000	10000	5	6	1.0
 mRMR	1000	10000	5	7	1.0
-mRMR	1000	10000	5	8	1.0
+mRMR	1000	10000	5	8	0.98
 mRMR	1000	10000	5	9	1.0
-mRMR	1000	1000	10	10	0.96
+mRMR	1000	1000	10	10	0.99
 mRMR	1000	1000	10	1	0.98
-mRMR	1000	1000	10	2	0.94
-mRMR	1000	1000	10	3	0.98
-mRMR	1000	1000	10	4	0.96
-mRMR	1000	1000	10	5	0.97
-mRMR	1000	1000	10	6	0.96
-mRMR	1000	1000	10	7	0.94
-mRMR	1000	1000	10	8	0.96
-mRMR	1000	1000	10	9	0.97
-mRMR	1000	1000	20	10	0.88
-mRMR	1000	1000	20	1	0.9
+mRMR	1000	1000	10	2	0.91
+mRMR	1000	1000	10	3	0.92
+mRMR	1000	1000	10	4	0.93
+mRMR	1000	1000	10	5	0.94
+mRMR	1000	1000	10	6	0.95
+mRMR	1000	1000	10	7	0.92
+mRMR	1000	1000	10	8	0.93
+mRMR	1000	1000	10	9	0.86
+mRMR	1000	1000	20	10	0.87
+mRMR	1000	1000	20	1	0.85
 mRMR	1000	1000	20	2	0.89
-mRMR	1000	1000	20	3	0.89
-mRMR	1000	1000	20	4	0.89
-mRMR	1000	1000	20	5	0.85
-mRMR	1000	1000	20	6	0.93
-mRMR	1000	1000	20	7	0.91
-mRMR	1000	1000	20	8	0.84
-mRMR	1000	1000	20	9	0.9
+mRMR	1000	1000	20	3	0.92
+mRMR	1000	1000	20	4	0.88
+mRMR	1000	1000	20	5	0.86
+mRMR	1000	1000	20	6	0.9
+mRMR	1000	1000	20	7	0.93
+mRMR	1000	1000	20	8	0.85
+mRMR	1000	1000	20	9	0.92
 mRMR	1000	1000	5	10	1.0
 mRMR	1000	1000	5	1	1.0
 mRMR	1000	1000	5	2	1.0
-mRMR	1000	1000	5	3	0.96
+mRMR	1000	1000	5	3	1.0
 mRMR	1000	1000	5	4	1.0
 mRMR	1000	1000	5	5	1.0
 mRMR	1000	1000	5	6	1.0
 mRMR	1000	1000	5	7	1.0
-mRMR	1000	1000	5	8	1.0
+mRMR	1000	1000	5	8	0.97
 mRMR	1000	1000	5	9	1.0
-mRMR	1000	2500	10	10	0.93
-mRMR	1000	2500	10	1	0.96
-mRMR	1000	2500	10	2	0.95
-mRMR	1000	2500	10	3	0.91
+mRMR	1000	2500	10	10	0.95
+mRMR	1000	2500	10	1	0.89
+mRMR	1000	2500	10	2	0.96
+mRMR	1000	2500	10	3	0.95
 mRMR	1000	2500	10	4	0.96
-mRMR	1000	2500	10	5	0.97
-mRMR	1000	2500	10	6	0.95
-mRMR	1000	2500	10	7	0.93
+mRMR	1000	2500	10	5	0.93
+mRMR	1000	2500	10	6	0.94
+mRMR	1000	2500	10	7	0.96
 mRMR	1000	2500	10	8	0.95
-mRMR	1000	2500	10	9	0.95
-mRMR	1000	2500	20	10	0.92
-mRMR	1000	2500	20	1	0.92
-mRMR	1000	2500	20	2	0.84
-mRMR	1000	2500	20	3	0.93
-mRMR	1000	2500	20	4	0.9
-mRMR	1000	2500	20	5	0.89
-mRMR	1000	2500	20	6	0.9
-mRMR	1000	2500	20	7	0.96
+mRMR	1000	2500	10	9	0.94
+mRMR	1000	2500	20	10	0.86
+mRMR	1000	2500	20	1	0.86
+mRMR	1000	2500	20	2	0.77
+mRMR	1000	2500	20	3	0.89
+mRMR	1000	2500	20	4	0.87
+mRMR	1000	2500	20	5	0.82
+mRMR	1000	2500	20	6	0.88
+mRMR	1000	2500	20	7	0.86
 mRMR	1000	2500	20	8	0.88
-mRMR	1000	2500	20	9	0.91
+mRMR	1000	2500	20	9	0.88
 mRMR	1000	2500	5	10	1.0
 mRMR	1000	2500	5	1	1.0
 mRMR	1000	2500	5	2	1.0
-mRMR	1000	2500	5	3	1.0
+mRMR	1000	2500	5	3	0.99
 mRMR	1000	2500	5	4	1.0
 mRMR	1000	2500	5	5	1.0
-mRMR	1000	2500	5	6	0.95
+mRMR	1000	2500	5	6	1.0
 mRMR	1000	2500	5	7	1.0
-mRMR	1000	2500	5	8	1.0
+mRMR	1000	2500	5	8	0.91
 mRMR	1000	2500	5	9	1.0
-mRMR	1000	5000	10	10	0.97
-mRMR	1000	5000	10	1	0.95
-mRMR	1000	5000	10	2	0.93
-mRMR	1000	5000	10	3	0.94
-mRMR	1000	5000	10	4	0.93
+mRMR	1000	5000	10	10	0.89
+mRMR	1000	5000	10	1	0.94
+mRMR	1000	5000	10	2	0.92
+mRMR	1000	5000	10	3	0.95
+mRMR	1000	5000	10	4	0.92
 mRMR	1000	5000	10	5	0.95
-mRMR	1000	5000	10	6	0.95
-mRMR	1000	5000	10	7	0.96
-mRMR	1000	5000	10	8	0.95
+mRMR	1000	5000	10	6	0.96
+mRMR	1000	5000	10	7	0.92
+mRMR	1000	5000	10	8	0.91
 mRMR	1000	5000	10	9	0.95
-mRMR	1000	5000	20	10	0.93
-mRMR	1000	5000	20	1	0.88
-mRMR	1000	5000	20	2	0.92
-mRMR	1000	5000	20	3	0.91
-mRMR	1000	5000	20	4	0.9
-mRMR	1000	5000	20	5	0.89
-mRMR	1000	5000	20	6	0.87
-mRMR	1000	5000	20	7	0.93
-mRMR	1000	5000	20	8	0.9
-mRMR	1000	5000	20	9	0.92
+mRMR	1000	5000	20	10	0.88
+mRMR	1000	5000	20	1	0.91
+mRMR	1000	5000	20	2	0.87
+mRMR	1000	5000	20	3	0.92
+mRMR	1000	5000	20	4	0.91
+mRMR	1000	5000	20	5	0.87
+mRMR	1000	5000	20	6	0.88
+mRMR	1000	5000	20	7	0.87
+mRMR	1000	5000	20	8	0.92
+mRMR	1000	5000	20	9	0.9
 mRMR	1000	5000	5	10	1.0
 mRMR	1000	5000	5	1	1.0
-mRMR	1000	5000	5	2	1.0
-mRMR	1000	5000	5	3	1.0
-mRMR	1000	5000	5	4	0.96
+mRMR	1000	5000	5	2	0.85
+mRMR	1000	5000	5	3	0.97
+mRMR	1000	5000	5	4	1.0
 mRMR	1000	5000	5	5	1.0
 mRMR	1000	5000	5	6	1.0
 mRMR	1000	5000	5	7	1.0
-mRMR	1000	5000	5	8	0.97
+mRMR	1000	5000	5	8	0.9
 mRMR	1000	5000	5	9	1.0
-mRMR	100	10000	10	10	0.64
-mRMR	100	10000	10	1	0.78
-mRMR	100	10000	10	2	0.77
-mRMR	100	10000	10	3	0.76
-mRMR	100	10000	10	4	0.77
-mRMR	100	10000	10	5	0.79
-mRMR	100	10000	10	6	0.65
-mRMR	100	10000	10	7	0.76
-mRMR	100	10000	10	8	0.78
-mRMR	100	10000	10	9	0.76
-mRMR	100	10000	20	10	0.52
-mRMR	100	10000	20	1	0.49
-mRMR	100	10000	20	2	0.71
-mRMR	100	10000	20	3	0.6
-mRMR	100	10000	20	4	0.52
-mRMR	100	10000	20	5	0.72
-mRMR	100	10000	20	6	0.61
-mRMR	100	10000	20	7	0.65
-mRMR	100	10000	20	8	0.72
-mRMR	100	10000	20	9	0.62
-mRMR	100	10000	5	10	0.82
-mRMR	100	10000	5	1	0.96
-mRMR	100	10000	5	2	0.83
-mRMR	100	10000	5	3	0.83
-mRMR	100	10000	5	4	0.98
-mRMR	100	10000	5	5	0.96
-mRMR	100	10000	5	6	0.7
-mRMR	100	10000	5	7	0.82
-mRMR	100	10000	5	8	0.92
-mRMR	100	10000	5	9	0.97
-mRMR	100	1000	10	10	0.82
-mRMR	100	1000	10	1	0.81
-mRMR	100	1000	10	2	0.89
-mRMR	100	1000	10	3	0.87
-mRMR	100	1000	10	4	0.81
-mRMR	100	1000	10	5	0.75
-mRMR	100	1000	10	6	0.75
-mRMR	100	1000	10	7	0.83
-mRMR	100	1000	10	8	0.69
-mRMR	100	1000	10	9	0.8
-mRMR	100	1000	20	10	0.72
-mRMR	100	1000	20	1	0.7
-mRMR	100	1000	20	2	0.74
-mRMR	100	1000	20	3	0.68
-mRMR	100	1000	20	4	0.7
-mRMR	100	1000	20	5	0.67
-mRMR	100	1000	20	6	0.74
-mRMR	100	1000	20	7	0.76
-mRMR	100	1000	20	8	0.6
-mRMR	100	1000	20	9	0.71
-mRMR	100	1000	5	10	0.97
-mRMR	100	1000	5	1	0.89
-mRMR	100	1000	5	2	0.99
-mRMR	100	1000	5	3	0.71
-mRMR	100	1000	5	4	0.8
-mRMR	100	1000	5	5	1.0
-mRMR	100	1000	5	6	0.99
-mRMR	100	1000	5	7	0.91
-mRMR	100	1000	5	8	0.97
-mRMR	100	1000	5	9	0.89
-mRMR	100	2500	10	10	0.79
-mRMR	100	2500	10	1	0.73
-mRMR	100	2500	10	2	0.83
-mRMR	100	2500	10	3	0.71
-mRMR	100	2500	10	4	0.78
-mRMR	100	2500	10	5	0.73
-mRMR	100	2500	10	6	0.71
-mRMR	100	2500	10	7	0.7
-mRMR	100	2500	10	8	0.78
-mRMR	100	2500	10	9	0.82
-mRMR	100	2500	20	10	0.66
-mRMR	100	2500	20	1	0.68
-mRMR	100	2500	20	2	0.65
-mRMR	100	2500	20	3	0.61
-mRMR	100	2500	20	4	0.71
-mRMR	100	2500	20	5	0.66
-mRMR	100	2500	20	6	0.62
-mRMR	100	2500	20	7	0.76
-mRMR	100	2500	20	8	0.66
-mRMR	100	2500	20	9	0.58
-mRMR	100	2500	5	10	0.87
-mRMR	100	2500	5	1	0.96
-mRMR	100	2500	5	2	0.86
-mRMR	100	2500	5	3	0.84
-mRMR	100	2500	5	4	0.91
-mRMR	100	2500	5	5	0.92
-mRMR	100	2500	5	6	0.79
+mRMR	100	10000	10	10	0.45
+mRMR	100	10000	10	1	0.64
+mRMR	100	10000	10	2	0.71
+mRMR	100	10000	10	3	0.58
+mRMR	100	10000	10	4	0.67
+mRMR	100	10000	10	5	0.72
+mRMR	100	10000	10	6	0.67
+mRMR	100	10000	10	7	0.78
+mRMR	100	10000	10	8	0.69
+mRMR	100	10000	10	9	0.64
+mRMR	100	10000	20	10	0.55
+mRMR	100	10000	20	1	0.51
+mRMR	100	10000	20	2	0.51
+mRMR	100	10000	20	3	0.57
+mRMR	100	10000	20	4	0.61
+mRMR	100	10000	20	5	0.61
+mRMR	100	10000	20	6	0.65
+mRMR	100	10000	20	7	0.57
+mRMR	100	10000	20	8	0.5
+mRMR	100	10000	20	9	0.57
+mRMR	100	10000	5	10	0.78
+mRMR	100	10000	5	1	0.75
+mRMR	100	10000	5	2	0.74
+mRMR	100	10000	5	3	0.87
+mRMR	100	10000	5	4	0.8
+mRMR	100	10000	5	5	0.88
+mRMR	100	10000	5	6	0.81
+mRMR	100	10000	5	7	0.83
+mRMR	100	10000	5	8	0.9
+mRMR	100	10000	5	9	0.94
+mRMR	100	1000	10	10	0.7
+mRMR	100	1000	10	1	0.73
+mRMR	100	1000	10	2	0.73
+mRMR	100	1000	10	3	0.79
+mRMR	100	1000	10	4	0.77
+mRMR	100	1000	10	5	0.79
+mRMR	100	1000	10	6	0.68
+mRMR	100	1000	10	7	0.75
+mRMR	100	1000	10	8	0.84
+mRMR	100	1000	10	9	0.65
+mRMR	100	1000	20	10	0.65
+mRMR	100	1000	20	1	0.69
+mRMR	100	1000	20	2	0.72
+mRMR	100	1000	20	3	0.64
+mRMR	100	1000	20	4	0.66
+mRMR	100	1000	20	5	0.74
+mRMR	100	1000	20	6	0.72
+mRMR	100	1000	20	7	0.67
+mRMR	100	1000	20	8	0.61
+mRMR	100	1000	20	9	0.59
+mRMR	100	1000	5	10	0.85
+mRMR	100	1000	5	1	0.82
+mRMR	100	1000	5	2	0.84
+mRMR	100	1000	5	3	0.86
+mRMR	100	1000	5	4	0.91
+mRMR	100	1000	5	5	0.94
+mRMR	100	1000	5	6	0.76
+mRMR	100	1000	5	7	0.95
+mRMR	100	1000	5	8	0.78
+mRMR	100	1000	5	9	0.88
+mRMR	100	2500	10	10	0.72
+mRMR	100	2500	10	1	0.67
+mRMR	100	2500	10	2	0.68
+mRMR	100	2500	10	3	0.68
+mRMR	100	2500	10	4	0.84
+mRMR	100	2500	10	5	0.69
+mRMR	100	2500	10	6	0.69
+mRMR	100	2500	10	7	0.74
+mRMR	100	2500	10	8	0.66
+mRMR	100	2500	10	9	0.76
+mRMR	100	2500	20	10	0.51
+mRMR	100	2500	20	1	0.63
+mRMR	100	2500	20	2	0.55
+mRMR	100	2500	20	3	0.59
+mRMR	100	2500	20	4	0.51
+mRMR	100	2500	20	5	0.61
+mRMR	100	2500	20	6	0.65
+mRMR	100	2500	20	7	0.62
+mRMR	100	2500	20	8	0.62
+mRMR	100	2500	20	9	0.67
+mRMR	100	2500	5	10	0.8
+mRMR	100	2500	5	1	0.8
+mRMR	100	2500	5	2	1.0
+mRMR	100	2500	5	3	0.78
+mRMR	100	2500	5	4	0.75
+mRMR	100	2500	5	5	0.88
+mRMR	100	2500	5	6	0.74
 mRMR	100	2500	5	7	0.92
-mRMR	100	2500	5	8	0.97
-mRMR	100	2500	5	9	0.91
-mRMR	100	5000	10	10	0.77
-mRMR	100	5000	10	1	0.73
-mRMR	100	5000	10	2	0.74
-mRMR	100	5000	10	3	0.75
+mRMR	100	2500	5	8	0.79
+mRMR	100	2500	5	9	0.9
+mRMR	100	5000	10	10	0.7
+mRMR	100	5000	10	1	0.65
+mRMR	100	5000	10	2	0.75
+mRMR	100	5000	10	3	0.62
 mRMR	100	5000	10	4	0.71
-mRMR	100	5000	10	5	0.8
-mRMR	100	5000	10	6	0.76
-mRMR	100	5000	10	7	0.71
-mRMR	100	5000	10	8	0.8
-mRMR	100	5000	10	9	0.84
-mRMR	100	5000	20	10	0.59
-mRMR	100	5000	20	1	0.66
-mRMR	100	5000	20	2	0.69
-mRMR	100	5000	20	3	0.57
-mRMR	100	5000	20	4	0.74
-mRMR	100	5000	20	5	0.61
-mRMR	100	5000	20	6	0.63
-mRMR	100	5000	20	7	0.7
-mRMR	100	5000	20	8	0.58
-mRMR	100	5000	20	9	0.5
-mRMR	100	5000	5	10	0.9
-mRMR	100	5000	5	1	0.98
-mRMR	100	5000	5	2	0.94
-mRMR	100	5000	5	3	1.0
-mRMR	100	5000	5	4	0.96
-mRMR	100	5000	5	5	0.92
-mRMR	100	5000	5	6	0.76
-mRMR	100	5000	5	7	0.99
-mRMR	100	5000	5	8	0.75
-mRMR	100	5000	5	9	0.85
+mRMR	100	5000	10	5	0.79
+mRMR	100	5000	10	6	0.64
+mRMR	100	5000	10	7	0.8
+mRMR	100	5000	10	8	0.64
+mRMR	100	5000	10	9	0.75
+mRMR	100	5000	20	10	0.53
+mRMR	100	5000	20	1	0.55
+mRMR	100	5000	20	2	0.61
+mRMR	100	5000	20	3	0.54
+mRMR	100	5000	20	4	0.61
+mRMR	100	5000	20	5	0.57
+mRMR	100	5000	20	6	0.58
+mRMR	100	5000	20	7	0.66
+mRMR	100	5000	20	8	0.51
+mRMR	100	5000	20	9	0.65
+mRMR	100	5000	5	10	0.76
+mRMR	100	5000	5	1	0.87
+mRMR	100	5000	5	2	0.76
+mRMR	100	5000	5	3	0.93
+mRMR	100	5000	5	4	0.69
+mRMR	100	5000	5	5	0.91
+mRMR	100	5000	5	6	0.75
+mRMR	100	5000	5	7	0.82
+mRMR	100	5000	5	8	0.87
+mRMR	100	5000	5	9	0.8

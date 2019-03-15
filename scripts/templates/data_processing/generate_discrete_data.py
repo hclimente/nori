@@ -33,7 +33,7 @@ for set_type,n in zip(['train', 'test'], [${N}, 100]):
         f,args = F[funs[i]]
         y += f(x[:,i], args)
 
-    y_bin = y >= np.quantile(y, 0.9)
+    y_bin = y >= np.quantile(y, 0.8)
 
     unaffected = np.random.choice(np.where(np.logical_not(y_bin))[0],
                                   size = int(n/2), replace=False)
