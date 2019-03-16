@@ -8,10 +8,10 @@ params.out = "."
 // setup
 params.perms = 10
 params.n = [100, 1000]
-params.d = [1000, 2500, 5000]
+params.d = [1000, 2500, 5000, 10000]
 
 params.data_generation = 'continuous'
-causal = [5, 10, 20]
+causal = [5]
 
 // classifier
 params.mode = 'regression'
