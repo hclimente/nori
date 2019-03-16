@@ -96,7 +96,7 @@ process run_hsic_lasso_no_covars {
 /////////////////////////////////////
 features_covars
     .mix( features_no_covars ) 
-    .into { features_qc }
+    .set { features_qc }
 
 process analyze_features {
 
