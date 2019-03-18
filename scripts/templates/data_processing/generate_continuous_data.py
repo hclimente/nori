@@ -23,19 +23,27 @@ print('Y = 0', end='')
 for i in range(${C}):
     f,args = F[funs[i]]
     print(' + {}(x{},{})'.format(f.__name__, i, args), end='')
+for i in range(2):
+    f,args = F[funs[i]]
+    print(' + {}(x{},{})'.format(f.__name__, ${C} + i, args), end='')
 
 for set_type,n in zip(['train', 'test'], [${N}, 100]):
 
     x = np.random.randn(n, ${D})
     y = np.zeros(n)
+    covars = x[:,[${C}, ${C} + 1]] + np.random.normal(scale = 0.5, size = (n,2))
 
     for i in range(${C}):
         f,args = F[funs[i]]
         y += f(x[:,i], args)
+
+    for i in range(2):
+        f,args = F[funs[i]]
+        y += f(covars[:,i], args)
         
     np.save("x_{}.npy".format(set_type), x)
     np.save("y_{}.npy".format(set_type), y)
-
+    np.save("covars_{}.npy".format(set_type), covars)
 
 featnames = [ str(x) for x in np.arange(${D}) ]
 
