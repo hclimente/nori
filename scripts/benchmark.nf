@@ -28,7 +28,7 @@ params.B = [0,5,10,20]
 params.M = 3
 params.hl_select = 50
 
-M = (params.data_generation == 'discrete')? String.valueOf(params.M) + ', discrete_x = True' : params.M
+M = params.M
 
 //  GENERATE DATA
 /////////////////////////////////////
