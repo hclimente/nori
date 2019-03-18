@@ -195,6 +195,15 @@ if (input_file.getExtension() == 'mat') {
 
 }
 
+process get_empty_covars {
+
+    output:
+        file 'empty_array.npy' into covars
+
+    script:
+    template 'io/make_empty_array.oy'
+}
+
 process split_data {
 
     clusterOptions = '-V -jc pcc-skl'
@@ -260,6 +269,7 @@ process run_hsic_lasso {
     input:
         each C from causal
         set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_hsic
+        file COVARS from covars
         each HL_B from B
         each HL_M from M
         each HL_SELECT from params.hl_select

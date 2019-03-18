@@ -168,6 +168,15 @@ if (input_file.getExtension() == 'mat') {
 
 }
 
+process get_empty_covars {
+
+    output:
+        file 'empty_array.npy' into covars
+
+    script:
+    template 'io/make_empty_array.oy'
+}
+
 //  FEATURE SELECTION
 /////////////////////////////////////
 process run_hsic_lasso {
@@ -183,6 +192,7 @@ process run_hsic_lasso {
         val HL_M from M
         val HL_B from params.B
         val MODE from params.type
+        file COVARS from covars
     
     output:
         set val("hsic_lasso_C=${C}_SELECT=${HL_SELECT}_M=${params.M}_B=${HL_B}"), 'features_hl.npy' into features_hl
