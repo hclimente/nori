@@ -201,7 +201,8 @@ process get_empty_covars {
         file 'empty_array.npy' into covars
 
     script:
-    template 'io/make_empty_array.oy'
+    template 'io/make_empty_array.py'
+
 }
 
 process split_data {
