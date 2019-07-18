@@ -2,7 +2,7 @@
 
 Study of non-linear phenotype-genotype relationships in high-dimensional experiments. Contains all the analyses of:
 
-Climente-González, H., Azencott, C-A., Kaski, S., and Yamada, M., [Block HSIC Lasso: model-free biomarker detection for ultra-high dimensional data.](https://www.biorxiv.org/content/10.1101/532192v1) bioRxiv 2019.
+Climente-González, H., Azencott, C-A., Kaski, S., and Yamada, M. (2019). [Block HSIC Lasso: model-free biomarker detection for ultra-high dimensional data.](https://academic.oup.com/bioinformatics/article/35/14/i427/5529193) *Bioinformatics* 35(14), i427–i435.
 
 ## Experiments on synthetic data
 
