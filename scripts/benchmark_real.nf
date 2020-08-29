@@ -253,10 +253,10 @@ process run_lars {
         set I, file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), file(FEATNAMES) from data_lasso
     
     output:
-        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'features_lars.npy' into features_lars
+        set val('LARS'), val(C), val(I), file(X_TRAIN), file(Y_TRAIN), file(X_TEST), file(Y_TEST), 'all_features.npy' into features_lars
 
     script:
-    template 'feature_selection/lars_spams.py'
+    template 'feature_selection/all_features.py'
 
 }
 

@@ -42,6 +42,8 @@ if (input_file.getExtension() == 'mat') {
 
     }
 
+    process normalize {
+
         clusterOptions = '-V -jc pcc-skl'
 
         input:
