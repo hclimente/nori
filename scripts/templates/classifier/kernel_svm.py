@@ -34,14 +34,9 @@ except IndexError:
     sys.exit(77)
 
 # cv, build model and predict
-if '${MODE}' == 'regression':
-    clf = svm.SVR()
-elif '${MODE}' == 'classification':
-    clf = svm.SVC()
+clf = svm.SVC(gamma="scale", class_weight="balanced", random_state=42)
 
-param_grid = { 'C': np.logspace(-6, 1, 10) }
-cv_clf = GridSearchCV(estimator = clf, param_grid = param_grid)
-cv_clf.fit(x_train, y_train)
+clf.fit(x_train, y_train)
 
 y_pred = cv_clf.predict(x_test)
 np.save('y_pred.npy', y_pred)
