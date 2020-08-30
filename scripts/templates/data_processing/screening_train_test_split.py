@@ -24,6 +24,7 @@ n = x.shape[0]
 perm = np.random.permutation(n)
 x = x[perm,:]
 y = y[perm]
+x  += np.random.normal(0, .01, x.shape)
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = ${SPLIT})
 
