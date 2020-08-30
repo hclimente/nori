@@ -82,7 +82,6 @@ process split_data {
 process run_mrmr {
 
     tag { "${C} (${I})" }
-    clusterOptions = '-V -jc pcc-large'
 
     input:
         each C from causal

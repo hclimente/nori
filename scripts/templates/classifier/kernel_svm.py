@@ -38,6 +38,6 @@ clf = svm.SVC(gamma="scale", class_weight="balanced", random_state=42)
 
 clf.fit(x_train, y_train)
 
-y_pred = cv_clf.predict(x_test)
+y_pred = clf.predict(x_test)
 np.save('y_pred.npy', y_pred)
 
