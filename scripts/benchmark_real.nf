@@ -25,7 +25,7 @@ stat = (MODE == 'regression')? 'mse' : 'accuracy'
 params.hl_select = 50
 params.M = 3
 M = params.M
-params.B = '0,5,10'
+params.B = '0,5,10,20'
 B = params.B .toString().split(",")
 
 //  GENERATE DATA
@@ -287,6 +287,7 @@ process run_mrmr {
 
     tag { "${C} (${I})" }
     clusterOptions = '-V -jc pcc-large'
+    errorStrategy 'ignore'
 
     input:
         each C from causal
