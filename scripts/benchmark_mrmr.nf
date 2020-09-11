@@ -73,7 +73,7 @@ process split_data {
         set val(SEED), "x_train.npy","y_train.npy","x_test.npy","y_test.npy","featnames.npy" into split_data
 
     script:
-    template 'data_processing/train_test_split.py'
+    template 'data_processing/screening_train_test_split.py'
 
 }
 
@@ -81,6 +81,7 @@ process split_data {
 /////////////////////////////////////
 process run_mrmr {
 
+    clusterOptions = '-V -jc pcc-large'
     tag { "${C} (${I})" }
 
     input:
