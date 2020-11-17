@@ -11,7 +11,7 @@ D = 'None'
 /////////////////////////////////////
 
 // setup
-SPLIT = 0.2
+params.split = 0.2
 params.perms = 10
 params.causal = '10,25,50'
 causal = params.causal .toString().split(",")
@@ -213,6 +213,7 @@ process split_data {
         file X from normalized_X
         file Y
         file FEATNAMES
+        val SPLIT from params.split
         each SEED from 1..params.perms
 
     output:
